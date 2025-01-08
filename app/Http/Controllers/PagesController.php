@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 
-class HomeController extends Controller
+class PagesController extends Controller
 {
     private function getProgramYayasan(){
         // return Cache::remember('programs', 120, function() {
@@ -21,22 +21,28 @@ class HomeController extends Controller
         // });
     }
 
+    private function getBanner(){
+        // return Cache::remember('banners', 120, function() {
+            return Bannerhome::all();
+        // })
+    }
+
     public static function staticData(){
-        $data = app(HomeController::class);
+        $data = app(PagesController::class);
 
         return [
             'program' => $data->getProgramYayasan(),
+            'banner' => $data->getBanner(),
         ];
     }
 
-    public function index()
+    public function home()
     {
         $visiMisi = VisiMisi::first();  // Pastikan ada data di tabel 'visi_misis'
         $rekening = Rekening::first();
         $program = Program::all();
-        $bannerhome = Bannerhome::first();
         // $berita = Berita::first();
-        return view('index', compact('visiMisi', 'rekening', 'program', 'bannerhome'));
+        return view('index', compact('visiMisi', 'rekening'));
 
     }
 

@@ -7,7 +7,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-2 col-lg-2 col-6">
                             <div class="header-logo">
-                                <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                                <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
                                         alt="Image Not Found"></a>
                             </div>
                         </div>
@@ -15,26 +15,16 @@
                             <div class="header-menu ">
                                 <nav class="header-nav-menu" id="mobile-menu">
                                     <ul>
-                                        <li><a href="{{ url('index') }}">Beranda</a></li>
+                                        <li><a href="{{ route('home') }}">Beranda</a></li>
                                         <li class="menu-has-child">
                                             <a href="#">Program Kami</a>
                                             <ul class="submenu">
-                                                {{-- <li><a href="{{ url('program-santunan') }}">Program Santunan</a></li>
-                                                <li><a href="{{ url('program-pendidikan') }}">Program Pendidikan</a></li>
-                                                <li><a href="{{ url('program-baktisosial') }}">Program Bakti Sosial</a></li>
-                                                <li><a href="{{ url('program-makan-bersama') }}">Program Makan Bersama</a>
-                                                </li>
-                                                <li><a href="{{ url('program-belanja') }}">Program Belanja Yatim</a></li>
-                                                <li><a href="{{ url('program-wisata') }}">Program Wisata Yatim</a></li>
-                                                <li><a href="{{ url('program-jajan') }}">Program Jajan Yatim</a></li>
-                                                <li><a href="{{ url('program-sembako') }}">Program Sembako</a></li> --}}
                                                 @foreach ($staticData['program'] as $item)
                                                     <li>
                                                         <a
                                                             href="{{ route('program-yayasan', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
                                                     </li>
                                                 @endforeach
-
                                             </ul>
                                         </li>
                                         <li><a href="{{ url('berita') }}">Berita</a></li>
@@ -90,8 +80,8 @@
 
     @section('content')
         <main>
-            <section class="slider_container">
-                @if ($bannerhome)
+            {{-- <section class="slider_container">
+                @if ($staticData['banner'])
                     <div class="slider">
                         <div class="slides">
                             <!--radio buttons start-->
@@ -101,18 +91,11 @@
                             <input type="radio" name="radio-btn" id="radio4">
                             <!--radio buttons end-->
                             <!--slide images start-->
-                            <div class="slide first">
-                                <img src="{{ Storage::url($bannerhome->imagebanner1) }}" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="{{ Storage::url($bannerhome->imagebanner2) }}" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="{{ Storage::url($bannerhome->imagebanner3) }}" alt="" />
-                            </div>
-                            <div class="slide">
-                                <img src="{{ Storage::url($bannerhome->imagebanner4) }}" alt="" />
-                            </div>
+                            @foreach ($staticData['banner'] as $item)
+                                <div class="slide first">
+                                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->caption }}" />
+                                </div>
+                            @endforeach
                             <!--slide images end-->
                             <!--automatic navigation start-->
                             <div class="navigation-auto">
@@ -142,12 +125,54 @@
                             if (counter > 4) {
                                 counter = 1;
                             }
-                        }, 6000);
+                        }, 2000);
                     </script>
                 @else
                     <p>Image Slide belum ditetapkan.</p>
                 @endif
+            </section> --}}
+
+            <section class="slider_container">
+                @if ($staticData['banner'])
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                            @foreach ($staticData['banner'] as $index => $item)
+                                <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}"
+                                    aria-current="{{ $index === 0 ? 'true' : 'false' }}"
+                                    aria-label="Slide {{ $index + 1 }}">
+                                </button>
+                            @endforeach
+                        </div>
+
+                        <!-- Slides -->
+                        <div class="carousel-inner">
+                            @foreach ($staticData['banner'] as $index => $item)
+                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                    <img src="{{ asset('storage/' . $item->gambar) }}" class="d-block w-100"
+                                        alt="{{ $item->caption }}">
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                @else
+                    <p>Image Slide belum ditetapkan.</p>
+                @endif
             </section>
+
 
             <!-- banner area start -->
             <section class="banner-area">
@@ -199,7 +224,8 @@
                                             <h5 class="choose-item-content-title"><a
                                                     href="#">{{ $item->kategori_program }}</a></h5>
                                             <p>{{ $item->deskripsi }}</p>
-                                            <a href="" class="choose-item-content-btn">Selengkapnya<i
+                                            <a href="{{ route('program-yayasan', ['slug' => $item->slug]) }}"
+                                                class="choose-item-content-btn">Selengkapnya<i
                                                     class="fa-light fa-angle-right"></i></a>
                                         </div>
                                     </div>

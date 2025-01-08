@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bannerhomes', function (Blueprint $table) {
+        Schema::create('bannerhome', function (Blueprint $table) {
             $table->id();
+            $table->string('gambar');
+            $table->string('caption');
+            $table->string('status');
             $table->timestamps();
-            $table->string('imagebanner1')->nullable();
-            $table->string('imagebanner2')->nullable();
-            $table->string('imagebanner3')->nullable();
-            $table->string('imagebanner4')->nullable();
         });
     }
 

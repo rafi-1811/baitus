@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\View;
 
 
 use Illuminate\Support\ServiceProvider;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PagesController;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         View::composer('*', function ($view) {
-            $view->with('staticData', HomeController::staticData());
+            $view->with('staticData', PagesController::staticData());
         });
     }
 

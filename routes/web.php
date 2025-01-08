@@ -11,13 +11,13 @@ use App\Http\Controllers\HomeController;
 use App\Models\Berita;
 
 
-Route::get('/index', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::get('/berita', [App\Http\Controllers\HomeController::class, 'berita']);
-Route::get('/blog-details/{slug}', [App\Http\Controllers\HomeController::class, 'blogdetails']);
+// Route::get('/index', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PagesController::class, 'home'])->name('home');
+Route::get('/berita', [App\Http\Controllers\PagesController::class, 'berita']);
+Route::get('/blog-details/{slug}', [App\Http\Controllers\PagesController::class, 'blogdetails']);
 
 // program yayasan
-Route::get('/program/{slug}', [App\Http\Controllers\HomeController::class, 'programYayasan'])->name('program-yayasan');
+Route::get('/program/{slug}', [App\Http\Controllers\PagesController::class, 'programYayasan'])->name('program-yayasan');
 
 // Route::get('/berita/{id}', [App\Http\Controllers\HomeController::class, 'blogdetail']);
 // Route::get('/blog-details/{slug}', [HomeController::class, 'blogdetail'])->name('blog-details'); 
@@ -30,7 +30,7 @@ Route::get('/program/{slug}', [App\Http\Controllers\HomeController::class, 'prog
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'indexx']);
 
 
-Route::get('{any}', [App\Http\Controllers\HomeController::class, 'pageView']);
+Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'rekening']);
 
