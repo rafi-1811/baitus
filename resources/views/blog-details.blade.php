@@ -6,20 +6,19 @@
 ?>
 
 @section('content')
-
     <!-- blog details area start -->
-    <section class="blog_details-area pt-105 pb-100 ">
+    <section class="blog_details-area pt-105 pb-100">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="blog_details-left mb-40">
                         <div class="blog_details-img">
-                            {{-- <img src="{{ asset('storage/' . $berita->gambarberita) }}" alt="Image Not Found"> --}}
+                            <img src="{{ asset('assets/images/blog/innerPage/1.png') }}" alt="" class="w-100 tp_fade_bottom">
                             <div class="blog_details-meta-box tp_fade_bottom">
                                 <div class="blog_details-meta">
                                     <span><a href="#">Creative</a></span>
                                     <span><a href="#"><i class="fa-light fa-circle-user"></i> by admin</a></span>
-                                    {{-- <span><i class="fa-light fa-calendar-days"></i>{{$berita->tanggalberita}}</span> --}}
+                                    <span><i class="fa-light fa-calendar-days"></i>April 18, 2024</span>
                                 </div>
                                 <div class="blog_details-meta-action">
                                     <ul>
@@ -31,7 +30,7 @@
                             </div>
                         </div>
                         <div class="blog_details-content">
-                            {{-- <h3 class="blog_details-content-title tp_has_text_reveal_anim">{{$berita->judul}}</h3> --}}
+                            <h3 class="blog_details-content-title tp_has_text_reveal_anim">Innovative Developments in AI Chatbot Technologies</h3>
                             <p class="blog_details-content-text mb-30 tp_fade_bottom">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin liter ature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
                             <blockquote class="tp_fade_bottom">
                                 <p>“If you set your goals ridiculously high and it’s a failure, you will fail above one of the best ever everyone else’s success”
