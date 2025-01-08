@@ -16,6 +16,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/berita', [App\Http\Controllers\HomeController::class, 'berita']);
 Route::get('/blog-details/{slug}', [App\Http\Controllers\HomeController::class, 'blogdetails']);
 
+// program yayasan
+Route::get('/program/{slug}', [App\Http\Controllers\HomeController::class, 'programYayasan'])->name('program-yayasan');
+
 // Route::get('/berita/{id}', [App\Http\Controllers\HomeController::class, 'blogdetail']);
 // Route::get('/blog-details/{slug}', [HomeController::class, 'blogdetail'])->name('blog-details'); 
 // Route::get('/blog-detail/{slug}', function ($slug) {

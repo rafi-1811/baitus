@@ -2,24 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\VisiMisi;
-use App\Models\Rekening;
-use App\Models\Program;
-use App\Models\Bannerhome;
 use App\Models\Berita;
+use App\Models\Program;
+use App\Models\Rekening;
+use App\Models\VisiMisi;
+use App\Models\Bannerhome;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 
 class HomeController extends Controller
 {
+    private function getProgramYayasan(){
+        // return Cache::remember('programs', 120, function() {
+            return Program::with('berita') // Eager loading berita terkait
+                ->orderBy('id', 'asc')
+                ->get(); // Mengambil semua data program
+        // });
+    }
+
+    public static function staticData(){
+        $data = app(HomeController::class);
+
+        return [
+            'program' => $data->getProgramYayasan(),
+        ];
+    }
+
     public function index()
     {
         $visiMisi = VisiMisi::first();  // Pastikan ada data di tabel 'visi_misis'
         $rekening = Rekening::first();
-        $program = Program::first();
+        $program = Program::all();
         $bannerhome = Bannerhome::first();
         // $berita = Berita::first();
-
         return view('index', compact('visiMisi', 'rekening', 'program', 'bannerhome'));
 
     }

@@ -11,15 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('beritas', function (Blueprint $table) {
-            $table->id();
+        Schema::create('berita', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+			$table->string('judul');
+			$table->string('slug')->unique();
+			$table->string('kategori');
+			$table->text('body');
+            $table->text('meta_deskripsi');
+            $table->text('meta_keywords');
+            $table->string('cover_gambar_berita');
+            $table->string('status');
             $table->timestamps();
-            $table->text('judul');
-            $table->string('gambarberita')->nullable();
-            $table->text('kategori');
-            $table->date('tanggalberita');  // Kolom tanggal berita
-            $table->text('content');
-            $table->string('slug')->unique();
+            
+            // foreign untuk relasi tabel
+            $table->foreign('kategori')->references('kategori_program')->on('program')->onDelete('restrict');
         });
     }
 

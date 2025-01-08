@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
@@ -10,43 +12,27 @@ class Program extends Model
 {
     use HasFactory;
 
-    protected $table = 'programs';
-    protected $fillable = ['judul1', 
-                            'gambarberita1', 
-                            'keterangan1',
-                            'judul2', 
-                            'gambarberita2', 
-                            'keterangan2',
-                            'judul3', 
-                            'gambarberita3', 
-                            'keterangan3',
-                            'judul4', 
-                            'gambarberita4', 
-                            'keterangan4',
-                            'judul5', 
-                            'gambarberita5', 
-                            'keterangan5',
-                            'judul6', 
-                            'gambarberita6', 
-                            'keterangan6',
-                            'judul7', 
-                            'gambarberita7', 
-                            'keterangan7',
-                            'judul8', 
-                            'gambarberita8', 
-                            'keterangan8',
-                        ];
-                        
-    public function getGambarUrlAttribute()
+    protected $table = 'program';
+	
+	protected $fillable = [
+        'kategori_program',
+        'deskripsi',
+        'slug',
+        'gambar'
+    ];
+	
+	// Menentukan kolom yang tidak bisa diisi secara massal
+    protected $guarded = [];
+
+    // Relasi dengan model Berita
+    public function berita(): HasMany
     {
-        return asset('storage/' . $this->gambarberita1,
-                                   $this->gambarberita2,
-                                   $this->gambarberita3,
-                                   $this->gambarberita4,
-                                   $this->gambarberita5,
-                                   $this->gambarberita6,
-                                   $this->gambarberita7,
-                                   $this->gambarberita8,
-                                );
+        return $this->hasMany(Berita::class, 'kategori', 'kategori_program');
+    }
+
+    public function setKategoriProgramAttribute($value)
+    {
+        $this->attributes['kategori_program'] = $value;
+        $this->attributes['slug'] = Str::slug($value);
     }
 }
