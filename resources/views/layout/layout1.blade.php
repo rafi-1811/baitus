@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <x-head/>
-  <body class="slug-{{ request()->route('news')->slug }}">
+  <body >
 
     <!-- Cursor start -->
     <x-cursor/>
