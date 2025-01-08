@@ -50,7 +50,7 @@ class ProgramResource extends Resource
                     ->directory('gambar-program')
                     ->visibility('private')
                     ->image()
-                    ->maxSize(200)
+                    // ->maxSize(200)
                     ->minFiles(1)
                     ->uploadingMessage('Gambar Sedang DiUnggah...')
                     ->required(),
