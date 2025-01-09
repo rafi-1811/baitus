@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 <?php
-    $title = 'Blog Details';
-    $subTitle = 'Home';
+$title = $berita->judul;
+$subTitle = 'Home';
 ?>
 
 @section('content')
@@ -13,12 +13,14 @@
                 <div class="col-lg-8">
                     <div class="blog_details-left mb-40">
                         <div class="blog_details-img">
-                            <img src="{{ asset('assets/images/blog/innerPage/1.png') }}" alt="" class="w-100 tp_fade_bottom">
+                            <img src="{{ asset('storage/' . $berita->cover_gambar_berita) }}"
+                                alt="{{ 'gambar terkait ' . $berita->judul . ' ?>' }}" class="w-100 tp_fade_bottom">
                             <div class="blog_details-meta-box tp_fade_bottom">
                                 <div class="blog_details-meta">
-                                    <span><a href="#">Creative</a></span>
+                                    <span><a href="#">{{ $berita->kategori }}</a></span>
                                     <span><a href="#"><i class="fa-light fa-circle-user"></i> by admin</a></span>
-                                    <span><i class="fa-light fa-calendar-days"></i>April 18, 2024</span>
+                                    <span><i
+                                            class="fa-light fa-calendar-days"></i>{{ \Carbon\Carbon::parse($berita->created_at)->locale('id')->format('d F Y') }}</span>
                                 </div>
                                 <div class="blog_details-meta-action">
                                     <ul>
@@ -29,28 +31,46 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- kontent berita --}}
+                        @php
+                            // Mendapatkan total panjang isi body
+                            $totalLength = strlen($berita->body);
+
+                            // Menghitung panjang tiap bagian (dibagi 4)
+                            $partLength = ceil($totalLength / 4);
+
+                            // Membagi teks menjadi 4 bagian
+                            $part1 = substr($berita->body, 0, $partLength);
+                            $part2 = substr($berita->body, $partLength, $partLength);
+                            $part3 = substr($berita->body, 2 * $partLength, $partLength);
+                            $part4 = substr($berita->body, 3 * $partLength);
+                        @endphp
                         <div class="blog_details-content">
-                            <h3 class="blog_details-content-title tp_has_text_reveal_anim">Innovative Developments in AI Chatbot Technologies</h3>
-                            <p class="blog_details-content-text mb-30 tp_fade_bottom">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin liter ature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.</p>
-                            <blockquote class="tp_fade_bottom">
-                                <p>“If you set your goals ridiculously high and it’s a failure, you will fail above one of the best ever everyone else’s success”
-                                </p>
-                                <span>Nelson Mandela</span>
-                            </blockquote>
-                            <p class="blog_details-content-text mb-35 tp_fade_bottom">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin liter ature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure.</p>
+                            <h3 class="blog_details-content-title tp_has_text_reveal_anim">{{ $berita->judul }}</h3>
+                            <p class="blog_details-content-text mb-30 tp_fade_bottom">{{ $part1 }}</p>
+                            @if ($berita->quotes)
+                                <blockquote class="tp_fade_bottom">
+                                    <p>{{ $berita->quotes }}
+                                    </p>
+                                    <span>Nelson Mandela</span>
+                                </blockquote>
+                            @else
+                                <span></span>
+                            @endif
+                            <p class="blog_details-content-text mb-35 tp_fade_bottom">{{ $part2 }}</p>
                             <div class="row align-items-center mb-20">
                                 <div class="col-xl-6 tp_fade_right">
                                     <div class="inner-img w_img mb-35 mb-xl-0 tp_fade_right">
-                                        <img src="{{ asset('assets/images/blog/innerPage/2.png') }}" alt="">
+                                        <img src="{{ asset('storage/' . $berita->gambar_content) ?? $berita->gambar_content }}"
+                                            alt="">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 tp_fade_left">
-                                    <p class="blog_details-content-text mb-0">Contrary to popular belief, Lorem Ipsum is not sim
-                                        ply random text. It has roots in a piece of classical ature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden Sydney College in Virginia, looked up one of the and going through the cites of the word in classical literature, discovered the undoubtable source. Lor and going through the cites.
+                                    <p class="blog_details-content-text mb-0">{{ $part3 }}
                                     </p>
                                 </div>
                             </div>
-                            <p class="blog_details-content-text mb-45 tp_fade_bottom">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin liter ature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words</p>
+                            <p class="blog_details-content-text mb-45 tp_fade_bottom">{{ $part4 }}</p>
                             <div class="blog_details-content-bottom tp_fade_bottom">
                                 <div class="blog_details-content-tag">
                                     <span>Tags:</span>
@@ -75,36 +95,42 @@
                                     <div class="blog_details-comment-content">
                                         <h6>Russell Sprout</h6>
                                         <span>march 29,2023 at 10:47 pm</span>
-                                        <p>There are many variations passages of lorem qoree available, but the majority have content marketing suffered alteration in some form.</p>
+                                        <p>There are many variations passages of lorem qoree available, but the majority
+                                            have content marketing suffered alteration in some form.</p>
                                         <a href="#" class="comment-reply">Reply</a>
                                     </div>
                                 </div>
-                                <div class="blog_details-comment-item ml-80 tp_has_fade_anim" data-fade-from="left" data-delay=".8">
+                                <div class="blog_details-comment-item ml-80 tp_has_fade_anim" data-fade-from="left"
+                                    data-delay=".8">
                                     <div class="blog_details-comment-img">
                                         <img src="{{ asset('assets/images/blog/innerPage/admin-2.jpg') }}" alt="">
                                     </div>
                                     <div class="blog_details-comment-content">
                                         <h6>Brian Cumin</h6>
                                         <span>march 29,2023 at 10:47 pm</span>
-                                        <p>There are many variations passages of lorem qoree available, but the majority have content marketing suffered alteration in some form.</p>
+                                        <p>There are many variations passages of lorem qoree available, but the majority
+                                            have content marketing suffered alteration in some form.</p>
                                         <a href="#" class="comment-reply">Reply</a>
                                     </div>
                                 </div>
-                                <div class="blog_details-comment-item ml-80 tp_has_fade_anim" data-fade-from="left" data-delay="1.1">
+                                <div class="blog_details-comment-item ml-80 tp_has_fade_anim" data-fade-from="left"
+                                    data-delay="1.1">
                                     <div class="blog_details-comment-img">
                                         <img src="{{ asset('assets/images/blog/innerPage/admin-3.jpg') }}" alt="">
                                     </div>
                                     <div class="blog_details-comment-content">
                                         <h6>Parsley Montana</h6>
                                         <span>march 29,2023 at 10:47 pm</span>
-                                        <p>There are many variations passages of lorem qoree available, but the majority have content marketing suffered alteration in some form.</p>
+                                        <p>There are many variations passages of lorem qoree available, but the majority
+                                            have content marketing suffered alteration in some form.</p>
                                         <a href="#" class="comment-reply">Reply</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="post-comments">
                                 <h3 class="post-comments-title tp_has_text_reveal_anim">Leave a Reply</h3>
-                                <p class="tp_fade_bottom">Your email address will not be published. Required fields are marked *</p>
+                                <p class="tp_fade_bottom">Your email address will not be published. Required fields are
+                                    marked *</p>
                                 <form action="#" class="tp_fade_bottom">
                                     <div class="row">
                                         <div class="col-sm-6">
@@ -163,24 +189,20 @@
                         <div class="blog_details-widget mb-30 tp_fade_left">
                             <h5 class="blog_details-widget-title mb-25">Category</h5>
                             <ul>
-                                <li><a href="#">AI Revolution <span>(4)</span></a></li>
-                                <li><a href="#">New AI <span>(2)</span></a></li>
-                                <li><a href="#">Content Writing <span>(3)</span></a></li>
-                                <li><a href="#">Writing <span>(4)</span></a></li>
-                                <li><a href="#">Image Generator <span>(2)</span></a></li>
+                                @foreach ($staticData['program'] as $item)
+                                    <li><a href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}
+                                            <span>({{ $item->berita->count() }})</span></a>
+                                    </li>
+                                @endforeach
+
                             </ul>
                         </div>
                         <div class="blog_details-widget mb-30 tp_fade_left">
                             <h5 class="blog_details-widget-title mb-25">Recent Posts</h5>
                             <ul>
-                                <li><a href="#">Balancing Innovation and Responsibility
-                                    With AI.</a></li>
-                                <li><a href="#">Exploring Trends, Challenges, and
-                                    Opportunities.</a></li>
-                                <li><a href="#">Shaping the Future of Work and Society.
-                                </a></li>
-                                <li><a href="#">The Evolution of Artificial Intelligence.</a></li>
-                                <li><a href="#">Balancing Innovation and Responsibility With AI.</a></li>
+                                @foreach ($staticData['berita'] as $item)
+                                    <li><a href="{{ route('detail-berita', $item->slug) }}">{{ $item->judul }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="blog_details-widget tp_fade_left">

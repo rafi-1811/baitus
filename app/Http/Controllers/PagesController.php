@@ -18,9 +18,9 @@ class PagesController extends Controller
     private function getProgramYayasan()
     {
         // return Cache::remember('programs', 120, function() {
-        return Program::with('berita') // Eager loading berita terkait
+        return Program::with('berita') 
             ->orderBy('id', 'asc')
-            ->get(); // Mengambil semua data program
+            ->get();
         // });
     }
 
@@ -81,20 +81,22 @@ class PagesController extends Controller
 
     public function detailProgram($slug)
     {
-        $data = Program::with('berita')->where('slug', $slug)->firstOrFail(); // Cari program berdasarkan slug
-        return view('detail-program', compact('data'));
+        $data = Program::with('berita')->where('slug', $slug)->firstOrFail();
+        $berita = $data->berita()->paginate(6);
+        return view('detail-program', compact('data', 'berita'));
     }
 
     public function berita()
     {
-        return view('berita');
+        $berita = Berita::with('program')->orderBy('created_at', 'desc')->paginate(5);
+        return view('berita' , compact('berita'));
     }
 
     public function detailBerita($slug)
     {
         $berita = Berita::where('slug', $slug)->firstOrFail(); // Cari berita berdasarkan slug
-        dd($berita);
-        return view('blog-details', compact('berita')); // Kirim berita ke halaman detail
+        // dd($berita);
+        return view('detail-berita', compact('berita')); // Kirim berita ke halaman detail
     }
 
     public function pageView(Request $request)

@@ -421,7 +421,8 @@
                                                             class="fa-light fa-calendar-days"></i>{{ $item->created_at }}</span>
                                                 </div>
                                                 <h4 class="h2_blog-content-title">
-                                                    <a href="{{ url('blog-details') }}">{{ $item->judul }}</a>
+                                                    <a
+                                                        href="{{ route('detail-berita', ['slug' => $item->slug]) }}">{{ $item->judul }}</a>
                                                 </h4>
                                             </div>
                                         </div>
