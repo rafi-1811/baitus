@@ -412,10 +412,10 @@ const h5_workActive = new Swiper(".h5_work-active", {
 ////////////////////////////////////////////////////////////////////////
 // 14. Blog Active
 const h2_blogActive = new Swiper(".h2_blog-active", {
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 30,
-	loop: true,
-	speed: 2000,
+	loop: false,
+	speed: 1000,
   pagination: {
 		el: ".h2_blog-pagination",
 		clickable: true,

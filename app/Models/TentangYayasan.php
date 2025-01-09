@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class Rekening extends Model
+class TentangYayasan extends Model
 {
     use HasFactory;
 
-    protected $table = 'rekening';
+    protected $table = 'tentang_yayasan';
 
     protected $fillable = [
-        'gambar_rekening_bank',
-        'nama_bank',
-        'no_rekening',
-        'nama_rekening',
+        'gambar_tentang_yayasan',
+        'tentang_yayasan',
+        'visi',
+        'misi'
     ];
 }

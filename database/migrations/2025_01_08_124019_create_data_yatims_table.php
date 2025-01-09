@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rekening', function (Blueprint $table) {
+        Schema::create('data_yatim', function (Blueprint $table) {
             $table->id();
-            $table->string('gambar_rekening_bank');
-            $table->string('nama_bank');
-            $table->string('no_rekening');
-            $table->string('nama_rekening');
+            $table->string('total_yatim_binaan');
+            $table->string('total_yatim_luar_binaan');
+            $table->string('total_kegiatan');
+            $table->string('total_daerah_cakupan');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rekenings');
+        Schema::dropIfExists('data_yatims');
     }
 };

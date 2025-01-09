@@ -7,15 +7,16 @@
 
     <title>Baitus Saadah Amanah</title>
 
-    <link rel="icon" href="assets/images/logo/logo.png">
-    <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="assets/css/all.min.css"> 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"> 
-    <link rel="stylesheet" href="assets/css/meanmenu.css"> 
-    <link rel="stylesheet" href="assets/css/magnific-popup.css"> 
-    <link rel="stylesheet" href="assets/css/nice-select.css"> 
-    <link rel="stylesheet" href="assets/css/backtotop.css"> 
-    <link rel="stylesheet" href="assets/css/main.css"> 
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/backtotop.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon.png') }}">
 
-  </head>
+
+</head>
