@@ -1,12 +1,11 @@
 @extends('layout.layout')
 
 <?php
-    $title = 'About Us';
-    $subTitle = 'Home';
+$title = 'About Us';
+$subTitle = 'Home';
 ?>
 
 @section('content')
-
     <!-- about area start -->
     <section class="banner-area">
         <div class="container custom-container-1">
@@ -17,16 +16,20 @@
                 <div class="banner-content">
                     <span class="banner-content-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
                     <h1 class="banner-content-title tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>
-                    <p class="tp_desc_anim">Yayasan Baitus Saadah Amanah merupakan lembaga sosial yang berdiri sejak April tahun 2021. 
-                        Tujuan utama yayasan ini berdiri yaitu, untuk membantu dan memajukan kehidupan anak-anak yatim dengan 
-                        program yang efektif dan berkesinambungan untuk kehidupan yang lebih baik. Hingga sekarang, 
-                        kami memiliki kantor representatif. dan penambahan logo baru dengan slogan <b>"Bahagia Bersama Yatim".</b>
-                        <p class="tp_desc_anim"><br>Sekretariat : Jl. Pendowo Raya Gg. Kopo Limo Kota Depok - Jawa Barat 16515 / Telp. 0813 7790 5741 — Nomor AHU-0011002.AH.01.04.Tahun 2021</p>
+                    <p class="tp_desc_anim">Yayasan Baitus Saadah Amanah merupakan lembaga sosial yang berdiri sejak April
+                        tahun 2021.
+                        Tujuan utama yayasan ini berdiri yaitu, untuk membantu dan memajukan kehidupan anak-anak yatim
+                        dengan
+                        program yang efektif dan berkesinambungan untuk kehidupan yang lebih baik. Hingga sekarang,
+                        kami memiliki kantor representatif. dan penambahan logo baru dengan slogan <b>"Bahagia Bersama
+                            Yatim".</b>
+                    <p class="tp_desc_anim"><br>Sekretariat : Jl. Pendowo Raya Gg. Kopo Limo Kota Depok - Jawa Barat 16515 /
+                        Telp. 0813 7790 5741 — Nomor AHU-0011002.AH.01.04.Tahun 2021</p>
                     </p>
                 </div>
             </div>
         </div>
-        
+
     </section>
     <!-- banner area end -->
 
@@ -42,103 +45,23 @@
                 </div>
             </div>
             <div class="row">
-                @if($program)
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita1) }}" alt="Image Not Found">
+                @if ($staticData['program'])
+                    @foreach ($staticData['program'] as $item)
+                        <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
+                            <div class="choose-item mb-30">
+                                <div class="choose-item-img">
+                                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="Image Not Found">
+                                </div>
+                                <div class="choose-item-content">
+                                    <h5 class="choose-item-content-title"><a href="#">{{ $item->judul }}</a></h5>
+                                    <p>{{ $item->deskripsi }}</p>
+                                    <a href="{{ route('detail-program', ['slug' => $item->slug]) }}"
+                                        class="choose-item-content-btn">Selengkapnya<i
+                                            class="fa-light fa-angle-right"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul1}}</a></h5>
-                            <p>{{$program->keterangan1}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay=".8">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita2) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul2}}</a></h5>
-                            <p>{{$program->keterangan2}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.1">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita3) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul3}}</a></h5>
-                            <p>{{$program->keterangan3}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita4) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul4}}</a></h5>
-                            <p>{{$program->keterangan4}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita5) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul5}}</a></h5>
-                            <p>{{$program->keterangan5}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita6) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul6}}</a></h5>
-                            <p>{{$program->keterangan6}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita7) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul7}}</a></h5>
-                            <p>{{$program->keterangan7}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                    <div class="choose-item mb-30">
-                        <div class="choose-item-img">
-                            <img src="{{ Storage::url($program->gambarberita8) }}" alt="Image Not Found">
-                        </div>
-                        <div class="choose-item-content">
-                            <h5 class="choose-item-content-title"><a href="#">{{$program->judul8}}</a></h5>
-                            <p>{{$program->keterangan8}}</p>
-                            <a href="#" class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
                 @else
                     <p>Prgoram belum ditetapkan.</p>
                 @endif
@@ -159,17 +82,17 @@
                 </div>
             </div>
             <div class="feature-top mb-50 tp_fade_bottom">
-                @if($visiMisi)
-                <div class="feature-item">
-                    <h5 class="feature-item-title">Visi</h5>
-                    <p>{{$visiMisi->visi}}</p>
-                </div>
-                <div class="feature-item1 ">
-                    <h5 class="feature-item-title">Misi</h5>
-                    {!!$visiMisi->misi!!}
-                </div>
+                @if ($staticData['tentang_yayasan'])
+                    <div class="feature-item">
+                        <h5 class="feature-item-title">Visi</h5>
+                        <p>{{ $staticData['tentang_yayasan']->visi }}</p>
+                    </div>
+                    <div class="feature-item1 ">
+                        <h5 class="feature-item-title">Misi</h5>
+                        {!! $staticData['tentang_yayasan']->misi !!}
+                    </div>
                 @else
-                <p>Visi Misi belum ditetapkan.</p>
+                    <p>Visi Misi belum ditetapkan.</p>
                 @endif
             </div>
         </div>

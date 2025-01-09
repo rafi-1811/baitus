@@ -25,40 +25,40 @@ class BannerhomeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationLabel = 'Banner Home';
+    protected static ?string $navigationLabel = 'Banner Image';
 
-    protected static ?string $pluralLabel = 'Banner Home';
+    protected static ?string $pluralLabel = 'Banner Image';
 
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            FileUpload::make('gambar')
-                ->disk('public')
-                ->directory('gambar-slider')
-                ->visibility('private')
-                ->image()
-                ->maxSize(2500)
-                ->minFiles(1)
-                ->uploadingMessage('Gambar Sedang Diunggah...')
-                ->extraAttributes(['style' => 'width: 50%;'])
-                ->required()
-                ->label('Slider Gambar'),
-            
-            TextInput::make('caption')
-                ->required()
-                ->extraAttributes(['style' => 'width: 50%;'])
-                ->label('Caption'), 
+            ->schema([
+                FileUpload::make('gambar')
+                    ->disk('public')
+                    ->directory('gambar-slider')
+                    ->visibility('private')
+                    ->image()
+                    ->maxSize(2500)
+                    ->minFiles(1)
+                    ->uploadingMessage('Gambar Sedang Diunggah...')
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->required()
+                    ->label('Slider Gambar'),
 
-            Select::make('status')
-                ->options([
-                    'aktif ' => 'Aktif',
-                    'nonaktif' => 'Nonaktif',
-                ])
-                ->extraAttributes(['style' => 'width: 50%;'])
-                ->required(),
+                TextInput::make('caption')
+                    ->required()
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->label('Caption'),
 
-        ])->Columns(1);
+                Select::make('status')
+                    ->options([
+                        'aktif ' => 'Aktif',
+                        'nonaktif' => 'Nonaktif',
+                    ])
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->required(),
+
+            ])->Columns(1);
     }
 
     public static function table(Table $table): Table

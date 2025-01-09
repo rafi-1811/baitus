@@ -13,9 +13,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Berita extends Model
 {
     use HasFactory, HasUuids;
-	
+
     protected $table = 'berita';
-	 // Menentukan primary key dan jenisnya (UUID)
+    // Menentukan primary key dan jenisnya (UUID)
     protected $primaryKey = 'id';
     public $incrementing = false; // Mengindikasikan bahwa primary key tidak auto increment
     protected $keyType = 'string'; // Mengindikasikan bahwa primary key adalah string (UUID)
@@ -31,6 +31,8 @@ class Berita extends Model
         'meta_keywords',
         'cover_gambar_berita',
         'gambar_dokumentasi',
+        'gambar_content',
+        'quotes',
         'id_youtube',
         'status'
     ];
@@ -87,5 +89,4 @@ class Berita extends Model
             $berita->slug = Str::slug($berita->judul, '-');
         });
     }
-
 }

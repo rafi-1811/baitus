@@ -22,7 +22,7 @@
                                                 @foreach ($staticData['program'] as $item)
                                                     <li>
                                                         <a
-                                                            href="{{ route('program-yayasan', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
+                                                            href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
@@ -224,111 +224,13 @@
                                             <h5 class="choose-item-content-title"><a
                                                     href="#">{{ $item->kategori_program }}</a></h5>
                                             <p>{{ $item->deskripsi }}</p>
-                                            <a href="" class="choose-item-content-btn">Selengkapnya<i
+                                            <a href="{{ route('detail-program', ['slug' => $item->slug]) }}"
+                                                class="choose-item-content-btn">Selengkapnya<i
                                                     class="fa-light fa-angle-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
-
-                            {{-- <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay=".8">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita2) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul2 }}</a></h5>
-                                        <p>{{ $program->keterangan2 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.1">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita3) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul3 }}</a></h5>
-                                        <p>{{ $program->keterangan3 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita4) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul4 }}</a></h5>
-                                        <p>{{ $program->keterangan4 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita5) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul5 }}</a></h5>
-                                        <p>{{ $program->keterangan5 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita6) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul6 }}</a></h5>
-                                        <p>{{ $program->keterangan6 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita7) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul7 }}</a></h5>
-                                        <p>{{ $program->keterangan7 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="choose-item mb-30">
-                                    <div class="choose-item-img">
-                                        <img src="{{ Storage::url($program->gambarberita8) }}" alt="Image Not Found">
-                                    </div>
-                                    <div class="choose-item-content">
-                                        <h5 class="choose-item-content-title"><a
-                                                href="#">{{ $program->judul8 }}</a></h5>
-                                        <p>{{ $program->keterangan8 }}</p>
-                                        <a href="#" class="choose-item-content-btn">Selengkapnya<i
-                                                class="fa-light fa-angle-right"></i></a>
-                                    </div>
-                                </div>
-                            </div> --}}
                         @else
                             <p>Prgoram belum ditetapkan.</p>
                         @endif
@@ -349,14 +251,14 @@
                         </div>
                     </div>
                     <div class="feature-top mb-50 tp_fade_bottom">
-                        @if ($visiMisi)
+                        @if ($staticData['tentang_yayasan'])
                             <div class="feature-item">
                                 <h5 class="feature-item-title">Visi</h5>
-                                <p>{{ $visiMisi->visi }}</p>
+                                <p>{{ $staticData['tentang_yayasan']->visi }}</p>
                             </div>
                             <div class="feature-item1 ">
                                 <h5 class="feature-item-title">Misi</h5>
-                                {!! $visiMisi->misi !!}
+                                {!! $staticData['tentang_yayasan']->misi !!}
                             </div>
                         @else
                             <p>Visi Misi belum ditetapkan.</p>
@@ -367,6 +269,7 @@
             <!-- feature area end -->
 
             {{-- < Animasi Angka > --}}
+
             <section class="h4_feature-area pt-80 pb-90">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -377,52 +280,66 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left">
-                            <div class="h4_feature-item mb-30">
-                                <div class="h4_feature-item-img">
-                                    <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
+                    @if ($staticData['data_yatim'])
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left">
+                                <div class="h4_feature-item mb-30">
+                                    <div class="h4_feature-item-img">
+                                        <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
+                                    </div>
+                                    <div class="counter"
+                                        data-target="{{ $staticData['data_yatim']->total_yatim_binaan }}">0
+                                    </div>
+                                    <div class="h4_feature-item-content">
+                                        <h4 class="h4_feature-item-content-title">Yatim Binaan</a></h4>
+                                    </div>
                                 </div>
-                                <div class="counter" data-target="120">0</div>
-                                <div class="h4_feature-item-content">
-                                    <h4 class="h4_feature-item-content-title">Yatim Binaan</a></h4>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left"
+                                data-delay=".4">
+                                <div class="h4_feature-item mb-30">
+                                    <div class="h4_feature-item-img">
+                                        <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
+                                    </div>
+                                    <div class="counter"
+                                        data-target="{{ $staticData['data_yatim']->total_yatim_luar_binaan }}">0</div>
+                                    <div class="h4_feature-item-content">
+                                        <h4 class="h4_feature-item-content-title">Yatim Luar Binaan</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left"
+                                data-delay=".6">
+                                <div class="h4_feature-item mb-30">
+                                    <div class="h4_feature-item-img">
+                                        <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
+                                    </div>
+                                    <div class="counter" data-target="{{ $staticData['data_yatim']->total_kegiatan }}">0
+                                    </div>
+                                    <div class="h4_feature-item-content">
+                                        <h4 class="h4_feature-item-content-title">Total Kegiatan</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left"
+                                data-delay=".8">
+                                <div class="h4_feature-item mb-30">
+                                    <div class="h4_feature-item-img">
+                                        <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
+                                    </div>
+                                    <div class="counter"
+                                        data-target="{{ $staticData['data_yatim']->total_daerah_cakupan }}">
+                                        0</div>
+                                    <div class="h4_feature-item-content">
+                                        <h4 class="h4_feature-item-content-title">Cakupan Daerah</a></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".4">
-                            <div class="h4_feature-item mb-30">
-                                <div class="h4_feature-item-img">
-                                    <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                                </div>
-                                <div class="counter" data-target="400">0</div>
-                                <div class="h4_feature-item-content">
-                                    <h4 class="h4_feature-item-content-title">Yatim Luar Binaan</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".6">
-                            <div class="h4_feature-item mb-30">
-                                <div class="h4_feature-item-img">
-                                    <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                                </div>
-                                <div class="counter" data-target="68">0</div>
-                                <div class="h4_feature-item-content">
-                                    <h4 class="h4_feature-item-content-title">Total Kegiatan</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".8">
-                            <div class="h4_feature-item mb-30">
-                                <div class="h4_feature-item-img">
-                                    <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                                </div>
-                                <div class="counter" data-target="10">0</div>
-                                <div class="h4_feature-item-content">
-                                    <h4 class="h4_feature-item-content-title">Cakupan Daerah</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @else
+                        <p>data yatim belum ditetapkan.</p>
+                    @endif
+
                 </div>
             </section>
 
@@ -440,48 +357,20 @@
                         </div>
                     </div>
                     <div class="row">
-                        @if ($rekening)
-                            <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left">
-                                <div class="rekening_service-item mb-30">
-                                    <div class="rekening_service-item-icon">
-                                        <img src="{{ Storage::url($rekening->imagebank1) }}" alt="Gambar">
+                        @if ($staticData['rekening'])
+                            @foreach ($staticData['rekening'] as $item)
+                                <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left">
+                                    <div class="rekening_service-item mb-30">
+                                        <div class="rekening_service-item-icon">
+                                            <img src="{{ asset('storage/' . $item->gambar_rekening_bank) }}"
+                                                alt="{{ $item->nama_bank }}">
+                                        </div>
+                                        <h5 class="rekening_service-item-title">{{ $item->no_rekening }}</h5>
+                                        <p>a.n {{ $item->nama_rekening }}</p>
+                                        {{-- <a href="{{ url('#') }}" class="rekening_service-item-btn">Learn More<i class="fa-light fa-angle-right"></i></a> --}}
                                     </div>
-                                    <h5 class="rekening_service-item-title">{{ $rekening->nomorbank1 }}</h5>
-                                    <p>a.n Yayasan Baitus Sa'adah Amanah</p>
-                                    {{-- <a href="{{ url('#') }}" class="rekening_service-item-btn">Learn More<i class="fa-light fa-angle-right"></i></a> --}}
                                 </div>
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left" data-delay=".8">
-                                <div class="rekening_service-item mb-30 ">
-                                    <div class="rekening_service-item-icon">
-                                        <img src="{{ Storage::url($rekening->imagebank2) }}" alt="Gambar">
-                                    </div>
-                                    <h5 class="rekening_service-item-title">{{ $rekening->nomorbank2 }}</h5>
-                                    <p>a.n Yayasan Baitus Sa'adah Amanah</p>
-                                    {{-- <a href="{{ url('#') }}" class="h3_service-item-btn">Learn More<i class="fa-light fa-angle-right"></i></a> --}}
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left" data-delay="1.1">
-                                <div class="rekening_service-item mb-30">
-                                    <div class="rekening_service-item-icon">
-                                        <img src="{{ Storage::url($rekening->imagebank3) }}" alt="Gambar">
-                                    </div>
-                                    <h5 class="rekening_service-item-title">{{ $rekening->nomorbank3 }}</h5>
-                                    <p>a.n Yayasan Baitus Sa'adah Amanah</p>
-                                    {{-- <a href="{{ url('#') }}" class="rekening_service-item-btn">Learn More<i class="fa-light fa-angle-right"></i></a> --}}
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left" data-delay="1.3">
-                                <div class="rekening_service-item mb-30">
-                                    <div class="rekening_service-item-icon">
-                                        <img src="{{ Storage::url($rekening->imagebank4) }}" alt="Gambar">
-                                    </div>
-                                    <h5 class="rekening_service-item-title">{{ $rekening->nomorbank4 }}</h5>
-                                    <p>a.n Yayasan Baitus Sa'adah Amanah</p>
-                                    {{-- <a href="{{ url('#') }}" class="rekening_service-item-btn">Learn More<i class="fa-light fa-angle-right"></i></a> --}}
-                                </div>
-                            </div>
+                            @endforeach
                         @else
                             <p>Rekening belum ditetapkan.</p>
                         @endif
@@ -514,67 +403,36 @@
                         </div>
                     </div>
                     <div class="swiper h2_blog-active">
-                        <div class="swiper-wrapper tp_fade_bottom">
-                            <div class="swiper-slide">
-                                <div class="h2_blog-item">
-                                    <div class="h2_blog-img w_img mb-35">
-                                        <a href="{{ url('blog-details') }}"><img
-                                                src="{{ asset('assets/images/blog/home2/santunan.jpg') }}"
-                                                alt="Image Not Found"></a>
-                                    </div>
-                                    <div class="h2_blog-content">
-                                        <div class="h2_blog-content-meta">
-                                            <span><a href="#">Program Santunan</a></span>
-                                            <span><i class="fa-light fa-calendar-days"></i>April 18, 2024</span>
+                        @if ($staticData['berita'])
+                            <div class="swiper-wrapper tp_fade_bottom">
+                                @foreach ($staticData['berita'] as $item)
+                                    <div class="swiper-slide">
+                                        <div class="h2_blog-item">
+                                            <div class="h2_blog-img w_img mb-35">
+                                                <a href="{{ url('blog-details') }}"><img
+                                                        src="{{ asset('storage/' . $item->cover_gambar_berita) }}"
+                                                        alt="Image Not Found"></a>
+                                            </div>
+                                            <div class="h2_blog-content">
+                                                <div class="h2_blog-content-meta">
+                                                    <span><a
+                                                            href="#">{{ $item->program->kategori_program }}</a></span>
+                                                    <span><i
+                                                            class="fa-light fa-calendar-days"></i>{{ $item->created_at }}</span>
+                                                </div>
+                                                <h4 class="h2_blog-content-title">
+                                                    <a href="{{ url('blog-details') }}">{{ $item->judul }}</a>
+                                                </h4>
+                                            </div>
                                         </div>
-                                        <h4 class="h2_blog-content-title">
-                                            <a href="{{ url('blog-details') }}">Santunan 120 Adik Yatim</a>
-                                        </h4>
                                     </div>
-                                </div>
+                                @endforeach
+
                             </div>
-                            <div class="swiper-slide">
-                                <div class="h2_blog-item">
-                                    <div class="h2_blog-img w_img mb-35">
-                                        <a href="{{ url('blog-details') }}"><img
-                                                src="{{ asset('assets/images/blog/home2/wisata.jpg') }}"
-                                                alt="Image Not Found"></a>
-                                    </div>
-                                    <div class="h2_blog-content">
-                                        <div class="h2_blog-content-meta">
-                                            <span><a href="#">Program Wisata</a></span>
-                                            <span><i class="fa-light fa-calendar-days"></i>June 18, 2024</span>
-                                        </div>
-                                        <h4 class="h2_blog-content-title">
-                                            <a href="{{ url('blog-details') }}">Wisata Adik Yatim</a>
-                                            <br>
-                                            <a href="{{ url('blog-details') }}">Putri Duyung | Depok</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="h2_blog-item">
-                                    <div class="h2_blog-img w_img mb-35">
-                                        <a href="{{ url('blog-details') }}"><img
-                                                src="{{ asset('assets/images/blog/home2/belanja.jpg') }}"
-                                                alt="Image Not Found"></a>
-                                    </div>
-                                    <div class="h2_blog-content">
-                                        <div class="h2_blog-content-meta">
-                                            <span><a href="#">Program Belanja</a></span>
-                                            <span><i class="fa-light fa-calendar-days"></i>April 18, 2024</span>
-                                        </div>
-                                        <h4 class="h2_blog-content-title">
-                                            <a href="{{ url('blog-details') }}">Belanja Bersama Adik Yatim</a>
-                                            <br>
-                                            <a href="{{ url('blog-details') }}">Pasadena | Depok</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="h2_blog-pagination text-center pt-50"></div>
+                            <div class="h2_blog-pagination text-center pt-50"></div>
+                        @else
+                            <p>data berita belum ditetapkan.</p>
+                        @endif
                     </div>
                 </div>
             </section>
@@ -697,12 +555,12 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            {{-- <div class="footer-bottom-menu d-flex justify-content-center justify-content-md-end">
-                            <ul>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Term of Service</a></li>
-                            </ul>
-                        </div> --}}
+                            <div class="footer-bottom-menu d-flex justify-content-center justify-content-md-end">
+                                <ul>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Term of Service</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

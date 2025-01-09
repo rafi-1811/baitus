@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 <?php
-    $title = 'Berita';
-    $subTitle = 'Home';
+$title = 'Berita';
+$subTitle = 'Home';
 ?>
 
 @section('content')
@@ -15,10 +15,10 @@
                     </div>
                 </div>
             </div>
-            
+
             {{-- mulai Berita --}}
             <div class="row">
-                @foreach($berita as $artikel)
+                {{-- @foreach ($berita as $artikel)
                 <div class="col-xl-4 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
                     <div class="h2_blog-item mb-35">
                         <a href="{{ url('blog-details', $artikel->slug) }}">
@@ -39,80 +39,81 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach --}}
             </div>
-        {{-- batas Berita --}}
+            {{-- batas Berita --}}
             <div class="row">
                 <div class="col-10">
                     <div class="pagination-area pt-30 d-flex justify-content-center tp_fade_bottom">
                         <span><i class="fa-light fa-arrow-left"></i></span>
-                            <ul>
-                                <li><a href="#" class="active">01</a></li>
-                                <li><a href="#">02</a></li>
-                                <li><a href="#">03</a></li>
-                                <li><a href="#">04</a></li>
-                                <li><a href="#">05</a></li>
-                            </ul>
+                        <ul>
+                            <li><a href="#" class="active">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#">04</a></li>
+                            <li><a href="#">05</a></li>
+                        </ul>
                         <span><i class="fa-light fa-arrow-right"></i></span>
                     </div>
                 </div>
-            </div> 
-
             </div>
-            <div class="sidebar1">
-                <h6>Kategori Program</h6>
-                <ul class="space-y-2">
-                    <li class="border-b-2 py-0.5">
+
+        </div>
+        <div class="sidebar1">
+            <h6>Kategori Program</h6>
+            <ul class="space-y-2">
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-1000-anak-yatim" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Santuanan (4)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(4)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-bakti-sosial" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Pendidikan (9)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(9)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-bedah-rumah-yatim" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Wisata Yatim (2)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(1)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-kado-untuk-yatim" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Belanja Yatim (4)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(1)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-makan-sehat" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Makan Bersama (4)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(3)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-pendidikan" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Bakti Sosial (8)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(8)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-santunan" class="flex justify-between items-center text-blue-600">
                         <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Jajan Yatim (5)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(5)</span> --}}
                     </a>
-                    </li>
-                    <li class="border-b-2 py-0.5">
+                </li>
+                <li class="border-b-2 py-0.5">
                     <a href="/program/program-wisata-yatim" class="flex justify-between items-center text-blue-600">
-                        <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Sembako Mingguan (5)</span>
+                        <span class="text-gray-600 hover:text-gray-800 font-roboto text-sm">Program Sembako Mingguan
+                            (5)</span>
                         {{-- <span class="text-gray-600  hover:text-gray-800 font-roboto text-sm">(4)</span> --}}
                     </a>
-                    </li>
-                </ul>   
-            </div>
+                </li>
+            </ul>
         </div>
+    </div>
 
     <footer class="footer-area1">
         <div class="container">
@@ -122,14 +123,16 @@
                         <div class="footer-left mb-50">
                             <div class="footer1">
                                 <div class="footer-logo">
-                                    <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Image Not Found"></a>
+                                    <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                                            alt="Image Not Found"></a>
                                 </div>
-                            <h1 class="footer-nama tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>  
+                                <h1 class="footer-nama tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>
                             </div>
                             <div class="footer-newsletter">
-                                <p>     Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan 
-                                    yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta membantu 
-                                    dan berdonasi di Yayasan Baitus Saadah Amanah. 
+                                <p> Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan
+                                    yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta
+                                    membantu
+                                    dan berdonasi di Yayasan Baitus Saadah Amanah.
                                     Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
                             </div>
                         </div>
@@ -141,9 +144,12 @@
                                 <div class="footer-widget mb-40">
                                     <h5>Sosial Media</h5>
                                     <ul>
-                                        <li><a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==">Instagram</a></li>
+                                        <li><a
+                                                href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==">Instagram</a>
+                                        </li>
                                         <li><a href="#">Facebook</a></li>
-                                        <li><a href="http://www.youtube.com/@yayasanbaitussaadahamanaho8517">Youtube</a></li>
+                                        <li><a href="http://www.youtube.com/@yayasanbaitussaadahamanaho8517">Youtube</a>
+                                        </li>
                                         <li><a href="twitter.com/Baitussaadah_">Twitter</a></li>
                                         <li><a href="tiktok.com/@yayasanbaitussaadahamah">Tiktok</a></li>
                                     </ul>
@@ -187,5 +193,4 @@
             </div>
         </div>
     </footer>
-
 @endsection

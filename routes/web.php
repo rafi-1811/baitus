@@ -14,10 +14,12 @@ use App\Models\Berita;
 // Route::get('/index', [App\Http\Controllers\PagesController::class, 'index']);
 Route::get('/', [App\Http\Controllers\PagesController::class, 'home'])->name('home');
 Route::get('/berita', [App\Http\Controllers\PagesController::class, 'berita']);
-Route::get('/blog-details/{slug}', [App\Http\Controllers\PagesController::class, 'blogdetails']);
+// Route::get('/blog-details/{slug}', [App\Http\Controllers\PagesController::class, 'blogdetails']);
 
 // program yayasan
-Route::get('/program/{slug}', [App\Http\Controllers\PagesController::class, 'programYayasan'])->name('program-yayasan');
+Route::get('/program/{slug}', [App\Http\Controllers\PagesController::class, 'detailProgram'])->name('detail-program');
+Route::get('/berita/{slug}', [App\Http\Controllers\PagesController::class, 'detailBerita'])->name('detail-berita');
+
 
 // Route::get('/berita/{id}', [App\Http\Controllers\HomeController::class, 'blogdetail']);
 // Route::get('/blog-details/{slug}', [HomeController::class, 'blogdetail'])->name('blog-details'); 
@@ -33,5 +35,3 @@ Route::get('/program/{slug}', [App\Http\Controllers\PagesController::class, 'pro
 Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'rekening']);
-
-
