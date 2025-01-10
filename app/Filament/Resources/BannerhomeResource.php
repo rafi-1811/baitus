@@ -38,7 +38,6 @@ class BannerhomeResource extends Resource
                     ->directory('gambar-slider')
                     ->visibility('private')
                     ->image()
-                    ->maxSize(2500)
                     ->minFiles(1)
                     ->uploadingMessage('Gambar Sedang Diunggah...')
                     ->extraAttributes(['style' => 'width: 50%;'])

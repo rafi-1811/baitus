@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TentangYayasanResource\Pages;
 use App\Filament\Resources\TentangYayasanResource\RelationManagers;
+use Filament\Forms\Components\RichEditor;
 
 class TentangYayasanResource extends Resource
 {
@@ -56,11 +57,11 @@ class TentangYayasanResource extends Resource
                     ->extraAttributes(['style' => 'width: 50%;'])
                     ->label('Visi Yayasan'),
 
-                Textarea::make('misi')
+                RichEditor::make('misi')
                     ->required()
                     ->extraAttributes(['style' => 'width: 50%;'])
                     ->label('Misi Yayasan')
-                    ->rows(5),
+                    ->toolbarButtons(['bold', 'italic', 'underline', 'link', 'unorderedList', 'bulletList', 'orderedList']),
 
             ])->columns(1);
     }
