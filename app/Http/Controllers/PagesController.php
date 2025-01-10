@@ -11,10 +11,18 @@ use App\Models\Bannerhome;
 use Illuminate\Http\Request;
 use App\Models\TentangYayasan;
 use Illuminate\Support\Facades\Cache;
+use App\Services\NewsContentService;
 
 
 class PagesController extends Controller
 {
+    protected $newsContentService;
+
+    public function __construct(NewsContentService $newsContentService)
+    {
+        $this->newsContentService = $newsContentService;
+    }
+
     private function getProgramYayasan()
     {
         // return Cache::remember('programs', 120, function() {
@@ -107,8 +115,9 @@ class PagesController extends Controller
     public function detailBerita($slug)
     {
         $berita = Berita::where('slug', $slug)->firstOrFail(); // Cari berita berdasarkan slug
-        // dd($berita);
-        return view('pages.detail-berita', compact('berita')); // Kirim berita ke halaman detail
+        // Pisahkan teks menjadi 4 bagian
+        $content = $this->newsContentService->splitContent($berita->body);
+        return view('pages.detail-berita', compact('berita', 'content')); // Kirim berita ke halaman detail
     }
 
     public function pageView(Request $request)

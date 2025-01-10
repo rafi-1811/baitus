@@ -47,7 +47,8 @@ $subTitle = 'Home';
                         @endphp
                         <div class="blog_details-content">
                             <h3 class="blog_details-content-title tp_has_text_reveal_anim">{{ $berita->judul }}</h3>
-                            <p class="blog_details-content-text mb-30 tp_fade_bottom">{{ $part1 }}</p>
+                            <p class="blog_details-content-text mb-30 tp_fade_bottom">
+                                {!! $content['opening'] !!}</p>
                             @if ($berita->quotes)
                                 <blockquote class="tp_fade_bottom">
                                     <p>{{ $berita->quotes }}
@@ -57,7 +58,8 @@ $subTitle = 'Home';
                             @else
                                 <span></span>
                             @endif
-                            <p class="blog_details-content-text mb-35 tp_fade_bottom">{{ $part2 }}</p>
+                            <p class="blog_details-content-text mb-35 tp_fade_bottom">
+                                {!! $content['pre_image'] !!}</p>
                             <div class="row align-items-center mb-20">
                                 <div class="col-xl-6 tp_fade_right">
                                     <div class="inner-img w_img mb-35 mb-xl-0 tp_fade_right">
@@ -66,11 +68,11 @@ $subTitle = 'Home';
                                     </div>
                                 </div>
                                 <div class="col-xl-6 tp_fade_left">
-                                    <p class="blog_details-content-text mb-0">{{ $part3 }}
-                                    </p>
+                                    <p class="blog_details-content-text mb-0">{!! $content['beside_image'] !!}</p>
                                 </div>
                             </div>
-                            <p class="blog_details-content-text mb-45 tp_fade_bottom">{{ $part4 }}</p>
+                            <p class="blog_details-content-text mb-45 tp_fade_bottom">
+                                {!! $content['closing'] !!}</p>
                             <div class="blog_details-content-bottom tp_fade_bottom">
                                 <div class="blog_details-content-tag">
                                     <span>Tags:</span>
