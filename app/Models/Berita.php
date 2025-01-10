@@ -38,9 +38,9 @@ class Berita extends Model
     ];
 
     // Multiply Uploads Gambar Dokumentasi Berita
-    protected $casts = [
-        'gambar_dokumentasi' => 'array',
-    ];
+    // protected $casts = [
+    //     'gambar_dokumentasi' => 'array',
+    // ];
 
     // Menentukan kolom yang tidak bisa diisi secara massal
     protected $guarded = [];
