@@ -6,14 +6,16 @@
                     <div class="footer-left mb-50">
                         <div class="footer1">
                             <div class="footer-logo">
-                                <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="Image Not Found"></a>
+                                <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                                        alt="Image Not Found"></a>
                             </div>
-                        <h1 class="footer-nama tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>  
+                            <h1 class="footer-nama tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>
                         </div>
                         <div class="footer-newsletter">
-                            <p>     Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan 
-                                yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta membantu 
-                                dan berdonasi di Yayasan Baitus Saadah Amanah. 
+                            <p> Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan
+                                yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta
+                                membantu
+                                dan berdonasi di Yayasan Baitus Saadah Amanah.
                                 Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
                         </div>
                     </div>
@@ -25,9 +27,12 @@
                             <div class="footer-widget mb-40">
                                 <h5>Sosial Media</h5>
                                 <ul>
-                                    <li><a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==">Instagram</a></li>
+                                    <li><a
+                                            href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==">Instagram</a>
+                                    </li>
                                     <li><a href="#">Facebook</a></li>
-                                    <li><a href="http://www.youtube.com/@yayasanbaitussaadahamanaho8517">Youtube</a></li>
+                                    <li><a href="http://www.youtube.com/@yayasanbaitussaadahamanaho8517">Youtube</a>
+                                    </li>
                                     <li><a href="twitter.com/Baitussaadah_">Twitter</a></li>
                                     <li><a href="tiktok.com/@yayasanbaitussaadahamah">Tiktok</a></li>
                                 </ul>
@@ -60,12 +65,12 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    {{-- <div class="footer-bottom-menu d-flex justify-content-center justify-content-md-end">
+                    <div class="footer-bottom-menu d-flex justify-content-center justify-content-md-end">
                         <ul>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Term of Service</a></li>
                         </ul>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

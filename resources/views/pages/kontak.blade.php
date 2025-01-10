@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 <?php
-    $title = 'Kontak Kami';
-    $subTitle = 'Home';
+$title = 'Kontak Kami';
+$subTitle = 'Home';
 ?>
 
 @section('content')
@@ -12,7 +12,7 @@
             <div class="row pb-100 justify-content-center">
                 <div class="col-xxl-5 col-xl-6">
                     <div class="inner_section-area mb-50 text-center">
-                        {{-- <span class="inner_section-subtitle tp_subtitle_anim"></span> --}}
+                        <span class="inner_section-subtitle tp_subtitle_anim"></span>
                         <h2 class="inner_section-title tp_title_slideup mb-30">Kontak Kami</h2>
                     </div>
                 </div>
@@ -36,24 +36,25 @@
                         </div>
                         <div class="contact-content">
                             <h4 class="contact-content-title">Alamat</h4>
-                            <p><a href="https://maps.app.goo.gl/rCTH5QT4qwZXLyV6A">Jl. Wareng No.12-33, Grogol, <br>Limo - Depok, Jawa Barat 16514</a></p>
+                            <p><a href="https://maps.app.goo.gl/rCTH5QT4qwZXLyV6A">Jl. Wareng No.12-33, Grogol, <br>Limo -
+                                    Depok, Jawa Barat 16514</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <div class="contact-content">
-                        <h4 class="contact-content-title">Waktu Oprasional</h4>
-                        <p><a href="mailto:support.young@example.com">07.00 - 17.00</a></p>
+                <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="contact-content">
+                            <h4 class="contact-content-title">Waktu Oprasional</h4>
+                            <p><a href="mailto:support.young@example.com">07.00 - 17.00</a></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
+                <div class="col-lg-3 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fa-solid fa-envelope"></i>
@@ -63,7 +64,7 @@
                             <p><a href="mailto:support.young@example.com">officialbaitussaadah@gmail.com</a></p>
                         </div>
                     </div>
-            </div>
+                </div>
             </div>
             <div class="social-media-icons">
                 <p>Sosial Media</p>
@@ -73,7 +74,8 @@
                 <a href="https://www.youtube.com/@yayasanbaitussaadahamanaho8517" target="_blank" class="icon youtube">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==" target="_blank" class="icon instagram">
+                <a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==" target="_blank"
+                    class="icon instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://x.com/Baitussaadah_" target="_blank" class="icon x">
@@ -88,11 +90,14 @@
                     <div class="col-lg-6">
                         <div class="contact-bottom-left">
                             {{-- <div class="inner_section-area mb-50"> --}}
-                                {{-- <span class="inner_section-subtitle tp_subtitle_anim">GET IN TOUCH</span> --}}
-                                {{-- <h2 class="inner_section-title tp_title_slideup mb-0">Connect with & ignite <br> the conversation!</h2> --}}
+                            {{-- <span class="inner_section-subtitle tp_subtitle_anim">GET IN TOUCH</span> --}}
+                            {{-- <h2 class="inner_section-title tp_title_slideup mb-0">Connect with & ignite <br> the conversation!</h2> --}}
                             {{-- </div> --}}
                             <div class="contact-map tp_fade_right">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.826156869298!2d106.78650762904047!3d-6.367311487177889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef4ff8004da7%3A0x898e33e9f15f600!2sTaman%20Bermain%20dan%20Belajar%20Yayasan%20Baitus%20Sa&#39;adah%20Amanah!5e0!3m2!1sid!2sid!4v1731545798084!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.826156869298!2d106.78650762904047!3d-6.367311487177889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef4ff8004da7%3A0x898e33e9f15f600!2sTaman%20Bermain%20dan%20Belajar%20Yayasan%20Baitus%20Sa&#39;adah%20Amanah!5e0!3m2!1sid!2sid!4v1731545798084!5m2!1sid!2sid"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                     </div>
@@ -120,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="contact-form-item mb-25">    
+                                        <div class="contact-form-item mb-25">
                                             <input type="tel" placeholder="Nomor Telepon" pattern="[0-9]{10,15}">
                                             <i class="fa-light fa-phone"></i>
                                         </div>

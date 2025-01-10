@@ -9870,6 +9870,12 @@ Header CSS 01 Start
 /* ///////////////////////////////////////////////////////////
 25. team
 /////////////////////////////////////////////////////////// */
+.inner_team-bottom-area{
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+
 .inner_team-area {
     position: relative;
     z-index: 1;

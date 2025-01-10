@@ -34,7 +34,7 @@ class PagesController extends Controller
 
     private function getTentangYayasan()
     {
-        // return Cache::remember('visi_misi', 120, function() {
+        // return Cache::remember('tentang-yayasan', 120, function() {
         return TentangYayasan::first();
         // });
     }
@@ -60,6 +60,7 @@ class PagesController extends Controller
         // });
     }
 
+    // Static Data
     public static function staticData()
     {
         $data = app(PagesController::class);
@@ -74,29 +75,40 @@ class PagesController extends Controller
         ];
     }
 
+    // Halaman Home
     public function home()
     {
-        return view('index');
+        return view('pages.index');
+    }
+
+    public function tentangKami()
+    {
+        return view('pages.about');
+    }
+
+    public function kontak()
+    {
+        return view('pages.kontak');
     }
 
     public function detailProgram($slug)
     {
         $data = Program::with('berita')->where('slug', $slug)->firstOrFail();
-        $berita = $data->berita()->paginate(6);
-        return view('detail-program', compact('data', 'berita'));
+        $berita = $data->berita()->paginate(10);
+        return view('pages.detail-program', compact('data', 'berita'));
     }
 
     public function berita()
     {
-        $berita = Berita::with('program')->orderBy('created_at', 'desc')->paginate(5);
-        return view('berita' , compact('berita'));
+        $berita = Berita::with('program')->orderBy('created_at', 'desc')->paginate(10);
+        return view('pages.berita' , compact('berita'));
     }
 
     public function detailBerita($slug)
     {
         $berita = Berita::where('slug', $slug)->firstOrFail(); // Cari berita berdasarkan slug
         // dd($berita);
-        return view('detail-berita', compact('berita')); // Kirim berita ke halaman detail
+        return view('pages.detail-berita', compact('berita')); // Kirim berita ke halaman detail
     }
 
     public function pageView(Request $request)

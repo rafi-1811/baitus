@@ -1,8 +1,8 @@
 @extends('layout.layout')
 
 <?php
-    $title = 'Our Team';
-    $subTitle = 'Home';
+$title = 'Our Team';
+$subTitle = 'Home';
 ?>
 
 @section('content')
@@ -13,15 +13,23 @@
                 <div class="col-xl-5 col-lg-5">
                     <div class="inner_team-img mb-30 mb-lg-0">
                         <img src="{{ asset('assets/images/team/1.png') }}" alt="" class="tp_fade_right">
-                        <img src="{{ asset('assets/images/team/shape.png') }}" alt="" class="inner_team-img-shape tp_fade_bottom">
+                        <img src="{{ asset('assets/images/team/shape.png') }}" alt=""
+                            class="inner_team-img-shape tp_fade_bottom">
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7">
                     <div class="inner_team-content mb-lg-0 mb-140">
-                        <h2 class="inner_team-content-title tp_has_text_reveal_anim">CEO. David Ferry</h2>
-                        <h6 class="inner_team-content-subtitle tp_has_text_reveal_anim">I’m David Ferry – AI of SalePush, A leading professional Designer company in NewYork</h6>
-                        <p class="tp_fade_bottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. you are going to use a passage of Lorem Ipsum.</p>
-                        <p class="tp_fade_bottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                        <h2 class="inner_team-content-title tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h2>
+                        <h6 class="inner_team-content-subtitle tp_has_text_reveal_anim">"Perubahan Lebih Berkah 2025"</h6>
+                        <p class="tp_fade_bottom">Yayasan Baitus Saadah Amanah merupakan lembaga sosial yang berdiri
+                            sejak April tahun 2021.
+                            Tujuan utama yayasan ini berdiri yaitu, untuk membantu dan memajukan kehidupan anak-anak
+                            yatim</p>
+                        <p class="tp_fade_bottom">dengan program yang efektif dan berkesinambungan untuk kehidupan yang
+                            lebih baik.
+                            Hingga sekarang,
+                            kami memiliki kantor representatif. dan penambahan logo baru dengan slogan <b>"Bahagia
+                                Bersama Yatim".</p>
                         <div class="inner_team-signature tp_fade_bottom">
                             <img src="{{ asset('assets/images/team/signature.png') }}" alt="">
                         </div>
@@ -30,14 +38,16 @@
             </div>
         </div>
         <div class="inner_team-shape">
-            <img src="{{ asset('assets/images/team/shape-2.png') }}" alt="Image Not Found" class="inner_team-shape-1" data-speed="0.8">
-            <img src="{{ asset('assets/images/team/shape-3.png') }}" alt="Image Not Found" class="inner_team-shape-2" data-speed="0.8">
+            <img src="{{ asset('assets/images/team/shape-2.png') }}" alt="Image Not Found" class="inner_team-shape-1"
+                data-speed="0.8">
+            <img src="{{ asset('assets/images/team/shape-3.png') }}" alt="Image Not Found" class="inner_team-shape-2"
+                data-speed="0.8">
         </div>
     </section>
     <!-- team area end -->
 
     <!-- team member area start -->
-    <section class="inner_team_member-area pt-135 pb-110">
+    {{-- <section class="inner_team_member-area pt-135 pb-110">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
@@ -202,7 +212,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- team member area end -->
 
     <!-- bottom img  -->

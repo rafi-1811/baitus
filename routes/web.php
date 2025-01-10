@@ -1,23 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ComproController;
-use App\Http\Controllers\CampaignController;
-use App\Http\Controllers\FlipController;
-use App\Http\Controllers\MidtransController;
-use App\Http\Middleware\CheckCampaignTarget;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
-use App\Http\Controllers\HomeController;
-use App\Models\Berita;
+use App\Http\Controllers\PagesController;
 
-
-
-Route::get('/', [App\Http\Controllers\PagesController::class, 'home'])->name('home');
-Route::get('/program/{slug}', [App\Http\Controllers\PagesController::class, 'detailProgram'])->name('detail-program');
-Route::get('/berita', [App\Http\Controllers\PagesController::class, 'berita'])->name('berita');
-Route::get('/berita/{slug}', [App\Http\Controllers\PagesController::class, 'detailBerita'])->name('detail-berita');
+Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::get('/tentang-kami', [PagesController::class, 'tentangKami'])->name('tentang-kami');
+Route::get('/program/{slug}', [PagesController::class, 'detailProgram'])->name('detail-program');
+Route::get('/berita', [PagesController::class, 'berita'])->name('berita');
+Route::get('/berita/{slug}', [PagesController::class, 'detailBerita'])->name('detail-berita');
+Route::get('/kontak', [PagesController::class, 'kontak'])->name('kontak');
 
 
 Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
 
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'rekening']);
