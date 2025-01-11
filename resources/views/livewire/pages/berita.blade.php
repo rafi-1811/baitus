@@ -51,7 +51,7 @@
         <ul class="space-y-2">
             @foreach ($staticData['program'] as $item)
                 <li class="border-b-2 py-0.5">
-                    <a href="{{ route('detail-berita', ['slug' => $item->slug]) }}"
+                    <a wire:navigate href="{{ route('detail-program', ['slug' => $item->slug]) }}"
                         class="flex justify-between items-center text-blue-600">
                         <span
                             class="text-gray-600 hover:text-gray-800 font-roboto text-sm">{{ $item->kategori_program }}
