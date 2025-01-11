@@ -25,7 +25,8 @@ $subTitle = 'Home';
                         </div>
                         <div class="contact-content">
                             <h4 class="contact-content-title">WhatsApp</h4>
-                            <p><a href="https://wa.me/+6281210079178" target="_blank">0812 1007 9178</a></p>
+                            <p><a href="https://wa.me/+6281210079178"
+                                    target="_blank">{{ $staticData['kontak']->whatsapp }}</a></p>
                         </div>
                     </div>
                 </div>
@@ -36,8 +37,8 @@ $subTitle = 'Home';
                         </div>
                         <div class="contact-content">
                             <h4 class="contact-content-title">Alamat</h4>
-                            <p><a href="https://maps.app.goo.gl/rCTH5QT4qwZXLyV6A">Jl. Wareng No.12-33, Grogol, <br>Limo -
-                                    Depok, Jawa Barat 16514</a></p>
+                            <p><a href="https://maps.app.goo.gl/rCTH5QT4qwZXLyV6A">{{ $staticData['kontak']->alamat }}</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -61,16 +62,18 @@ $subTitle = 'Home';
                         </div>
                         <div class="contact-content">
                             <h4 class="contact-content-title">Email</h4>
-                            <p><a href="mailto:support.young@example.com">officialbaitussaadah@gmail.com</a></p>
+                            <p><a href="mailto:{{ $staticData['kontak']->email }}">{{ $staticData['kontak']->email }}</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="social-media-icons">
                 <p>Sosial Media</p>
-                <a href="https://www.facebook.com/baitussaadah.amanah" target="_blank" class="icon facebook">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/yayasanbaitussaadahamah" target="_blank" class="icon facebook">
+                    <i class="fab fa-facebook"></i>
                 </a>
+
                 <a href="https://www.youtube.com/@yayasanbaitussaadahamanaho8517" target="_blank" class="icon youtube">
                     <i class="fab fa-youtube"></i>
                 </a>
@@ -89,10 +92,11 @@ $subTitle = 'Home';
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="contact-bottom-left">
-                            {{-- <div class="inner_section-area mb-50"> --}}
-                            {{-- <span class="inner_section-subtitle tp_subtitle_anim">GET IN TOUCH</span> --}}
-                            {{-- <h2 class="inner_section-title tp_title_slideup mb-0">Connect with & ignite <br> the conversation!</h2> --}}
-                            {{-- </div> --}}
+                            <div class="inner_section-area mb-50">
+                                <span class="inner_section-subtitle tp_subtitle_anim">Hubungi Kami</span>
+                                <h2 class="inner_section-title tp_title_slideup mb-0">Mari tebar kebahagiaan <br>
+                                    untuk mereka</h2>
+                            </div>
                             <div class="contact-map tp_fade_right">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15860.826156869298!2d106.78650762904047!3d-6.367311487177889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef4ff8004da7%3A0x898e33e9f15f600!2sTaman%20Bermain%20dan%20Belajar%20Yayasan%20Baitus%20Sa&#39;adah%20Amanah!5e0!3m2!1sid!2sid!4v1731545798084!5m2!1sid!2sid"
@@ -103,7 +107,7 @@ $subTitle = 'Home';
                     </div>
                     <div class="col-lg-6 tp_fade_left">
                         <div class="contact-form mt-40 mt-lg-0">
-                            {{-- <h3 class="contact-form-title">Fillup the form</h3> --}}
+                            <h3 class="contact-form-title">Form Pesan</h3>
                             <form action="#">
                                 <div class="row">
                                     <div class="col-12">
@@ -112,12 +116,6 @@ $subTitle = 'Home';
                                             <i class="fa-light fa-user"></i>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-xl-6 col-lg-12 col-md-6">
-                                        <div class="contact-form-item mb-25">    
-                                            <input type="text" placeholder="Last Name">
-                                            <i class="fa-light fa-user"></i>
-                                        </div>
-                                    </div> --}}
                                     <div class="col-12">
                                         <div class="contact-form-item mb-25">
                                             <input type="email" placeholder="Email">
@@ -130,16 +128,6 @@ $subTitle = 'Home';
                                             <i class="fa-light fa-phone"></i>
                                         </div>
                                     </div>
-                                    {{-- <div class="col-12">
-                                        <div class="contact-form-item">
-                                            <select name="select" class="subject-option has-nice-select  mb-25">
-                                                <option value="1">Subject</option>
-                                                <option value="2">Subject 2</option>
-                                                <option value="3">Subject 3</option>
-                                                <option value="4">Subject 4</option>
-                                            </select>
-                                        </div>
-                                    </div> --}}
                                     <div class="col-12">
                                         <div class="contact-form-item mb-25">
                                             <textarea name="message" placeholder="Pesan"></textarea>

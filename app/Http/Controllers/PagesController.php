@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Kontak;
 use App\Models\Program;
 use App\Models\Rekening;
 use App\Models\VisiMisi;
 use App\Models\DataYatim;
 use App\Models\Bannerhome;
+use App\Models\SocialMedia;
 use Illuminate\Http\Request;
 use App\Models\TentangYayasan;
-use Illuminate\Support\Facades\Cache;
 use App\Services\NewsContentService;
+use Illuminate\Support\Facades\Cache;
 
 
 class PagesController extends Controller
@@ -68,6 +70,20 @@ class PagesController extends Controller
         // });
     }
 
+    private function getKontak()
+    {
+        // return Cache::remember('kontak', 120, function() {
+        return Kontak::first();
+        // });
+    }
+
+    private function getSosialMedia()
+    {
+        // return Cache::remember('sosial-media', 120, function() {
+        return SocialMedia::all();
+        // });
+    }
+
     // Static Data
     public static function staticData()
     {
@@ -80,6 +96,8 @@ class PagesController extends Controller
             'data_yatim' => $data->getDataYatim(),
             'rekening' => $data->getRekening(),
             'berita' => $data->getBerita(),
+            'kontak' => $data->getKontak(),
+            'sosial_media' => $data->getSosialMedia(),
         ];
     }
 
