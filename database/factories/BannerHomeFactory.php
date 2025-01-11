@@ -22,7 +22,7 @@ class BannerHomeFactory extends Factory
         return [
             'gambar' => $this->faker->imageUrl(800, 600, 'business', true), // Gambar banner
             'caption' => $this->faker->sentence, // Caption banner
-            'status' => $this->faker->randomElement(['ACTIVE', 'INACTIVE']), // Status banner (ACTIVE / INACTIVE)
+            'status' => $this->faker->randomElement(['aktif', 'nonaktif']), // Status banner (ACTIVE / INACTIVE)
             'created_at' => now(),
             'updated_at' => now(),
         ];

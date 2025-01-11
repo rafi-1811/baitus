@@ -1,12 +1,6 @@
-@extends('layout.layout')
+<!-- section Tentang Kami -->
+<section>
 
-<?php
-$title = 'About Us';
-$subTitle = 'Home';
-?>
-
-@section('content')
-    <!-- section Tentang Kami -->
     <x-tentang-kami />
 
     <!-- Section Program -->
@@ -17,4 +11,5 @@ $subTitle = 'Home';
 
     {{-- section Data Yatim --}}
     <x-data-yatim />
-@endsection
+
+</section>

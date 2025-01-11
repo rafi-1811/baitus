@@ -2267,6 +2267,8 @@ Header CSS 01 Start
 @media (max-width: 720px) {
     .header-logo {
         margin-left: 10px;
+        width: 70px;
+        height: 70px;
     }
 }
 .header-nav-menu ul {
@@ -2351,6 +2353,11 @@ Header CSS 01 Start
 .header-nav-menu ul li:hover > a {
     color: #ff901a;
 }
+
+.header-nav-menu ul li a.active {
+    color: #ff901a;
+}
+
 .header-action {
     display: flex;
     align-items: center;

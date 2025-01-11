@@ -17,10 +17,12 @@
                                 <img src="{{ asset('storage/' . $item->gambar) }}" alt="Image Not Found">
                             </div>
                             <div class="choose-item-content">
-                                <h5 class="choose-item-content-title"><a
-                                        href="#">{{ $item->kategori_program }}</a></h5>
+                                <h5 class="choose-item-content-title">
+                                    <a wire:navigate
+                                        href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
+                                </h5>
                                 <p>{{ $item->deskripsi }}</p>
-                                <a href="{{ route('detail-program', ['slug' => $item->slug]) }}"
+                                <a wire:navigate href="{{ route('detail-program', ['slug' => $item->slug]) }}"
                                     class="choose-item-content-btn">Selengkapnya<i
                                         class="fa-light fa-angle-right"></i></a>
                             </div>

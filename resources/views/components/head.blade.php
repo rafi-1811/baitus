@@ -5,7 +5,7 @@
     <meta name="author" content="Asad">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Baitus Saadah Amanah</title>
+    <title>Yayasan Baitus Saadah Amanah</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -18,5 +18,5 @@
     <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon.png') }}">
 
-
+    @livewireStyles
 </head>

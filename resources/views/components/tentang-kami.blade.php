@@ -3,7 +3,7 @@
         <div class="banner-single">
             <div class="banner-img tp_fade_left">
                 <img src="{{ asset('storage/' . $staticData['tentang_yayasan']->gambar_tentang_yayasan) }}"
-                    alt="Image Not Found">
+                    alt="ini gambar tentang yayasan">
             </div>
             <div class="banner-content">
                 <span class="banner-content-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
