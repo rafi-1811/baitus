@@ -44,7 +44,34 @@ class PagesController extends Controller
     private function getDataYatim()
     {
         return Cache::remember('data_yatim', 120, function () {
-            return DataYatim::first();
+            $data =  DataYatim::select('total_yatim_binaan', 'total_yatim_luar_binaan', 'total_kegiatan', 'total_daerah_cakupan')->first();
+
+            if (!$data) {
+                return [];
+            }
+
+            return [
+                [
+                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'number' => $data->total_yatim_binaan,
+                    'text' => 'Yatim Binaan'
+                ],
+                [
+                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'number' => $data->total_yatim_luar_binaan,
+                    'text' => 'Yatim Luar Binaan'
+                ],
+                [
+                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'number' => $data->total_kegiatan,
+                    'text' => 'Total Kegiatan'
+                ],
+                [
+                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'number' => $data->total_daerah_cakupan,
+                    'text' => 'Cakupan Daerah'
+                ]
+            ];
         });
     }
 

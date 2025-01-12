@@ -125,22 +125,20 @@
                 </div>
             </div>
             <div class="row">
-                @if ($staticData['rekening'])
-                    @foreach ($staticData['rekening'] as $item)
-                        <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left">
-                            <div class="rekening_service-item mb-30">
-                                <div class="rekening_service-item-icon">
-                                    <img src="{{ asset('storage/' . $item->gambar_rekening_bank) }}"
-                                        alt="{{ $item->nama_bank }}">
-                                </div>
-                                <h5 class="rekening_service-item-title">{{ $item->no_rekening }}</h5>
-                                <p>a.n {{ $item->nama_rekening }}</p>
+                @forelse ($staticData['rekening'] as $item)
+                    <div class="col-xl-3 col-lg-4 col-md-3 tp_fade_left" data-fade-from="left">
+                        <div class="rekening_service-item mb-30">
+                            <div class="rekening_service-item-icon">
+                                <img src="{{ asset('storage/' . $item->gambar_rekening_bank) }}"
+                                    alt="{{ $item->nama_bank }}">
                             </div>
+                            <h5 class="rekening_service-item-title">{{ $item->no_rekening }}</h5>
+                            <p>a.n {{ $item->nama_rekening }}</p>
                         </div>
-                    @endforeach
-                @else
-                    <p>Rekening belum ditetapkan.</p>
-                @endif
+                    </div>
+                @empty
+                    <h4 class="text-center text-danger">Rekening Belum Ditetapkan</h4>
+                @endforelse
             </div>
 
             <div class="md-1" data-fade-from="left" data-delay=".8">
@@ -166,37 +164,45 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper h2_blog-active">
-                <div class="swiper-wrapper tp_fade_bottom">
-                    @forelse ($staticData['berita'] as $item)
-                        <div class="swiper-slide" wire:key="{{ $loop->index }}">
-                            <div class="h2_blog-item">
-                                <div class="h2_blog-img w_img mb-35">
-                                    <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}"><img
-                                            src="{{ asset('storage/' . $item->cover_gambar_berita) }}"
-                                            alt="Image Not Found"></a>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-area text-end mb-30">
+                        <h6 style=""
+                            class="tp_fade_left d-flex justify-content-end align-items-center d-flex gap-2">
+                            <a wire:navigate href="{{ route('berita') }}">
+                                Lihat semua
+                            </a>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </h6>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse ($staticData['berita'] as $item)
+                    <div wire:key="{{ $item->slug }}" class="col-xl-4 col-md-6 tp_fade_left">
+                        <div class="h2_blog-item mb-35">
+                            <div class="h2_blog-img w_img mb-25">
+                                <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}"><img
+                                        src="{{ asset('storage/' . $item->cover_gambar_berita) }}"
+                                        alt="{{ $item->program->kategori_program }}"></a>
+                            </div>
+                            <div class="h2_blog-content">
+                                <div class="h2_blog-content-meta">
+                                    <span><a href="#">{{ $item->program->kategori_program }}</a></span>
+                                    <span><i
+                                            class="fa-light fa-calendar-days"></i>{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->format('d F Y') }}</span>
                                 </div>
-                                <div class="h2_blog-content">
-                                    <div class="h2_blog-content-meta">
-                                        <span><a wire:navigate
-                                                href="{{ route('detail-program', ['slug' => $item->program->slug]) }}">{{ $item->program->kategori_program }}</a></span>
-                                        <span><i class="fa-light fa-calendar-days"></i>{{ $item->created_at }}</span>
-                                    </div>
-                                    <h4 class="h2_blog-content-title">
-                                        <a @click.prevent="Livewire.navigate('{{ route('detail-berita', ['slug' => $item->slug]) }}')"
-                                            href="{{ route('detail-berita', ['slug' => $item->slug]) }}">{{ $item->judul }}</a>
-                                    </h4>
-                                </div>
+                                <h4 class="h2_blog-content-title">
+                                    <a wire:navigate
+                                        href="{{ route('detail-berita', ['slug' => $item->slug]) }}">{{ $item->judul }}.</a>
+                                </h4>
                             </div>
                         </div>
-                    @empty
-                        <div class="d-flex justify-content-center">
-                            <h4 class="text-center">Data Tidak Ditemukan</h4>
-                        </div>
-                    @endforelse
-
-                </div>
-                <div class="h2_blog-pagination text-center pt-50"></div>
+                    </div>
+                @empty
+                    <h4 class="text-center text-danger">Data Tidak Ditemukan</h4>
+                @endforelse
             </div>
         </div>
     </section>

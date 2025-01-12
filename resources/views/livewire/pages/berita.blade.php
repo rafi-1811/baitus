@@ -36,7 +36,7 @@
                     </div>
                 </div>
             @empty
-                <h1 class="text-center">Data Tidak Ditemukan</h1>
+                <h4 class="text-center text-danger">Data Tidak Ditemukan</h4>
             @endforelse
             {{-- pagination --}}
             <div>{{ $berita->links('pagination.custom', data: ['scrollTo' => false]) }}</div>

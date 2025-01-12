@@ -19,7 +19,9 @@
                     {!! $staticData['tentang_yayasan']->misi !!}
                 </div>
             @else
-                <p>Visi Misi belum ditetapkan.</p>
+                <div class="d-flex justify-content-center">
+                    <h4 class="text-center text-danger">Visi Misi belum ditetapkan.</h4>
+                </div>
             @endif
         </div>
     </div>

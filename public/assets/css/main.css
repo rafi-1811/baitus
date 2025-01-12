@@ -12294,13 +12294,13 @@ Header CSS 01 Start
     font-size: 50px;
     font-weight: bold;
     color: #333;
-    opacity: 0; /* Hide initially */
+    opacity: 1; /* Hide initially */
     display: inline-block;
     transition: opacity 0.5s;
 }
-.counter.visible {
-    opacity: 1; /* Menampilkan angka setelah animasi dimulai */
-}
+/* .counter.visible {
+    opacity: 1;
+} */
 @media (max-width: 1199px) {
     .counter {
         margin-left: 10px;

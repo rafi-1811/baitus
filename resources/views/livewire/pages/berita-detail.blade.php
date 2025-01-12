@@ -4,6 +4,7 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="blog_details-left mb-40">
+                    {{-- head berita --}}
                     <div class="blog_details-img">
                         <img src="{{ asset('storage/' . $berita->cover_gambar_berita) }}"
                             alt="{{ 'gambar terkait ' . $berita->judul . ' ?>' }}" class="w-100 tp_fade_bottom">
@@ -70,6 +71,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- komentar --}}
                     <div class="blog_details-bottom pt-75">
                         <div class="blog_details-comment pb-45">
                             <h3 class="blog_details-comment-title tp_has_text_reveal_anim">3 Komen</h3>
@@ -100,10 +103,11 @@
                                 </div>
                             </div>
                         </div>
+
+                        {{-- form komentar --}}
                         <div class="post-comments">
                             <h3 class="post-comments-title tp_has_text_reveal_anim">Tinggalkan Balasan</h3>
-                            <p class="tp_fade_bottom">Alamat email tidak akan dipublikasikan. Alamat email harus diisi
-                                *</p>
+                            <p class="tp_fade_bottom"><i>Alamat email tidak akan dipublikasikan</i></p>
                             <form action="#" class="tp_fade_bottom">
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -140,6 +144,8 @@
                     </div>
                 </div>
             </div>
+
+            {{-- cari berita  --}}
             <div class="col-lg-4">
                 <div class="blog_details-right mb-40">
                     <div class="blog_details-widget mb-30 tp_fade_left">

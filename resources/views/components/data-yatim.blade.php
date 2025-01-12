@@ -9,59 +9,9 @@
             </div>
         </div>
         @if ($staticData['data_yatim'])
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left">
-                    <div class="h4_feature-item mb-30">
-                        <div class="h4_feature-item-img">
-                            <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                        </div>
-                        <div class="counter" data-target="{{ $staticData['data_yatim']->total_yatim_binaan }}">
-                            0
-                        </div>
-                        <div class="h4_feature-item-content">
-                            <h4 class="h4_feature-item-content-title">Yatim Binaan</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".4">
-                    <div class="h4_feature-item mb-30">
-                        <div class="h4_feature-item-img">
-                            <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                        </div>
-                        <div class="counter" data-target="{{ $staticData['data_yatim']->total_yatim_luar_binaan }}">0
-                        </div>
-                        <div class="h4_feature-item-content">
-                            <h4 class="h4_feature-item-content-title">Yatim Luar Binaan</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".6">
-                    <div class="h4_feature-item mb-30">
-                        <div class="h4_feature-item-img">
-                            <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                        </div>
-                        <div class="counter" data-target="{{ $staticData['data_yatim']->total_kegiatan }}">0
-                        </div>
-                        <div class="h4_feature-item-content">
-                            <h4 class="h4_feature-item-content-title">Total Kegiatan</a></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim" data-fade-from="left" data-delay=".8">
-                    <div class="h4_feature-item mb-30">
-                        <div class="h4_feature-item-img">
-                            <img src="{{ asset('assets/images/feature/home4/baksos.jpg') }}" alt="">
-                        </div>
-                        <div class="counter" data-target="{{ $staticData['data_yatim']->total_daerah_cakupan }}">
-                            0</div>
-                        <div class="h4_feature-item-content">
-                            <h4 class="h4_feature-item-content-title">Cakupan Daerah</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @livewire('counter-yatim', ['dataYatim' => $staticData['data_yatim']])
         @else
-            <p>data yatim belum ditetapkan.</p>
+            <h4 class="text-center text-danger">Data Yatim belum ditetapkan</h4>
         @endif
 
     </div>

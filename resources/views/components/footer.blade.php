@@ -84,7 +84,7 @@
                         <div class="row mb-20 mb-lg-30">
                             <div class="col-xl-3">
                                 <div class="h5_footer-logo">
-                                    <a href="{{ url('index') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                                    <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
                                             alt=""></a>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                             <li><a href="{{ route('tentang-kami') }}">Tentang Kami</a></li>
                             <li><a href="{{ route('berita') }}">Berita</a></li>
                             <li><a href="{{ route('kontak') }}">Kontak</a></li>
-                            <li><a href="{{ url('about') }}">Donasi</a></li>
+                            <li><a href="{{ route('home') }}">Donasi</a></li>
                         </ul>
                     </div>
                 </div>
@@ -125,9 +125,11 @@
                     <div class="h5_footer-widget mb-35">
                         <h5 class="h5_footer-widget-title">Sosial Media</h5>
                         <ul>
-                            @foreach ($staticData['sosial_media'] as $item)
+                            @forelse ($staticData['sosial_media'] as $item)
                                 <li><a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a></li>
-                            @endforeach
+                            @empty
+                                <li class="text-danger">Belum ada sosial media</li>
+                            @endforelse
                         </ul>
                     </div>
                 </div>
@@ -136,11 +138,16 @@
                     <div class="h5_footer-widget mb-35">
                         <h5 class="h5_footer-widget-title">Hubungi Kami</h5>
                         <ul>
-                            <li><a href="{{ url('team') }}">{{ $staticData['kontak']->alamat }}</a></li>
-                            <li><a href="{{ url('contact') }}">Telepon: {{ $staticData['kontak']->telepon }}</a>
+                            <li>{{ $staticData['kontak']->alamat ?? 'Jl. Jend. Sudirman' }}
                             </li>
-                            <li><a href="{{ url('contact') }}">Email : {{ $staticData['kontak']->email }}</a></li>
-                            <li><a href="{{ url('faq') }}">Whatsapp : {{ $staticData['kontak']->whatsapp }}</a>
+                            <li>Telepon:
+                                {{ $staticData['kontak']->telepon ?? '0812 1007 9178' }}
+                            </li>
+                            <li>Email :
+                                {{ $staticData['kontak']->email ?? '0X3tD@example.com' }}
+                            </li>
+                            <li>Whatsapp :
+                                {{ $staticData['kontak']->whatsapp ?? '0812 1007 9178' }}
                             </li>
                         </ul>
                     </div>

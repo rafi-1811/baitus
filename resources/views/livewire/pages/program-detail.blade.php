@@ -12,12 +12,8 @@
 
         {{-- Section Berita Terkait --}}
         <div class="row">
-            @php
-                $delay = 0.2;
-            @endphp
             @forelse ($berita as $item)
-                <div wire:key="{{ $item->slug }}" class="col-xl-4 col-md-6 tp_fade_left" data-fade-from="left"
-                    data-delay="{{ number_format($delay, 1) }}">
+                <div wire:key="{{ $item->slug }}" class="col-xl-4 col-md-6 tp_fade_left">
                     <div class="h2_blog-item mb-35">
                         <div class="h2_blog-img w_img mb-25">
                             <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}"><img
@@ -37,11 +33,8 @@
                         </div>
                     </div>
                 </div>
-                @php
-                    $delay += 0.2;
-                @endphp
             @empty
-                <h1 class="text-center">Data Tidak Ditemukan</h1>
+                <h4 class="text-center text-danger">Data Tidak Ditemukan</h4>
             @endforelse
             <div>{{ $berita->links('pagination.custom', data: ['scrollTo' => false]) }}</div>
         </div>

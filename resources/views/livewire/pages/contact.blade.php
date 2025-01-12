@@ -17,8 +17,9 @@
                     </div>
                     <div class="contact-content">
                         <h4 class="contact-content-title">WhatsApp</h4>
-                        <p><a href="https://wa.me/+6281210079178"
-                                target="_blank">{{ $staticData['kontak']->whatsapp }}</a></p>
+                        <p><a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '081210079178' }}"
+                                target="_blank">{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -29,7 +30,8 @@
                     </div>
                     <div class="contact-content">
                         <h4 class="contact-content-title">Alamat</h4>
-                        <p><a href="https://maps.app.goo.gl/rCTH5QT4qwZXLyV6A">{{ $staticData['kontak']->alamat }}</a>
+                        <p>
+                            {{ $staticData['kontak']->alamat ?? 'Jl. Komp. Baitussaadahah' }}
                         </p>
                     </div>
                 </div>
@@ -54,7 +56,8 @@
                     </div>
                     <div class="contact-content">
                         <h4 class="contact-content-title">Email</h4>
-                        <p><a href="mailto:{{ $staticData['kontak']->email }}">{{ $staticData['kontak']->email }}</a>
+                        <p><a
+                                href="mailto:{{ $staticData['kontak']->email ?? 'support.young@example.com' }}">{{ $staticData['kontak']->email ?? 'support.young@example.com' }}</a>
                         </p>
                     </div>
                 </div>
