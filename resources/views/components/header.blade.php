@@ -1,39 +1,41 @@
 <header class="header-area">
     <div class="header-main header-sticky">
-        <div class="container custom-container-1">
-            <div class="row align-items-center">
-                <div class="col-xl-2 col-lg-2 col-6">
+        <div class="container">
+            <div class="row align-items-center d-flex justify-content-between">
+                <div class="col-xl-2 col-lg-1 col-4">
                     <div class="header-logo">
                         <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
                                 alt="Logo"></a>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7 text-center d-none d-lg-block">
-                    <div class="header-menu ">
+                    <div class="header-menu">
                         <nav class="header-nav-menu" id="mobile-menu">
-                            <ul>
-                                <li><a href="{{ route('home') }}">Beranda</a></li>
+                            <ul class="d-flex justify-content-center">
+                                <x-nav-link href="{{ route('home') }}">Beranda</x-nav-link>
+                                <x-nav-link href="{{ route('tentang-kami') }}">Tentang
+                                    Kami</x-nav-link>
+                                </li>
                                 <li class="menu-has-child">
                                     <a href="#">Program Kami</a>
                                     <ul class="submenu">
                                         @foreach ($staticData['program'] as $item)
-                                            <li>
-                                                <a
-                                                    href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
-                                            </li>
+                                            <x-nav-link
+                                                href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</x-nav-link>
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('berita') }}">Berita</a></li>
-                                <li><a href="{{ route('tentang-kami') }}">Tentang Kami</a></li>
-                                <li><a href="{{ route('kontak') }}">Kontak</a></li>
+                                <x-nav-link href="{{ route('berita') }}">Berita</x-nav-link>
+                                <x-nav-link href="{{ route('kontak') }}">Kontak</x-nav-link>
                             </ul>
                         </nav>
                     </div>
                 </div>
+
+                {{-- tombol --}}
                 <div class="col-xl-3 col-lg-3 col-6">
-                    <div class="header-action-wrap d-flex align-items-center justify-content-end mr-20">
-                        <div class="button">
+                    <div class="header-action-wrap d-flex align-items-center justify-content-end">
+                        <div class="button d-none d-xl-block">
                             <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim" target="_blank">
                                 DONASI DISINI
                                 <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
@@ -58,7 +60,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <div class="header-menu-bar d-lg-none">
+                        <div class="header-menu-bar d-xl-none">
                             <span class="header-menu-bar-icon side-toggle">
                                 <i class="fa-light fa-bars"></i>
                             </span>

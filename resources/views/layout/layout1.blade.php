@@ -26,7 +26,8 @@
 
                 @yield('header')
 
-                @yield('content')
+                {{-- @yield('content') --}}
+                {{ $slot }}
 
                 @yield('footer')
             </div>

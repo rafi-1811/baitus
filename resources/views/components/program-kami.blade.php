@@ -9,27 +9,26 @@
             </div>
         </div>
         <div class="row">
-            @if ($staticData['program'])
-                @foreach ($staticData['program'] as $item)
-                    <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
-                        <div class="choose-item mb-30">
-                            <div class="choose-item-img">
-                                <img src="{{ asset('storage/' . $item->gambar) }}" alt="Image Not Found">
-                            </div>
-                            <div class="choose-item-content">
-                                <h5 class="choose-item-content-title"><a
-                                        href="#">{{ $item->kategori_program }}</a></h5>
-                                <p>{{ $item->deskripsi }}</p>
-                                <a href="{{ route('detail-program', ['slug' => $item->slug]) }}"
-                                    class="choose-item-content-btn">Selengkapnya<i
-                                        class="fa-light fa-angle-right"></i></a>
-                            </div>
+            @forelse ($staticData['program'] as $item)
+                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
+                    <div class="choose-item mb-30">
+                        <div class="choose-item-img">
+                            <img src="{{ asset('storage/' . $item->gambar) }}" alt="Image Not Found">
+                        </div>
+                        <div class="choose-item-content">
+                            <h5 class="choose-item-content-title">
+                                <a wire:navigate
+                                    href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
+                            </h5>
+                            <p>{{ $item->deskripsi }}</p>
+                            <a wire:navigate href="{{ route('detail-program', ['slug' => $item->slug]) }}"
+                                class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
                         </div>
                     </div>
-                @endforeach
-            @else
-                <p>Prgoram belum ditetapkan.</p>
-            @endif
+                </div>
+            @empty
+                <h4 class="text-center text-danger">Data Tidak Ditemukan</h4>
+            @endforelse
         </div>
     </div>
 </section>

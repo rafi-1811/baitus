@@ -979,39 +979,51 @@ const tl = gsap.timeline({
 
 
 
+// component counter data Yatim
 
+document.addEventListener('livewire:init', () => {
+	const initCounters = () => {
+		const counters = document.querySelectorAll('.counter-section');
 
-// Fungsi untuk animasi counter
-function animateCounter(element) {
-    const target = +element.getAttribute("data-target"); // Mengambil target angka
-    let count = 0;
-    const speed = target / 1000; // Kecepatan animasi
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const counter = entry.target.querySelector('.counter');
+					const target = +counter.getAttribute('data-target');
+					const numberElement = counter.querySelector('h2') || counter;
 
-    const interval = setInterval(() => {
-        count += speed;
-        if (count >= target) {
-            clearInterval(interval); // Hentikan interval setelah mencapai target
-            count = target; // Pastikan angka mencapai target
-        }
-        element.textContent = Math.floor(count); // Perbarui angka elemen
-    }, 10); // Update angka setiap 10ms
-}
+					const updateCounter = () => {
+						const current = +numberElement.innerText;
+						const increment = target / 5000;
 
-// Intersection Observer untuk mendeteksi ketika elemen muncul di layar
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counterElement = entry.target;
-            counterElement.classList.add("visible"); // Menampilkan angka saat elemen terlihat
-            animateCounter(counterElement); // Jalankan animasi counter
-            observer.unobserve(counterElement); // Berhenti mengamati elemen setelah animasi selesai
-        }
-    });
-}, { threshold: 0.5 }); // Threshold 0.5 berarti animasi dimulai saat 50% elemen muncul di layar
+						if (current < target) {
+							numberElement.innerText = Math.ceil(current +
+								increment);
+							setTimeout(updateCounter, 10);
+						} else {
+							numberElement.innerText = target;
+						}
+					};
 
-// Menambahkan observer ke setiap elemen dengan class .counter
-const counters = document.querySelectorAll('.counter');
-counters.forEach(counter => observer.observe(counter));
+					updateCounter();
+
+					observer.unobserve(entry.target);
+				}
+			});
+		}, {
+			threshold: 0.5
+		});
+
+		counters.forEach(counter => observer.observe(counter));
+	};
+
+	initCounters();
+
+	// Jalanin ulang componentnya
+	Livewire.hook('component.init', (e) => {
+		initCounters();
+	});
+});        
 
 
 

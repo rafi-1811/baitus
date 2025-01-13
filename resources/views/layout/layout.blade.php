@@ -52,7 +52,9 @@
                     </section>
                     <!-- breadcrumb area end -->
 
-                    @yield('content')
+                    {{-- @yield('content') --}}
+
+                    {{ $slot }}
                 </main>
                 <!-- footer area start -->
                 <x-footer />

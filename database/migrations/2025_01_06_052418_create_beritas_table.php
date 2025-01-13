@@ -20,7 +20,11 @@ return new class extends Migration
             $table->text('meta_deskripsi');
             $table->text('meta_keywords');
             $table->string('cover_gambar_berita');
+<<<<<<< HEAD
             $table->string('gambar_content')->nullable();
+=======
+            $table->string('gambar_content');
+>>>>>>> 9ca11ea2f48d9730d282e93a4640ed4978516bfb
             $table->text('quotes')->nullable();
             $table->string('status');
 
