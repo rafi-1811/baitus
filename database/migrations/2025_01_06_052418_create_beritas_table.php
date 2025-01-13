@@ -20,8 +20,8 @@ return new class extends Migration
             $table->text('meta_deskripsi');
             $table->text('meta_keywords');
             $table->string('cover_gambar_berita');
-            $table->string('gambar_content');
-            $table->text('quotes');
+            $table->string('gambar_content')->nullable();
+            $table->text('quotes')->nullable();
             $table->string('status');
 
             $table->timestamps();
