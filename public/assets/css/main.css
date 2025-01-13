@@ -3267,10 +3267,18 @@ Header CSS 01 Start
     position: relative;
     z-index: 1;
 }
-@media (max-width: 1080px) {
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS rules for large screens */
+    .banner-area {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
     .banner-area {
         width: 100%;
-        margin-top: 10px;
+        margin-top: 100px;
     }
 }
 .banner-single {
@@ -3278,19 +3286,45 @@ Header CSS 01 Start
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
-    min-height: 600px;
     gap: 40px;
 }
 
-@media (max-width: 1199px) {
+/* Extra small (xs): <576px */
+@media (max-width: 575.98px) {
     .banner-single {
         flex-wrap: wrap;
         width: 100%;
         gap: 0;
+        justify-content: center;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* CSS rules for small screens */
+    .banner-single {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* lebar layar medium atau tablet */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .banner-single {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1199px) {
+    .banner-single {
+        width: 100%;
+        gap: 50px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* CSS rules for extra extra large screens */
     .banner-single {
         margin-top: 100px;
     }
@@ -3431,24 +3465,22 @@ Header CSS 01 Start
     margin-bottom: 0px;
 }
 
-@media (min-width: 575px) {
-    .banner-img {
-        margin-bottom: 60px;
-    }
-}
-
-@media (max-width: 1199px) {
-    /* .banner-img {
-        width: 483px;
-        height: 350px;
-    } */
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    /* CSS rules for extra large screens */
     .banner-img {
         margin-bottom: 0;
         width: 80%;
         height: 350px;
+        display: flex;
+    }
+}
+
+@media (min-width: 1400px) {
+    /* CSS rules for extra extra large screens */
+    .banner-img {
+        margin-bottom: 0;
+        width: 100%;
+        /* height: 350px; */
         display: flex;
     }
 }
@@ -4767,10 +4799,14 @@ Header CSS 01 Start
     letter-spacing: -1.2px;
 }
 
+.h21_blog-area {
+    background-color: #ffffff;
+    margin: 120px 0;
+}
+
 @media (max-width: 1199px) {
     .h21_blog-area {
         background-color: #ffffff;
-        padding-bottom: 10px;
     }
 }
 
@@ -5121,6 +5157,7 @@ Header CSS 01 Start
 @media (max-width: 991px) {
     .feature-top {
         flex-wrap: wrap;
+        justify-content: center;
     }
 }
 .feature-item {
@@ -5138,7 +5175,7 @@ Header CSS 01 Start
 }
 @media (max-width: 991px) {
     .feature-item {
-        width: calc(50% - 15px);
+        /* width: calc(50% - 15px); */
     }
 }
 @media (max-width: 575px) {
@@ -5177,11 +5214,8 @@ Header CSS 01 Start
 .feature-item1 {
     color: #4a4d56;
     list-style-position: inside;
-    list-style: disc;
     font-size: 15px;
-    text-align: left;
     font-weight: 400;
-    line-height: 24px;
     margin-left: 15px;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
@@ -6915,6 +6949,13 @@ Header CSS 01 Start
 .h2_blog-item {
     background-color: #ffffff;
 }
+
+@media (max-width: 575.98px) {
+    .h2_blog-item {
+        margin-bottom: 70px;
+    }
+}
+
 @media (max-width: 1199px) {
     .h2_blog-item {
         width: 100%;
@@ -6928,8 +6969,6 @@ Header CSS 01 Start
 @media (max-width: 1199px) {
     .h2_blog-img {
         width: 100%;
-        height: 270px;
-        /* margin-left: 10px; */
     }
 }
 .h2_blog-img:hover img {
@@ -6941,14 +6980,40 @@ Header CSS 01 Start
 .h2_blog-content-meta {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
+
+@media (max-width: 575.98px) {
+    /* CSS rules for extra small screens */
+    .h2_blog-content-meta {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* CSS rules for medium screens */
+    .h2_blog-content-meta {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+    }
+}
+
 @media (max-width: 1199px) {
     .h2_blog-content-meta {
         width: 370px;
-        margin-left: 10px;
+        margin: 15px 0;
     }
 }
+
+@media (min-width: 1200px) {
+    .h2_blog-content-meta {
+        width: 370px;
+        margin: 15px 0;
+    }
+}
+
 .h2_blog-content-meta span {
     display: block;
     color: #6a738b;
@@ -12739,43 +12804,23 @@ Header CSS 01 Start
     }
 }
 
-/* Styling untuk konten utama */
-.content1 {
-    flex: 1;
-    padding: 30px;
-    background-color: #fff;
-
-    margin-right: 10px; /* Ruang antara konten utama dan sidebar */
-}
-@media (max-width: 1199px) {
-    .content1 {
-        padding: 0px;
-        width: 100%;
-        flex: none;
-        margin-left: 11px;
-        /* margin-right: 10px; */
-    }
-}
-
 /* Styling untuk sidebar */
-.sidebar1 {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 290px; /* Set the width of the sidebar */
-    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #ffffff; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    margin-top: 58px;
-    padding-top: 115px;
-}
-@media (max-width: 1199px) {
+/* .sidebar1 {
+   
+} */
+
+/* @media (min-width: 1200px) {
+    CSS rules for large screens
     .sidebar1 {
         width: 100%;
-        /* margin-left: 30px; */
-        padding-top: 40px;
-        padding-bottom: 50px;
+        margin: 50px 0;
+    }
+} */
+
+/* @media (max-width: 1199px) {
+    .sidebar1 {
+        width: 100%;
+        margin: 50px 0;
     }
 }
 .sidebar1 h6 {
@@ -12788,7 +12833,7 @@ Header CSS 01 Start
 
 .sidebar1 span:hover {
     color: #f59e0b;
-}
+} */
 
 .sidenav a {
     padding: 6px 8px 6px 16px;
@@ -12798,28 +12843,12 @@ Header CSS 01 Start
     display: block;
 }
 
-.sidebar1 ul li {
+/* .sidebar1 ul li {
     width: 350px;
     margin-top: 10px;
     margin-left: 15px;
     background-color: #ffffff;
-}
-
-/* Responsif untuk layar kecil */
-@media screen and (max-width: 768px) {
-    .container1 {
-        flex-direction: column; /* Sidebar dan konten utama bertumpuk */
-    }
-
-    .sidebar1 {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .content1 {
-        margin-right: 0;
-    }
-}
+} */
 
 .social-media-icons {
     display: flex;
@@ -12943,4 +12972,21 @@ Header CSS 01 Start
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.content1 {
+    flex: 1; /* Isi sisa ruang yang tersedia */
+    max-width: 75%; /* Atur lebar maksimal (opsional) */
+}
+
+
+.sidebar1 {
+    flex: 0 0 25%; /* Sidebar mengambil 25% dari lebar */
+    max-width: 25%; /* Pastikan lebar maksimalnya sesuai */
+}
+
+.wrap-item-berita {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 35px; 
 }

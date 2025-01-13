@@ -1,8 +1,9 @@
 <section class="banner-area">
-    <div class="container custom-container-1">
+    <div class="container">
         <div class="banner-single">
             <div class="banner-img tp_fade_left">
-                <img src="{{ asset('storage/' . ($staticData['tentang_yayasan']->gambar_tentang_yayasan ?? 'assets/images/banner/home1/home.jpg')) }}"
+                <img class="img-tentang-yayasan"
+                    src="{{ asset('storage/' . ($staticData['tentang_yayasan']->gambar_tentang_yayasan ?? 'assets/images/banner/home1/home.jpg')) }}"
                     alt="ini gambar tentang yayasan">
 
             </div>

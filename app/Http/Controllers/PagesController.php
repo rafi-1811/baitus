@@ -52,22 +52,22 @@ class PagesController extends Controller
 
             return [
                 [
-                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'img' => '',
                     'number' => $data->total_yatim_binaan,
                     'text' => 'Yatim Binaan'
                 ],
                 [
-                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'img' => '',
                     'number' => $data->total_yatim_luar_binaan,
                     'text' => 'Yatim Luar Binaan'
                 ],
                 [
-                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'img' => '',
                     'number' => $data->total_kegiatan,
                     'text' => 'Total Kegiatan'
                 ],
                 [
-                    'img' => 'assets/images/feature/home4/baksos.jpg',
+                    'img' => '',
                     'number' => $data->total_daerah_cakupan,
                     'text' => 'Cakupan Daerah'
                 ]
