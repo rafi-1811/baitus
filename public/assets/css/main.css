@@ -12637,13 +12637,13 @@ Header CSS 01 Start
     background-color: transparent;
     height: 310px;
 }
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
     .rekening_service-item-icon img {
         width: 270px;
         justify-content: center;
         padding: 10px 35px 10px;
     }
-}
+} */
 .rekening_service-item1-title {
     color: #1b2a52;
     font-size: 18px;
@@ -12663,15 +12663,29 @@ Header CSS 01 Start
     text-align: center;
 }
 .rekening_service-item-icon img {
-    width: 270px;
-    height: 60px;
+    width: 120px;
     margin-bottom: 34px;
 }
-@media (max-width: 1199px) {
+
+.rekening_service-item-icon {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
     .rekening_service-item-icon img {
-        margin-left: 118px;
+        margin-bottom: 20px;
+        width: 170px;
     }
 }
+
+@media (min-width: 1200px) {
+    .rekening_service-item-icon img {
+        margin-bottom: 10px;
+        width: 120px;
+    }
+}
+
 .rekening_service-item-title {
     color: #1b2a52;
     font-size: 18px;
