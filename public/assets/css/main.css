@@ -4966,11 +4966,12 @@ Header CSS 01 Start
 }
 @media (max-width: 1199px) {
     .choose-area {
-        padding-top: 5px;
-        padding-left: 20px;
-        padding-right: 5px;
+        padding-top: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
         margin: 0px;
         width: 100%;
+        margin-bottom: 60px;
     }
 }
 
@@ -5038,7 +5039,6 @@ Header CSS 01 Start
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
-    /* margin-left: 10px; */
     letter-spacing: -0.6px;
     margin-bottom: 10px;
 }
@@ -5046,10 +5046,6 @@ Header CSS 01 Start
     .choose-item-content-title {
         width: 480px;
         font-size: 25px;
-        padding-top: 0px;
-        padding-left: 15px;
-        margin-right: 5px;
-        margin-bottom: 10px;
         letter-spacing: 0.2px;
     }
 }
@@ -5057,29 +5053,36 @@ Header CSS 01 Start
 .choose-item-content-title:hover a {
     color: #000000;
 }
+
+@media (max-width: 1199px) {
+    .choose-item-content {
+        padding: 15px;
+        padding-bottom: 20px;
+    }
+}
+
+.choose-item-content {
+    /* padding: 15px;
+    padding-bottom: 20px; */
+}
+
 .choose-item-content p {
     color: #6a738bba;
     font-size: 14px;
     text-align: left;
     font-weight: 400;
-    /* margin-left: 10px; */
     line-height: 22px;
-    margin-bottom: 32px;
 }
 @media (max-width: 1199px) {
     .choose-item-content p {
-        width: 96%;
         font-size: 15px;
         text-align: justify;
-        padding-left: 15px;
+        margin-bottom: 32px;
     }
 }
 .choose-item-content-btn {
     color: #1b2a52;
     font-size: 14px;
-    /* margin-left: 10px; */
-    margin-top: 40px;
-    margin-bottom: 50px;
     line-height: 21px;
     font-weight: 600;
     display: flex;
@@ -5089,10 +5092,6 @@ Header CSS 01 Start
 @media (max-width: 1199px) {
     .choose-item-content-btn {
         font-size: 18px;
-        margin-top: 20px;
-        padding-left: 15px;
-        margin-right: 5px;
-        padding-bottom: 20px;
     }
 }
 .choose-item-content-btn i {
@@ -12924,4 +12923,14 @@ Header CSS 01 Start
         box-shadow: -2px -2px 6px rgba(255, 227, 126, 0.5),
             2px 2px 6px rgba(144, 148, 255, 0.5);
     }
+}
+
+/* //////////////////////////////////////////////////// */
+
+.text-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
 }
