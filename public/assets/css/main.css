@@ -3274,11 +3274,9 @@ Header CSS 01 Start
     }
 }
 .banner-single {
-    padding-top: 100px;
     background-color: #ffffff;
     padding-bottom: 50px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     min-height: 600px;
     gap: 40px;
@@ -3288,19 +3286,25 @@ Header CSS 01 Start
     .banner-single {
         flex-wrap: wrap;
         width: 100%;
-        margin-left: 0px;
-        /* align-items: center; */
-        padding-top: 30px;
     }
 }
+
+@media (min-width: 1200px) {
+    .banner-single {
+        margin-top: 100px;
+    }
+}
+
 .banner-content {
     width: auto;
     flex-shrink: 1;
-    /* margin-left: 150px; */
 }
 @media (max-width: 1399px) {
     .banner-content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 @media (max-width: 1199px) {
@@ -3313,11 +3317,15 @@ Header CSS 01 Start
         width: 100%;
     }
 }
+.banner-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+}
 .banner-content-subtitle {
     border-radius: 50px;
     background: rgba(255, 229, 177, 0.164);
     box-shadow: 0px 2px 4px 0px rgba(27, 42, 82, 0.2);
-    margin-left: 200px;
     display: inline-block;
     color: #fa901f;
     font-size: 14px;
@@ -3326,15 +3334,12 @@ Header CSS 01 Start
     padding: 0 30px;
     height: 36px;
     line-height: 36px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 @media (max-width: 1199px) {
     .banner-content-subtitle {
         font-size: 11px;
-        /* padding-top: 1px;
-    height: 32px;
-    line-height: 32px;*/
-        margin-left: 115px;
+        display: inline-flex;
     }
 }
 .banner-content-title {
@@ -3342,7 +3347,6 @@ Header CSS 01 Start
     font-size: 40px;
     font-weight: 700;
     line-height: 1.1;
-    margin-left: 40px;
     letter-spacing: -2.1px;
     margin-bottom: 20px;
 }
@@ -3378,14 +3382,10 @@ Header CSS 01 Start
 } */
 .banner-content p {
     color: #524b1b;
-    font-family: sans-serif;
     font-size: 16px;
-    margin-left: 40px;
     text-align: justify;
     font-weight: 400;
     line-height: 28px;
-    margin-bottom: 43px;
-    width: 600px;
 }
 @media (max-width: 1199px) {
     .banner-content p br {
@@ -3427,20 +3427,34 @@ Header CSS 01 Start
     }
 }
 .banner-img {
-    width: 644px;
-    height: 450px;
     border-radius: 30px;
-    margin-top: 120px;
+    margin-top: 60px;
+    margin-bottom: 0px;
 }
-@media (max-width: 1199px) {
+
+@media (min-width: 575px) {
     .banner-img {
-        width: 483px;
-        height: 350px;
-        margin-bottom: 0;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-bottom: 60px;
     }
 }
+
+@media (max-width: 1199px) {
+    /* .banner-img {
+        width: 483px;
+        height: 350px;
+    } */
+}
+
+@media (min-width: 1200px) {
+    .banner-img {
+        margin-bottom: 0;
+        width: 80%;
+        height: 350px;
+        display: flex;
+        align-items: center;
+    }
+}
+
 .banner-shape-1 {
     position: absolute;
     left: 75px;
@@ -4758,7 +4772,6 @@ Header CSS 01 Start
 @media (max-width: 1199px) {
     .h21_blog-area {
         background-color: #ffffff;
-        width: 610px;
         padding-bottom: 10px;
     }
 }
