@@ -3274,8 +3274,8 @@ Header CSS 01 Start
     }
 }
 .banner-single {
+    align-items: center;
     background-color: #ffffff;
-    padding-bottom: 50px;
     display: flex;
     justify-content: space-between;
     min-height: 600px;
@@ -3286,6 +3286,7 @@ Header CSS 01 Start
     .banner-single {
         flex-wrap: wrap;
         width: 100%;
+        gap: 0;
     }
 }
 
@@ -3304,7 +3305,6 @@ Header CSS 01 Start
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 }
 @media (max-width: 1199px) {
@@ -3382,8 +3382,7 @@ Header CSS 01 Start
 } */
 .banner-content p {
     color: #524b1b;
-    font-size: 16px;
-    text-align: justify;
+    font-size: 15px;
     font-weight: 400;
     line-height: 28px;
 }
@@ -3451,7 +3450,6 @@ Header CSS 01 Start
         width: 80%;
         height: 350px;
         display: flex;
-        align-items: center;
     }
 }
 
@@ -4962,16 +4960,14 @@ Header CSS 01 Start
 07. choose
 /////////////////////////////////////////////////////////// */
 .choose-area {
-    margin-bottom: 60px;
+    margin: 150px 0;
 }
 @media (max-width: 1199px) {
     .choose-area {
-        padding-top: 80px;
         padding-left: 10px;
         padding-right: 10px;
-        margin: 0px;
         width: 100%;
-        margin-bottom: 60px;
+        margin: 150px 0;
     }
 }
 

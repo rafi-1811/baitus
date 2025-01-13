@@ -1,4 +1,4 @@
-<section class="choose-area pt-140">
+<section class="choose-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
