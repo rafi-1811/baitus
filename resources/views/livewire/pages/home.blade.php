@@ -119,7 +119,7 @@
                     <div class="h4_section-area text-center mb-25">
                         <span class="section-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
                         <h2 class="h4_section-title tp_title_slideup">Rekening Donasi</h2>
-                        <p class="mt-20">Salurkan Bantuan Anda untuk Masa Depan Anak Yatim yang Lebih Cerah.
+                        <p class="mt-20 desc_title">Salurkan Bantuan Anda untuk Masa Depan Anak Yatim yang Lebih Cerah.
                             Setiap Rupiah Membawa Harapan dan Kebahagiaan bagi Mereka yang Membutuhkan.</p>
                     </div>
                 </div>
@@ -194,7 +194,9 @@
                             <div class="h2_blog-content">
                                 <div class="h2_blog-content-meta">
                                     <span>
-                                        <a href="#" class="text-decoration-none text-muted">
+                                        <a wire:navigate
+                                            href="{{ route('detail-program', ['slug' => $item->program->slug]) }}"
+                                            class="text-decoration-none">
                                             {{ $item->program->kategori_program }}
                                         </a>
                                     </span>

@@ -22,7 +22,8 @@
                             </div>
                             <div class="h2_blog-content">
                                 <div class="h2_blog-content-meta">
-                                    <span><a href="#">{{ $program->kategori_program }}</a></span>
+                                    <span><a wire:navigate
+                                            href="{{ route('detail-program', ['slug' => $program->slug]) }}">{{ $program->kategori_program }}</a></span>
                                     <span><i
                                             class="fa-light fa-calendar-days"></i>{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->format('d F Y') }}</span>
                                 </div>

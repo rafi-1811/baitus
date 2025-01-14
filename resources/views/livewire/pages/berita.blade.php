@@ -1,5 +1,4 @@
 <div class="container">
-
     {{-- Breadcump title --}}
     <div class="row justify-content-center">
         <div class="col-10">
@@ -9,12 +8,10 @@
         </div>
     </div>
     {{-- end --}}
+
     <div class="wrap-item-berita">
-
+        {{-- Section Berita --}}
         <div class="content1">
-
-
-            {{-- Section Berita --}}
             <div class="row">
                 @forelse ($berita as $item)
                     <div class="col-xl-4 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
@@ -27,7 +24,8 @@
                             </a>
                             <div class="h2_blog-content">
                                 <div class="h2_blog-content-meta">
-                                    <span>{{ $item->kategori }}</span>
+                                    <span><a wire:navigate
+                                            href="{{ route('detail-program', ['slug' => $item->program->slug]) }}">{{ $item->program->kategori_program }}</a></span>
                                     <span><i
                                             class="fa-light fa-calendar-days"></i>{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</span>
                                 </div>
@@ -45,9 +43,9 @@
                 {{-- pagination --}}
                 <div>{{ $berita->links('pagination.custom', data: ['scrollTo' => false]) }}</div>
             </div>
-            {{-- end --}}
-
         </div>
+        {{-- end --}}
+
 
         {{-- Section Kategori Program --}}
         <div class="sidebar1">
@@ -60,7 +58,6 @@
                                 <span>({{ $item->berita->count() }})</span></a>
                         </li>
                     @endforeach
-
                 </ul>
             </div>
         </div>

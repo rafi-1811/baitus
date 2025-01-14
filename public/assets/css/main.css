@@ -2155,7 +2155,7 @@ i[class*=" flaticon-"]:before {
 Header CSS 01 Start
 /////////////////////////////////////////////////////////// */
 .header-area {
-    position: fixed;
+    position: sticky;
     background: rgb(255, 255, 255);
     /* backdrop-filter: blur(10px); */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -5093,11 +5093,6 @@ Header CSS 01 Start
     }
 }
 
-.choose-item-content {
-    /* padding: 15px;
-    padding-bottom: 20px; */
-}
-
 .choose-item-content p {
     color: #6a738bba;
     font-size: 14px;
@@ -5171,11 +5166,6 @@ Header CSS 01 Start
     -ms-transition: all 0.3s linear 0s;
     -o-transition: all 0.3s linear 0s;
     transition: all 0.3s linear 0s;
-}
-@media (max-width: 991px) {
-    .feature-item {
-        /* width: calc(50% - 15px); */
-    }
 }
 @media (max-width: 575px) {
     .feature-item {
@@ -9716,19 +9706,23 @@ Header CSS 01 Start
     position: relative;
     z-index: 1;
     border-radius: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
     overflow: hidden;
-    margin-top: 100px;
 }
-@media (max-width: 1199px) {
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .breadcrumb-area {
+        padding: 20px 0;
+    }
+}
+
+/* @media (max-width: 1199px) {
     .breadcrumb-area {
         width: auto;
-        height: 280px;
         margin-left: auto;
         margin-right: auto;
     }
-}
+} */
 .breadcrumb-title {
     color: #1b2a52;
     text-align: right;
@@ -9736,39 +9730,49 @@ Header CSS 01 Start
     font-weight: 1000;
     line-height: 1;
     letter-spacing: -2px;
-    margin-top: 115px;
 }
-@media (max-width: 1199px) {
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
     .breadcrumb-title {
-        font-size: 60px;
-        margin-right: 20px;
+        font-size: 35px;
+        margin-top: 0;
     }
 }
-@media (max-width: 991px) {
-    .breadcrumb-title {
-        font-size: 55px;
-    }
-}
-@media (max-width: 767px) {
-    .breadcrumb-title {
-        font-size: 50px;
-    }
-}
-@media (max-width: 480px) {
+
+@media (max-width: 991.98px) { 
     .breadcrumb-title {
         font-size: 40px;
+        margin-top: 0;
     }
-}
+ }
+
+ @media (max-width: 1199.98px) { 
+    .breadcrumb-title {
+        font-size: 45px;
+        margin-top: 0;
+    }
+ }
+
 .breadcrumb-list {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: end;
 }
-@media (max-width: 1199px) {
+
+@media (max-width: 575.98px) {
     .breadcrumb-list {
-        margin-right: 20px;
+        margin-right: 0;
+        align-items: center;
     }
 }
+
+@media (max-width: 991.98px) {
+    .breadcrumb-list {
+        margin-right: 0;
+        align-items: center;
+    }
+}
+
 .breadcrumb-list a {
     color: rgba(27, 42, 82, 0.7);
     font-size: 17px;
@@ -9807,10 +9811,13 @@ Header CSS 01 Start
     font-weight: 500;
     line-height: 25px;
     display: block;
+    text-align: end;
 }
-@media (max-width: 480px) {
+@media (max-width: 575.98px) {
     .breadcrumb-list span {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: end;
     }
 }
 
@@ -12166,7 +12173,6 @@ Header CSS 01 Start
 .slider_container {
     position: relative;
     width: 100%;
-    margin-top: 99px; /* Menghapus margin-top agar tidak ada jarak ekstra */
     overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
 }
 
@@ -12734,7 +12740,7 @@ Header CSS 01 Start
     .rekening_service-item-icon img {
         width: 120px;
         background-color: transparent;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
 
@@ -12772,7 +12778,7 @@ Header CSS 01 Start
     .rekening_service-item-icon {
         display: flex;
         justify-content: center;
-        height: 80px;
+        height: 60px;
         align-items: center;
     }
 }
@@ -12794,6 +12800,15 @@ Header CSS 01 Start
     .rekening_service-item-icon {
         display: flex;
         justify-content: center;
+        height: 60px;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    .rekening_service-item-icon {
+        display: flex;
+        justify-content: center;
         height: 80px;
         align-items: center;
     }
@@ -12807,6 +12822,21 @@ Header CSS 01 Start
     letter-spacing: -0.1px;
     text-align: center;
 }
+
+@media (max-width: 575.98px) {
+    /* Tambahkan gaya untuk perangkat kecil di sini */
+    .rekening_service-item-title {
+        margin-bottom: 0;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .rekening_service-item-title {
+        margin-bottom: 10px;
+    }
+}
+
 .rekening_service-item-title:hover a {
     color: var(--clr-theme-primary);
 }
@@ -13019,3 +13049,11 @@ Header CSS 01 Start
         max-width: 100%;
     }
 }
+
+@media (max-width: 575.98px) {
+    .desc_title{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
