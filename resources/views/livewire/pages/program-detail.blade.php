@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-xl-5">
     {{-- Breadcump title --}}
     <div class="row justify-content-center">
         <div class="col-xl-6">
@@ -14,8 +14,8 @@
             <div class="row">
                 @forelse ($berita as $item)
                     <div wire:key="{{ $item->slug }}" class="col-xl-4 col-md-6 tp_fade_left">
-                        <div class="h2_blog-item mb-35">
-                            <div class="h2_blog-img w_img mb-25">
+                        <div class="h2_blog-item">
+                            <div class="h2_blog-img w_img">
                                 <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}"><img
                                         src="{{ asset('storage/' . $item->cover_gambar_berita) }}"
                                         alt="{{ $program->kategori_program }}"></a>

@@ -127,7 +127,7 @@
             <div class="row">
                 @forelse ($staticData['rekening'] as $item)
                     <div class="col-xl-3 col-lg-3 col-md-3 tp_fade_left" data-fade-from="left">
-                        <div class="rekening_service-item mb-30">
+                        <div class="rekening_service-item">
                             <div class="rekening_service-item-icon">
                                 <img src="{{ asset('storage/' . $item->gambar_rekening_bank) }}"
                                     alt="{{ $item->nama_bank }}">

@@ -20,7 +20,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
                         <div class="h2_blog-item mb-35">
                             <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}">
-                                <div class="h2_blog-img w_img mb-25">
+                                <div class="h2_blog-img w_img">
                                     <img src="{{ asset('storage/' . $item->cover_gambar_berita) }}"
                                         alt="gambar {{ $item->kategori }}">
                                 </div>
