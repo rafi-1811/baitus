@@ -18,6 +18,7 @@ Color Declaration
     --clr-body-text: #6a738b;
     --clr-color-violet: #e825ec;
     --clr-theme-primary: #ec9c25;
+    --clr-theme-secondary: #4a4d56;
     --clr-bg-gray: #f6f6f6;
     --clr-bg-gray-2: #f1f1f1;
     --clr-bg-gray-3: #eeeeee;
@@ -7323,6 +7324,7 @@ Header CSS 01 Start
     font-size: 14px;
     line-height: 1;
     display: block;
+    color: var(--clr-theme-primary);
 }
 .blog_details-meta span a:hover {
     color: var(--clr-theme-primary);
@@ -7676,7 +7678,7 @@ Header CSS 01 Start
     width: 100px;
     height: 1px;
     content: "";
-    background-color: #7d25ec;
+    background-color: var(--clr-theme-primary);
 }
 .blog_details-widget-search {
     position: relative;
@@ -7703,7 +7705,7 @@ Header CSS 01 Start
     height: 47px;
     border: none;
     border-radius: 10px;
-    background: #7d25ec;
+    background: var(--clr-theme-primary);
     color: #fff;
     font-size: 15px;
     display: flex;
@@ -9738,27 +9740,24 @@ Header CSS 01 Start
     line-height: 1;
     letter-spacing: -2px;
 }
-/* X-Small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-    .breadcrumb-title {
+
+@media (max-width: 767px) {
+    .breadcrumb-title{
         font-size: 35px;
-        margin-top: 0;
     }
 }
 
-@media (max-width: 991.98px) { 
-    .breadcrumb-title {
+@media (max-width: 991px) {
+    .breadcrumb-title{
         font-size: 40px;
-        margin-top: 0;
     }
- }
+}
 
- @media (max-width: 1199.98px) { 
-    .breadcrumb-title {
+@media (max-width: 1199px) {
+    .breadcrumb-title{
         font-size: 45px;
-        margin-top: 0;
     }
- }
+}
 
 .breadcrumb-list {
     display: flex;
@@ -9813,7 +9812,7 @@ Header CSS 01 Start
     border-radius: 50%;
 }
 .breadcrumb-list span {
-    color: #7d25ec;
+    color: var(--clr-theme-primary);
     font-size: 17px;
     font-weight: 500;
     line-height: 25px;
@@ -11304,14 +11303,14 @@ Header CSS 01 Start
 33. footer
 /////////////////////////////////////////////////////////// */
 .footer-area {
-    background: #4a4d56;
+    background: var(--clr-theme-secondary);
 }
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
     .footer-area {
         width: 610px;
         height: 777px;
     }
-}
+} */
 .footer-area1 {
     background: #4a4d56;
 }
@@ -11323,46 +11322,59 @@ Header CSS 01 Start
 }
 .footer1 {
     display: flex;
-    width: 580px;
+    align-items: center;
+    flex-direction: column;
 }
+ /* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    .footer1 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+ }
+
+@media (min-width: 1200px) { 
+    .footer1 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+ }
+
+.footer-top{
+    padding: 50px 0;
+}
+
 .footer-logo {
-    margin-bottom: 10px;
-    position: relative;
+    display: flex;
     width: 105px;
     height: 105px;
+    align-items: center;
 }
 .footer-nama {
-    color: #f0f2f8;
-    font-size: 25px;
-    margin-top: 35px;
-    margin-left: 28px;
+    font-size: 21px;
     letter-spacing: 1px;
     font-weight: 600;
     line-height: 35px;
     margin-bottom: 8px;
-    /* text-align: center; */
     color: sandybrown;
 }
-@media (max-width: 1199px) {
+@media (min-width: 1200px) {
     .footer-nama {
-        font-size: 25px;
-        margin-top: 40px;
-        padding: 0px;
+        margin: 0;
     }
 }
 .footer-newsletter p {
-    width: 580px;
     color: azure;
     font-size: 15px;
-    text-align: justify;
+    text-align: start;
     font-weight: 200;
-    margin-bottom: 10px;
+    margin: 0;
 }
-@media (max-width: 1199px) {
-    .footer-newsletter p {
-        width: 550px;
-    }
-}
+
 .footer-newsletter form {
     position: relative;
     z-index: 1;
@@ -11490,14 +11502,46 @@ Header CSS 01 Start
 }
 .footer-widget-wrap {
     display: flex;
-    justify-content: space-between;
-    margin-left: 60px;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
 }
-@media (max-width: 480px) {
+
+/* medium devices (landscape phones, less than 768px) */
+@media (max-width: 991.98px) { 
     .footer-widget-wrap {
-        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: start;
+        text-align: start;
+        gap: 0;
+        justify-content: space-around;
+    }
+ }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+    .footer-widget-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        text-align: start;
+    }
+
+}
+
+@media (min-width: 1200px){
+    .footer-widget-wrap {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: start;
+        text-align: start;
     }
 }
+
 .footer-widget h5 {
     color: #fff;
     font-size: 20px;
@@ -12029,8 +12073,17 @@ Header CSS 01 Start
 .h5_footer-widget-social {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    padding: 20px 0;
 }
+
+@media (min-width: 1200px) {
+    .h5_footer-widget-social {
+        justify-content: start;
+    }
+}
+
 .h5_footer-widget-social a {
     width: 40px;
     height: 40px;
@@ -12044,7 +12097,7 @@ Header CSS 01 Start
     font-size: 14px;
 }
 .h5_footer-widget-social a:hover {
-    background: #7d25ec;
+    background: var(--clr-theme-primary);
     color: #fff;
     border-color: transparent;
 }
@@ -12751,6 +12804,15 @@ Header CSS 01 Start
     }
 }
 
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+    .rekening_service-item-icon img {
+        width: 120px;
+        background-color: transparent;
+        margin: 0;
+    }
+ }
+
 /* Large (lg): ≥992px */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     /* CSS rules for large screens */
@@ -12780,7 +12842,7 @@ Header CSS 01 Start
 }
 
 /* Medium (md): ≥768px */
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (max-width: 991.98px) {
     /* CSS rules for medium screens */
     .rekening_service-item-icon {
         display: flex;

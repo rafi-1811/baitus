@@ -2,16 +2,16 @@
 
 <footer class="footer-area">
     <div class="container">
-        <div class="footer-top pt-95 pb-55 pl-15 pr-15">
+        <div class="footer-top">
             <div class="row justify-content-between">
                 <div class="col-xl-5 col-lg-4 tp_has_fade_anim" data-fade-from="left">
-                    <div class="footer-left mb-50">
+                    <div class="footer-left">
                         <div class="footer1">
                             <div class="footer-logo">
                                 <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
                                         alt="Image Not Found"></a>
                             </div>
-                            <h1 class="footer-nama tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>
+                            <h1 class="footer-nama">Yayasan Baitus Saadah Amanah</h1>
                         </div>
                         <div class="footer-newsletter">
                             <p> Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan
@@ -30,32 +30,31 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">
-                    <div class="footer-right mb-10">
-                        <div class="footer-widget-wrap">
-                            <div class="footer-widget">
-                                <h5 class="footer-widget-title">Sosial Media</h5>
-                                <ul>
-                                    @forelse ($staticData['sosial_media'] as $item)
-                                        <li><a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a></li>
-                                    @empty
-                                        <li class="text-danger">Belum ada sosial media</li>
-                                    @endforelse
-                                </ul>
-                            </div>
-                            <div class="footer-widget">
-                                <h5 class="footer-widget-title">Menu</h5>
-                                <ul>
-                                    <li><a href="blog">Berita</a></li>
-                                    <li><a href="#">Tentang Kami</a></li>
-                                    <li><a href="caontact">Kontak</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-widget">
-                                <h5 class="footer-widget-title">Kontak</h5>
-                                <ul>
-                                    <li><a href="tel:+62812-1007-9178">0812 1007 9178</a></li>
-                                </ul>
-                            </div>
+                    <div class="footer-widget-wrap">
+                        <div class="footer-widget">
+                            <h5 class="footer-widget-title">Sosial Media</h5>
+                            <ul>
+                                @forelse ($staticData['sosial_media'] as $item)
+                                    <li><a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a>
+                                    </li>
+                                @empty
+                                    <li class="text-danger">Belum ada sosial media</li>
+                                @endforelse
+                            </ul>
+                        </div>
+                        <div class="footer-widget">
+                            <h5 class="footer-widget-title">Menu</h5>
+                            <ul>
+                                <li><a href="blog">Berita</a></li>
+                                <li><a href="#">Tentang Kami</a></li>
+                                <li><a href="caontact">Kontak</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-widget">
+                            <h5 class="footer-widget-title">Kontak</h5>
+                            <ul>
+                                <li><a href="tel:+62812-1007-9178">0812 1007 9178</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

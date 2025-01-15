@@ -207,7 +207,7 @@
                                 </div>
                                 <h4 class="h2_blog-content-title">
                                     <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}"
-                                        class="text-decoration-none text-dark">
+                                        class="text-decoration-none">
                                         {{ $item->judul }}
                                     </a>
                                 </h4>

@@ -25,7 +25,7 @@
                 <main>
                     <!-- breadcrumb area start -->
                     <section class="breadcrumb-area bg-default"
-                        data-background="assets/images/breadcrumb/breadcrumb-bg.jpg">
+                        data-background="{{ asset('assets/images/breadcrumb/breadcrumb-bg.jpg') }}">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
