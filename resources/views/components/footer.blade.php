@@ -1,6 +1,6 @@
 {{-- Kalo mau ubah footer lama uncomment ini aja --}}
 
-{{-- <footer class="footer-area">
+<footer class="footer-area">
     <div class="container">
         <div class="footer-top pt-95 pb-55 pl-15 pr-15">
             <div class="row justify-content-between">
@@ -72,10 +72,10 @@
             </div>
         </div>
     </div>
-</footer> --}}
+</footer>
 
 {{-- ini footer buatan gua --}}
-<footer class="h5_footer-area">
+{{-- <footer class="h5_footer-area">
     <div class="h5_footer-top pt-120 pb-80">
         <div class="container">
             <div class="row justify-content-between">
@@ -167,4 +167,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> --}}
