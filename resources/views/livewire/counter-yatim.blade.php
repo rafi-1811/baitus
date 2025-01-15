@@ -1,7 +1,7 @@
 <div class="row">
     @forelse ($dataYatim as $index => $item)
         <div wire:key="counter-section-{{ $index }}" id="counter-section-{{ $index }}"
-            class="col-xl-3 col-lg-4 col-md-6 tp_has_fade_anim counter-section" data-fade-from="left">
+            class="col-xl-3 col-lg-6 col-md-6 tp_has_fade_anim counter-section" data-fade-from="left">
             <div class="h4_feature-item mb-30">
                 <div class="h4_feature-item-img">
                     <img src="{{ asset($item['img']) }}" alt="">

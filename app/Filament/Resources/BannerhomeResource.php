@@ -51,7 +51,7 @@ class BannerhomeResource extends Resource
 
                 Select::make('status')
                     ->options([
-                        'aktif ' => 'Aktif',
+                        'aktif' => 'Aktif',
                         'nonaktif' => 'Nonaktif',
                     ])
                     ->extraAttributes(['style' => 'width: 50%;'])

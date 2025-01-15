@@ -1,4 +1,4 @@
-<section class="choose-area pt-140">
+<section class="choose-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
@@ -20,7 +20,7 @@
                                 <a wire:navigate
                                     href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</a>
                             </h5>
-                            <p>{{ $item->deskripsi }}</p>
+                            <p class="text-clamp">{{ $item->deskripsi }}</p>
                             <a wire:navigate href="{{ route('detail-program', ['slug' => $item->slug]) }}"
                                 class="choose-item-content-btn">Selengkapnya<i class="fa-light fa-angle-right"></i></a>
                         </div>

@@ -2155,7 +2155,7 @@ i[class*=" flaticon-"]:before {
 Header CSS 01 Start
 /////////////////////////////////////////////////////////// */
 .header-area {
-    position: fixed;
+    position: sticky;
     background: rgb(255, 255, 255);
     /* backdrop-filter: blur(10px); */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
@@ -3267,40 +3267,78 @@ Header CSS 01 Start
     position: relative;
     z-index: 1;
 }
-@media (max-width: 1080px) {
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS rules for large screens */
+    .banner-area {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
     .banner-area {
         width: 100%;
-        margin-top: 10px;
+        margin-top: 100px;
     }
 }
 .banner-single {
-    padding-top: 100px;
-    background-color: #ffffff;
-    padding-bottom: 50px;
-    display: flex;
     align-items: center;
+    background-color: #ffffff;
+    display: flex;
     justify-content: space-between;
-    min-height: 600px;
     gap: 40px;
+}
+
+/* Extra small (xs): <576px */
+@media (max-width: 575.98px) {
+    .banner-single {
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 0;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    /* CSS rules for small screens */
+    .banner-single {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* lebar layar medium atau tablet */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .banner-single {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 1199px) {
     .banner-single {
-        flex-wrap: wrap;
         width: 100%;
-        margin-left: 0px;
-        /* align-items: center; */
-        padding-top: 30px;
+        gap: 50px;
+        justify-content: center;
     }
 }
+
+@media (min-width: 1400px) {
+    /* CSS rules for extra extra large screens */
+    .banner-single {
+        margin-top: 100px;
+    }
+}
+
 .banner-content {
     width: auto;
     flex-shrink: 1;
-    /* margin-left: 150px; */
 }
 @media (max-width: 1399px) {
     .banner-content {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
 }
 @media (max-width: 1199px) {
@@ -3313,11 +3351,15 @@ Header CSS 01 Start
         width: 100%;
     }
 }
+.banner-wrapper {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+}
 .banner-content-subtitle {
     border-radius: 50px;
     background: rgba(255, 229, 177, 0.164);
     box-shadow: 0px 2px 4px 0px rgba(27, 42, 82, 0.2);
-    margin-left: 200px;
     display: inline-block;
     color: #fa901f;
     font-size: 14px;
@@ -3326,15 +3368,12 @@ Header CSS 01 Start
     padding: 0 30px;
     height: 36px;
     line-height: 36px;
-    margin-bottom: 30px;
+    margin: 30px 0;
 }
 @media (max-width: 1199px) {
     .banner-content-subtitle {
         font-size: 11px;
-        /* padding-top: 1px;
-    height: 32px;
-    line-height: 32px;*/
-        margin-left: 115px;
+        display: inline-flex;
     }
 }
 .banner-content-title {
@@ -3342,7 +3381,6 @@ Header CSS 01 Start
     font-size: 40px;
     font-weight: 700;
     line-height: 1.1;
-    margin-left: 40px;
     letter-spacing: -2.1px;
     margin-bottom: 20px;
 }
@@ -3378,14 +3416,9 @@ Header CSS 01 Start
 } */
 .banner-content p {
     color: #524b1b;
-    font-family: sans-serif;
-    font-size: 16px;
-    margin-left: 40px;
-    text-align: justify;
+    font-size: 15px;
     font-weight: 400;
     line-height: 28px;
-    margin-bottom: 43px;
-    width: 600px;
 }
 @media (max-width: 1199px) {
     .banner-content p br {
@@ -3427,20 +3460,31 @@ Header CSS 01 Start
     }
 }
 .banner-img {
-    width: 644px;
-    height: 450px;
     border-radius: 30px;
-    margin-top: 120px;
+    margin-top: 60px;
+    margin-bottom: 0px;
 }
-@media (max-width: 1199px) {
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    /* CSS rules for extra large screens */
     .banner-img {
-        width: 483px;
-        height: 350px;
         margin-bottom: 0;
-        margin-left: 5%;
-        margin-right: 5%;
+        width: 80%;
+        height: 350px;
+        display: flex;
     }
 }
+
+@media (min-width: 1400px) {
+    /* CSS rules for extra extra large screens */
+    .banner-img {
+        margin-bottom: 0;
+        width: 100%;
+        /* height: 350px; */
+        display: flex;
+    }
+}
+
 .banner-shape-1 {
     position: absolute;
     left: 75px;
@@ -4755,11 +4799,14 @@ Header CSS 01 Start
     letter-spacing: -1.2px;
 }
 
+.h21_blog-area {
+    background-color: #ffffff;
+    margin: 120px 0;
+}
+
 @media (max-width: 1199px) {
     .h21_blog-area {
         background-color: #ffffff;
-        width: 610px;
-        padding-bottom: 10px;
     }
 }
 
@@ -4949,15 +4996,14 @@ Header CSS 01 Start
 07. choose
 /////////////////////////////////////////////////////////// */
 .choose-area {
-    margin-bottom: 60px;
+    margin: 150px 0;
 }
 @media (max-width: 1199px) {
     .choose-area {
-        padding-top: 5px;
-        padding-left: 20px;
-        padding-right: 5px;
-        margin: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
         width: 100%;
+        margin: 150px 0;
     }
 }
 
@@ -5025,18 +5071,13 @@ Header CSS 01 Start
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
-    /* margin-left: 10px; */
     letter-spacing: -0.6px;
     margin-bottom: 10px;
 }
-@media (max-width: 1199px) {
+
+@media (max-width: 575.98px) {
     .choose-item-content-title {
-        width: 480px;
-        font-size: 25px;
-        padding-top: 0px;
-        padding-left: 15px;
-        margin-right: 5px;
-        margin-bottom: 10px;
+        font-size: 20px;
         letter-spacing: 0.2px;
     }
 }
@@ -5044,29 +5085,30 @@ Header CSS 01 Start
 .choose-item-content-title:hover a {
     color: #000000;
 }
+
+@media (max-width: 1199px) {
+    .choose-item-content {
+        padding: 15px;
+        padding-bottom: 20px;
+    }
+}
+
 .choose-item-content p {
     color: #6a738bba;
     font-size: 14px;
     text-align: left;
     font-weight: 400;
-    /* margin-left: 10px; */
     line-height: 22px;
-    margin-bottom: 32px;
 }
 @media (max-width: 1199px) {
     .choose-item-content p {
-        width: 96%;
         font-size: 15px;
-        text-align: justify;
-        padding-left: 15px;
+        margin-bottom: 32px;
     }
 }
 .choose-item-content-btn {
     color: #1b2a52;
     font-size: 14px;
-    /* margin-left: 10px; */
-    margin-top: 40px;
-    margin-bottom: 50px;
     line-height: 21px;
     font-weight: 600;
     display: flex;
@@ -5076,10 +5118,6 @@ Header CSS 01 Start
 @media (max-width: 1199px) {
     .choose-item-content-btn {
         font-size: 18px;
-        margin-top: 20px;
-        padding-left: 15px;
-        margin-right: 5px;
-        padding-bottom: 20px;
     }
 }
 .choose-item-content-btn i {
@@ -5113,6 +5151,7 @@ Header CSS 01 Start
 @media (max-width: 991px) {
     .feature-top {
         flex-wrap: wrap;
+        justify-content: center;
     }
 }
 .feature-item {
@@ -5127,11 +5166,6 @@ Header CSS 01 Start
     -ms-transition: all 0.3s linear 0s;
     -o-transition: all 0.3s linear 0s;
     transition: all 0.3s linear 0s;
-}
-@media (max-width: 991px) {
-    .feature-item {
-        width: calc(50% - 15px);
-    }
 }
 @media (max-width: 575px) {
     .feature-item {
@@ -5169,11 +5203,8 @@ Header CSS 01 Start
 .feature-item1 {
     color: #4a4d56;
     list-style-position: inside;
-    list-style: disc;
     font-size: 15px;
-    text-align: left;
     font-weight: 400;
-    line-height: 24px;
     margin-left: 15px;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
@@ -6907,10 +6938,18 @@ Header CSS 01 Start
 .h2_blog-item {
     background-color: #ffffff;
 }
+
+@media (max-width: 991.98px) {
+    .h2_blog-item {
+        margin-bottom: 40px;
+    }
+}
+
 @media (max-width: 1199px) {
     .h2_blog-item {
         width: 100%;
         align-content: center;
+        margin-bottom: 40px;
     }
 }
 .h2_blog-img {
@@ -6920,8 +6959,6 @@ Header CSS 01 Start
 @media (max-width: 1199px) {
     .h2_blog-img {
         width: 100%;
-        height: 270px;
-        /* margin-left: 10px; */
     }
 }
 .h2_blog-img:hover img {
@@ -6933,14 +6970,41 @@ Header CSS 01 Start
 .h2_blog-content-meta {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
 }
-@media (max-width: 1199px) {
+
+@media (max-width: 575.98px) {
+    /* CSS rules for extra small screens */
     .h2_blog-content-meta {
-        width: 370px;
-        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
     }
 }
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* CSS rules for medium screens */
+    .h2_blog-content-meta {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 5px 0;
+    }
+}
+
+/* Large (lg): ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS rules for large screens */
+    .h2_blog-content-meta {
+        margin: 10px 0 5px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .h2_blog-content-meta {
+        width: 370px;
+        margin-top: 10px;
+    }
+}
+
 .h2_blog-content-meta span {
     display: block;
     color: #6a738b;
@@ -6972,7 +7036,7 @@ Header CSS 01 Start
     height: 14px;
 }
 .h2_blog-content-title {
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.72px;
@@ -6980,9 +7044,16 @@ Header CSS 01 Start
 }
 @media (max-width: 480px) {
     .h2_blog-content-title {
-        font-size: 22px;
+        font-size: 19px;
     }
 }
+
+@media (max-width: 991.98px) {
+    .h2_blog-content-title {
+        font-size: 20px;
+    }
+}
+
 .h2_blog-content-title a {
     transition: all 0.3s linear 0s;
 }
@@ -9635,19 +9706,23 @@ Header CSS 01 Start
     position: relative;
     z-index: 1;
     border-radius: 30px;
-    margin-left: 5px;
-    margin-right: 5px;
     overflow: hidden;
-    margin-top: 100px;
 }
-@media (max-width: 1199px) {
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .breadcrumb-area {
+        padding: 20px 0;
+    }
+}
+
+/* @media (max-width: 1199px) {
     .breadcrumb-area {
         width: auto;
-        height: 280px;
         margin-left: auto;
         margin-right: auto;
     }
-}
+} */
 .breadcrumb-title {
     color: #1b2a52;
     text-align: right;
@@ -9655,39 +9730,49 @@ Header CSS 01 Start
     font-weight: 1000;
     line-height: 1;
     letter-spacing: -2px;
-    margin-top: 115px;
 }
-@media (max-width: 1199px) {
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
     .breadcrumb-title {
-        font-size: 60px;
-        margin-right: 20px;
+        font-size: 35px;
+        margin-top: 0;
     }
 }
-@media (max-width: 991px) {
-    .breadcrumb-title {
-        font-size: 55px;
-    }
-}
-@media (max-width: 767px) {
-    .breadcrumb-title {
-        font-size: 50px;
-    }
-}
-@media (max-width: 480px) {
+
+@media (max-width: 991.98px) { 
     .breadcrumb-title {
         font-size: 40px;
+        margin-top: 0;
     }
-}
+ }
+
+ @media (max-width: 1199.98px) { 
+    .breadcrumb-title {
+        font-size: 45px;
+        margin-top: 0;
+    }
+ }
+
 .breadcrumb-list {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: end;
 }
-@media (max-width: 1199px) {
+
+@media (max-width: 575.98px) {
     .breadcrumb-list {
-        margin-right: 20px;
+        margin-right: 0;
+        align-items: center;
     }
 }
+
+@media (max-width: 991.98px) {
+    .breadcrumb-list {
+        margin-right: 0;
+        align-items: center;
+    }
+}
+
 .breadcrumb-list a {
     color: rgba(27, 42, 82, 0.7);
     font-size: 17px;
@@ -9726,10 +9811,13 @@ Header CSS 01 Start
     font-weight: 500;
     line-height: 25px;
     display: block;
+    text-align: end;
 }
-@media (max-width: 480px) {
+@media (max-width: 575.98px) {
     .breadcrumb-list span {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 20px;
+        text-align: end;
     }
 }
 
@@ -12085,7 +12173,6 @@ Header CSS 01 Start
 .slider_container {
     position: relative;
     width: 100%;
-    margin-top: 99px; /* Menghapus margin-top agar tidak ada jarak ekstra */
     overflow: hidden; /* Menyembunyikan bagian gambar yang keluar dari kontainer */
 }
 
@@ -12572,11 +12659,6 @@ Header CSS 01 Start
 
 .rekening_service-item {
     background: #fff;
-    padding-left: 15px;
-    padding-right: 15px;
-    /* padding: 40px 0px 40px; */
-    /* border-radius: 30px; */
-    /* box-shadow: 0px 4px 20px 0px rgba(27, 42, 82, 0.08); */
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
     -ms-transition: all 0.3s linear 0s;
@@ -12586,22 +12668,26 @@ Header CSS 01 Start
 @media (max-width: 1399px) {
     .rekening_service-item {
         width: 100%;
-        padding: 40px 30px 40px;
     }
 }
-@media (max-width: 1199px) {
+
+/* Medium (md): ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* CSS rules for medium screens */
     .rekening_service-item {
         width: 100%;
-        padding: 10px 35px 10px;
+        padding: 0;
     }
 }
-/* .rekening_service-item:hover {
-    box-shadow: 0px 30px 110px 0px rgba(27, 42, 82, 0.14);
-  } */
 
-/* .rekening_service-item-icon {
-    margin-bottom: 30px;
-  } */
+/* Extra small (xs): <576px */
+@media (max-width: 575.98px) {
+    .rekening_service-item {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+}
 
 .rekening_service-item1 {
     background: #ffffff;
@@ -12629,13 +12715,6 @@ Header CSS 01 Start
     background-color: transparent;
     height: 310px;
 }
-@media (max-width: 1199px) {
-    .rekening_service-item-icon img {
-        width: 270px;
-        justify-content: center;
-        padding: 10px 35px 10px;
-    }
-}
 .rekening_service-item1-title {
     color: #1b2a52;
     font-size: 18px;
@@ -12654,16 +12733,87 @@ Header CSS 01 Start
     line-height: 20px;
     text-align: center;
 }
-.rekening_service-item-icon img {
-    width: 270px;
-    height: 60px;
-    margin-bottom: 34px;
-}
-@media (max-width: 1199px) {
+
+/* Extra small (xs): <576px */
+@media (max-width: 575.98px) {
+    /* CSS rules for extra small screens */
     .rekening_service-item-icon img {
-        margin-left: 118px;
+        width: 120px;
+        background-color: transparent;
+        margin-bottom: 10px;
     }
 }
+
+/* Large (lg): ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS rules for large screens */
+    .rekening_service-item-icon img {
+        width: 130px;
+        background-color: transparent;
+        margin-bottom: 0;
+    }
+}
+/* Medium (md): ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .rekening_service-item-icon img {
+        margin-bottom: 0;
+        width: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .rekening_service-item-icon img {
+        width: 120px;
+    }
+}
+
+.rekening_service-item-icon {
+    display: flex;
+    justify-content: center;
+}
+
+/* Medium (md): ≥768px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* CSS rules for medium screens */
+    .rekening_service-item-icon {
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        align-items: center;
+    }
+}
+
+/* Large (lg): ≥992px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS rules for large screens */
+    .rekening_service-item-icon {
+        display: flex;
+        justify-content: center;
+        height: 80px;
+        align-items: center;
+    }
+}
+
+/* Extra large (xl): ≥1200px */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    /* CSS rules for extra large screens */
+    .rekening_service-item-icon {
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1400px) {
+    .rekening_service-item-icon {
+        display: flex;
+        justify-content: center;
+        height: 80px;
+        align-items: center;
+    }
+}
+
 .rekening_service-item-title {
     color: #1b2a52;
     font-size: 18px;
@@ -12672,6 +12822,21 @@ Header CSS 01 Start
     letter-spacing: -0.1px;
     text-align: center;
 }
+
+@media (max-width: 575.98px) {
+    /* Tambahkan gaya untuk perangkat kecil di sini */
+    .rekening_service-item-title {
+        margin-bottom: 0;
+    }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .rekening_service-item-title {
+        margin-bottom: 10px;
+    }
+}
+
 .rekening_service-item-title:hover a {
     color: var(--clr-theme-primary);
 }
@@ -12717,86 +12882,12 @@ Header CSS 01 Start
     }
 }
 
-/* Styling untuk konten utama */
-.content1 {
-    flex: 1;
-    padding: 30px;
-    background-color: #fff;
-
-    margin-right: 10px; /* Ruang antara konten utama dan sidebar */
-}
-@media (max-width: 1199px) {
-    .content1 {
-        padding: 0px;
-        width: 100%;
-        flex: none;
-        margin-left: 11px;
-        /* margin-right: 10px; */
-    }
-}
-
-/* Styling untuk sidebar */
-.sidebar1 {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 290px; /* Set the width of the sidebar */
-    position: sticky; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #ffffff; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    margin-top: 58px;
-    padding-top: 115px;
-}
-@media (max-width: 1199px) {
-    .sidebar1 {
-        width: 100%;
-        /* margin-left: 30px; */
-        padding-top: 40px;
-        padding-bottom: 50px;
-    }
-}
-.sidebar1 h6 {
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: -0.72px;
-    margin-bottom: 0;
-}
-
-.sidebar1 span:hover {
-    color: #f59e0b;
-}
-
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
-}
-
-.sidebar1 ul li {
-    width: 350px;
-    margin-top: 10px;
-    margin-left: 15px;
-    background-color: #ffffff;
-}
-
-/* Responsif untuk layar kecil */
-@media screen and (max-width: 768px) {
-    .container1 {
-        flex-direction: column; /* Sidebar dan konten utama bertumpuk */
-    }
-
-    .sidebar1 {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .content1 {
-        margin-right: 0;
-    }
 }
 
 .social-media-icons {
@@ -12912,3 +13003,57 @@ Header CSS 01 Start
             2px 2px 6px rgba(144, 148, 255, 0.5);
     }
 }
+
+/* //////////////////////////////////////////////////// */
+
+.text-clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.content1 {
+    flex: 1; /* Isi sisa ruang yang tersedia */
+    max-width: 75%; /* Atur lebar maksimal (opsional) */
+}
+
+.sidebar1 {
+    flex: 0 0 25%; /* Sidebar mengambil 25% dari lebar */
+    max-width: 25%; /* Pastikan lebar maksimalnya sesuai */
+}
+
+.wrap-item-berita {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+@media (max-width: 991.98px) {
+    /* CSS rules for medium screens */
+    .wrap-item-berita {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+        flex-direction: column;
+    }
+
+    .content1 {
+        flex: 1; /* Isi sisa ruang yang tersedia */
+        max-width: 100%; /* Atur lebar maksimal (opsional) */
+    }
+
+    .sidebar1 {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .desc_title{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+

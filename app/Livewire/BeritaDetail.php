@@ -24,7 +24,7 @@ class BeritaDetail extends Component
     public function render()
     {
         return view('livewire.pages.berita-detail')->layout('layout.layout', [
-            'title' => 'Detail Berita',
+            'title' => $this->berita->judul,
             'subTitle' => 'Home'
         ]);
     }

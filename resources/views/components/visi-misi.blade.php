@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-        <div class="feature-top mb-50 tp_fade_bottom">
+        <div class="feature-top tp_fade_bottom">
             @if ($staticData['tentang_yayasan'])
                 <div class="feature-item">
                     <h5 class="feature-item-title">Visi</h5>
