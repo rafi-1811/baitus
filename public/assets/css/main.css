@@ -3334,6 +3334,13 @@ Header CSS 01 Start
     width: auto;
     flex-shrink: 1;
 }
+
+@media(min-width: 1400px){
+    .banner-content{
+        flex: 100%;
+    }
+}
+
 @media (max-width: 1399px) {
     .banner-content {
         width: 100%;

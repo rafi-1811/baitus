@@ -1362,7 +1362,6 @@
                                     class="col-xl-9 d-flex align-items-center tp_has_text_reveal_anim section-title">
                                     Yayasan Baitus Saadah Amanah
                                 </div>
-
                             </div>
 
                             <p class="h5_footer-widget-text">Kami berharap masyarakat dapat terus berkontribusi untuk

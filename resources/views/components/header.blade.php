@@ -8,13 +8,11 @@
                                 alt="Logo"></a>
                     </div>
                 </div>
-                <div class="col-xl-7 col-lg-7 text-center d-none d-lg-block">
+                <div class="col-xl-7 col-lg-7 d-none d-lg-block">
                     <div class="header-menu">
                         <nav class="header-nav-menu" id="mobile-menu">
                             <ul class="d-flex justify-content-center">
                                 <x-nav-link href="{{ route('home') }}">Beranda</x-nav-link>
-                                <x-nav-link href="{{ route('tentang-kami') }}">Tentang
-                                    Kami</x-nav-link>
                                 </li>
                                 <li class="menu-has-child">
                                     <a href="#">Program Kami</a>
@@ -25,6 +23,8 @@
                                         @endforeach
                                     </ul>
                                 </li>
+                                <x-nav-link href="{{ route('tentang-kami') }}">Tentang
+                                    Kami</x-nav-link>
                                 <x-nav-link href="{{ route('berita') }}">Berita</x-nav-link>
                                 <x-nav-link href="{{ route('kontak') }}">Kontak</x-nav-link>
                             </ul>

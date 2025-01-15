@@ -19,7 +19,6 @@
                             </div>
                             <div class="blog_details-meta-action">
                                 <ul>
-                                    <li><a href="#"><i class="fa-light fa-comment"></i>5</a></li>
                                     <li><a href="#"><i class="fa-light fa-heart"></i>20</a></li>
                                     <li><a href="#"><i class="fa-light fa-share-nodes"></i>12</a></li>
                                 </ul>
@@ -65,38 +64,38 @@
                     </div>
                 </div>
 
-                {{-- cari berita  --}}
-                <div class="col-lg-4">
-                    <div class="blog_details-right mb-40">
-                        <div class="blog_details-widget mb-30 tp_fade_left">
-                            <h5 class="blog_details-widget-title mb-30">Cari Berita</h5>
-                            <form action="#" class="blog_details-widget-search">
-                                <input type="text" placeholder="Cari disini...">
-                                <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
-                            </form>
-                        </div>
-                        <div class="blog_details-widget mb-30 tp_fade_left">
-                            <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
-                            <ul>
-                                @foreach ($staticData['program'] as $item)
-                                    <li><a wire:navigate
-                                            href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}
-                                            <span>({{ $item->berita->count() }})</span></a>
-                                    </li>
-                                @endforeach
+            </div>
+             {{-- cari berita  --}}
+             <div class="col-lg-4">
+                <div class="blog_details-right mb-40">
+                    <div class="blog_details-widget mb-30 tp_fade_left">
+                        <h5 class="blog_details-widget-title mb-30">Cari Berita</h5>
+                        <form action="#" class="blog_details-widget-search">
+                            <input type="text" placeholder="Cari disini...">
+                            <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
+                        </form>
+                    </div>
+                    <div class="blog_details-widget mb-30 tp_fade_left">
+                        <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
+                        <ul>
+                            @foreach ($staticData['program'] as $item)
+                                <li><a wire:navigate
+                                        href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}
+                                        <span>({{ $item->berita->count() }})</span></a>
+                                </li>
+                            @endforeach
 
-                            </ul>
-                        </div>
-                        <div class="blog_details-widget mb-30 tp_fade_left">
-                            <h5 class="blog_details-widget-title mb-25">Berita Terbaru</h5>
-                            <ul>
-                                @foreach ($staticData['berita'] as $item)
-                                    <li><a wire:navigate
-                                            href="{{ route('detail-berita', $item->slug) }}">{{ $item->judul }}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+                        </ul>
+                    </div>
+                    <div class="blog_details-widget mb-30 tp_fade_left">
+                        <h5 class="blog_details-widget-title mb-25">Berita Terbaru</h5>
+                        <ul>
+                            @foreach ($staticData['berita'] as $item)
+                                <li><a wire:navigate
+                                        href="{{ route('detail-berita', $item->slug) }}">{{ $item->judul }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>

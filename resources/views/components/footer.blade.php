@@ -20,31 +20,38 @@
                                 dan berdonasi di Yayasan Baitus Saadah Amanah.
                                 Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
                         </div>
+                        <div class="h5_footer-widget-social">
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">
                     <div class="footer-right mb-10">
                         <div class="footer-widget-wrap">
-                            <div class="footer-widget mb-40">
-                                <h5>Sosial Media</h5>
+                            <div class="footer-widget">
+                                <h5 class="footer-widget-title">Sosial Media</h5>
                                 <ul>
-                                    @foreach ($staticData['sosial_media'] as $item)
-                                        <li>
-                                            <a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a>
-                                        </li>
-                                    @endforeach
+                                    @forelse ($staticData['sosial_media'] as $item)
+                                        <li><a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a></li>
+                                    @empty
+                                        <li class="text-danger">Belum ada sosial media</li>
+                                    @endforelse
                                 </ul>
                             </div>
-                            <div class="footer-widget mb-40">
-                                <h5>Menu</h5>
+                            <div class="footer-widget">
+                                <h5 class="footer-widget-title">Menu</h5>
                                 <ul>
                                     <li><a href="blog">Berita</a></li>
                                     <li><a href="#">Tentang Kami</a></li>
                                     <li><a href="caontact">Kontak</a></li>
                                 </ul>
                             </div>
-                            <div class="footer-widget mb-40">
-                                <h5>Kontak</h5>
+                            <div class="footer-widget">
+                                <h5 class="footer-widget-title">Kontak</h5>
                                 <ul>
                                     <li><a href="tel:+62812-1007-9178">0812 1007 9178</a></li>
                                 </ul>

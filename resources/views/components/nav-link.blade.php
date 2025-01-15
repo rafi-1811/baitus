@@ -1,3 +1,3 @@
 <li>
-    <a wire:navigate wire:current.exact="active" {{ $attributes->merge() }}>{{ $slot }}</a>
+    <a wire:navigate wire:current.exact="" {{ $attributes->merge() }}>{{ $slot }}</a>
 </li>
