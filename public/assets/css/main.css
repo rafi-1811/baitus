@@ -7365,7 +7365,8 @@ Header CSS 01 Start
 }
 @media (max-width: 480px) {
     .blog_details-content {
-        padding: 30px 0;
+        padding: 20px 0;
+        border: none;
     }
 }
 .blog_details-content-title {
@@ -13182,4 +13183,10 @@ Header CSS 01 Start
     .footer-right {
         flex: 50%;
     }
+}
+
+.docs-berita a {
+    font-size: 14px;
+    color: blue;
+    text-decoration: underline;
 }

@@ -60,13 +60,17 @@
                             <div class="blog_details-content-share">
                                 <a href="#"><i class="fa-light fa-share-nodes"></i>12 Share</a>
                             </div>
+                            <div class="docs-berita">
+                                <a href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat Dokumentasinya
+                                    disini</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-             {{-- cari berita  --}}
-             <div class="col-lg-4">
+            {{-- cari berita  --}}
+            <div class="col-lg-4">
                 <div class="blog_details-right mb-40">
                     <div class="blog_details-widget mb-30 tp_fade_left">
                         <h5 class="blog_details-widget-title mb-30">Cari Berita</h5>
