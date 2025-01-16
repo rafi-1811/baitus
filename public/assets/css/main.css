@@ -11533,11 +11533,16 @@ Header CSS 01 Start
 
 @media (min-width: 767px) {
     .footer-widget-wrap {
-        display: flex;
-        flex-direction: row;
-        align-items: start;
-        text-align: start;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
         justify-content: space-between;
+    }
+}
+
+@media (min-width: 991px) {
+    .footer-widget-wrap {
+        text-align: start;
     }
 }
 
@@ -11552,12 +11557,13 @@ Header CSS 01 Start
 }
 .footer-widget ul li {
     margin-bottom: 15px;
+    color: azure;
 }
 .footer-widget ul li:last-child {
     margin-bottom: 0;
 }
 .footer-widget ul li a {
-    color: rgba(255, 255, 255, 0.7);
+    color: azure;
     font-size: 15px;
     font-weight: 500;
     line-height: 20px;
@@ -12100,7 +12106,7 @@ Header CSS 01 Start
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #7f879e;
+    color: var(--clr-theme-primary);
     font-size: 14px;
 }
 .h5_footer-widget-social a:hover {
@@ -12276,8 +12282,7 @@ Header CSS 01 Start
     background-color: rgba(0, 0, 0, 0.5); /* Warna kontrol carousel */
 }
 
-
-@media (min-width: 1400px) { 
+@media (min-width: 1400px) {
     .carousel-inner {
         height: 30%; /* Menyesuaikan tinggi lebih kecil untuk layar kecil */
         width: 100%;
@@ -12288,7 +12293,7 @@ Header CSS 01 Start
         height: 30%;
         width: 100%;
     }
- }
+}
 
 @media (max-width: 992px) {
     .carousel-inner {
@@ -12307,7 +12312,7 @@ Header CSS 01 Start
 @media (max-width: 768px) {
     .carousel-inner {
         height: 100%; /* Menyesuaikan tinggi lebih kecil untuk layar kecil */
-        
+
         width: 100%;
     }
 
