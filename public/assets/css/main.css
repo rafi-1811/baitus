@@ -2261,13 +2261,11 @@ Header CSS 01 Start
     }
 }
 .header-logo {
-    margin-left: 65px;
     width: 100px;
     height: 100px;
 }
 @media (max-width: 720px) {
     .header-logo {
-        margin-left: 10px;
         width: 70px;
         height: 70px;
     }
@@ -3336,8 +3334,8 @@ Header CSS 01 Start
     flex-shrink: 1;
 }
 
-@media(min-width: 1400px){
-    .banner-content{
+@media (min-width: 1400px) {
+    .banner-content {
         flex: 100%;
     }
 }
@@ -5149,19 +5147,24 @@ Header CSS 01 Start
 
 .feature-top {
     display: flex;
-    gap: 105px;
+    gap: 40px;
 }
-@media (max-width: 1199px) {
-    .feature-top {
-        gap: 30px;
-    }
-}
+
 @media (max-width: 991px) {
     .feature-top {
-        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
     }
 }
+
+@media (min-width: 1200px) {
+    .feature-top {
+        flex-direction: row;
+        justify-content: center;
+        padding: 40px 100px;
+    }
+}
+
 .feature-item {
     /* border-radius: 10px; */
     /* border: 1px solid rgba(27, 42, 82, 0.07); */
@@ -5220,6 +5223,12 @@ Header CSS 01 Start
     -o-transition: all 0.3s linear 0s;
     transition: all 0.3s linear 0s;
 }
+
+.feature-item1 ul {
+    list-style: disc;
+    margin-left: 25px;
+}
+
 .feature-item-1::after {
     position: absolute;
     right: -84px;
@@ -7356,7 +7365,7 @@ Header CSS 01 Start
 }
 @media (max-width: 480px) {
     .blog_details-content {
-        padding: 30px 20px 0;
+        padding: 30px 0;
     }
 }
 .blog_details-content-title {
@@ -9742,19 +9751,19 @@ Header CSS 01 Start
 }
 
 @media (max-width: 767px) {
-    .breadcrumb-title{
+    .breadcrumb-title {
         font-size: 35px;
     }
 }
 
 @media (max-width: 991px) {
-    .breadcrumb-title{
+    .breadcrumb-title {
         font-size: 40px;
     }
 }
 
 @media (max-width: 1199px) {
-    .breadcrumb-title{
+    .breadcrumb-title {
         font-size: 45px;
     }
 }
@@ -11324,27 +11333,22 @@ Header CSS 01 Start
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
- /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { 
+
+@media (min-width: 991px) {
     .footer1 {
         display: flex;
         align-items: center;
         flex-direction: row;
-        gap: 10px;
+        margin-bottom: 20px;
+        justify-content: start;
     }
- }
+}
 
-@media (min-width: 1200px) { 
-    .footer1 {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 10px;
-    }
- }
-
-.footer-top{
+.footer-top {
     padding: 50px 0;
 }
 
@@ -11359,10 +11363,10 @@ Header CSS 01 Start
     letter-spacing: 1px;
     font-weight: 600;
     line-height: 35px;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     color: sandybrown;
 }
-@media (min-width: 1200px) {
+@media (max-width: 991.98px) {
     .footer-nama {
         margin: 0;
     }
@@ -11370,9 +11374,21 @@ Header CSS 01 Start
 .footer-newsletter p {
     color: azure;
     font-size: 15px;
-    text-align: start;
+    text-align: center;
     font-weight: 200;
     margin: 0;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* CSS untuk perangkat besar */
+    .footer-newsletter p {
+        color: azure;
+        font-size: 15px;
+        text-align: start;
+        font-weight: 200;
+        margin: 0;
+    }
 }
 
 .footer-newsletter form {
@@ -11500,45 +11516,28 @@ Header CSS 01 Start
     letter-spacing: -1.2px;
     margin-bottom: 60px;
 }
+
 .footer-widget-wrap {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    text-align: center;
 }
 
-/* medium devices (landscape phones, less than 768px) */
-@media (max-width: 991.98px) { 
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
     .footer-widget-wrap {
-        flex-direction: row;
-        align-items: start;
-        text-align: start;
-        gap: 0;
-        justify-content: space-around;
-    }
- }
-
-/* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { 
-    .footer-widget-wrap {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: start;
-        text-align: start;
-    }
-
-}
-
-@media (min-width: 1200px){
-    .footer-widget-wrap {
-        display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         gap: 40px;
-        justify-content: space-between;
+    }
+}
+
+@media (min-width: 767px) {
+    .footer-widget-wrap {
+        display: flex;
+        flex-direction: row;
         align-items: start;
         text-align: start;
+        justify-content: space-between;
     }
 }
 
@@ -12076,6 +12075,14 @@ Header CSS 01 Start
     justify-content: center;
     gap: 10px;
     padding: 20px 0;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS untuk perangkat besar */
+    .h5_footer-widget-social {
+        justify-content: start;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -12839,13 +12846,13 @@ Header CSS 01 Start
 }
 
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
+@media (max-width: 767.98px) {
     .rekening_service-item-icon img {
         width: 120px;
         background-color: transparent;
         margin: 0;
     }
- }
+}
 
 /* Large (lg): ≥992px */
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -13154,9 +13161,20 @@ Header CSS 01 Start
 }
 
 @media (max-width: 575.98px) {
-    .desc_title{
+    .desc_title {
         font-size: 14px;
         line-height: 22px;
     }
 }
 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* CSS untuk perangkat besar */
+    .footer-left {
+        flex: 50%;
+    }
+
+    .footer-right {
+        flex: 50%;
+    }
+}

@@ -4,32 +4,30 @@
     <div class="container">
         <div class="footer-top">
             <div class="row justify-content-between">
-                <div class="col-xl-5 col-lg-4 tp_has_fade_anim" data-fade-from="left">
-                    <div class="footer-left">
-                        <div class="footer1">
-                            <div class="footer-logo">
-                                <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
-                                        alt="Image Not Found"></a>
-                            </div>
-                            <h1 class="footer-nama">Yayasan Baitus Saadah Amanah</h1>
+                <div class="footer-left col-xl-5 col-lg-4 tp_has_fade_anim" data-fade-from="left">
+                    <div class="footer1">
+                        <div class="footer-logo">
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
+                                    alt="Image Not Found"></a>
                         </div>
-                        <div class="footer-newsletter">
-                            <p> Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan
-                                yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta
-                                membantu
-                                dan berdonasi di Yayasan Baitus Saadah Amanah.
-                                Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
-                        </div>
-                        <div class="h5_footer-widget-social">
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </div>
+                        <h1 class="footer-nama">Yayasan Baitus Saadah Amanah</h1>
+                    </div>
+                    <div class="footer-newsletter">
+                        <p> Kami berharap masyarakat dapat terus berkontribusi untuk membantu kami dalam memberikan
+                            yang terbaik kepada yang membutuhkan, mulai dari Rp10.000 anda sudah dapat ikut serta
+                            membantu
+                            dan berdonasi di Yayasan Baitus Saadah Amanah.
+                            Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
+                    </div>
+                    <div class="h5_footer-widget-social">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">
+                <div class="footer-right col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">
                     <div class="footer-widget-wrap">
                         <div class="footer-widget">
                             <h5 class="footer-widget-title">Sosial Media</h5>

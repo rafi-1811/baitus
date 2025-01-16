@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-1 tp_fade_left" data-fade-from="left">
+            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-phone"></i>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-1 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
+            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-house"></i>
