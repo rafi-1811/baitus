@@ -12270,18 +12270,18 @@ Header CSS 01 Start
 }
 
 
-@media (min-width: 1400px) { 
+/* @media (min-width: 1400px) { 
     .carousel-inner {
-        height: 30%; /* Menyesuaikan tinggi lebih kecil untuk layar kecil */
+        height: 50%; 
         width: 100%;
     }
 
     .carousel-item img {
-        object-fit: cover; /* Tetap menjaga gambar agar memenuhi kontainer */
-        height: 30%;
+        object-fit: cover;
+        height: 50%;
         width: 100%;
     }
- }
+ } */
 
 @media (max-width: 992px) {
     .carousel-inner {
