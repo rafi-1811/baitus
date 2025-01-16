@@ -46,7 +46,7 @@
                         <div class="row align-items-center mb-20">
                             <div class="col-xl-6 tp_fade_right">
                                 <div class="inner-img w_img mb-35 mb-xl-0 tp_fade_right">
-                                    <img src="{{ asset('storage/' . $berita->gambar_content) ?? $berita->gambar_content }}"
+                                    <img src="{{ asset('storage/' . $berita->gambar_dokumentasi[0]) ?? $berita->gambar_dokumentasi[0] }}"
                                         alt="">
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                 <a href="#"><i class="fa-light fa-share-nodes"></i>12 Share</a>
                             </div>
                             <div class="docs-berita">
-                                <a href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat Dokumentasinya
+                                <a href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat dokumentasinya
                                     disini</a>
                             </div>
                         </div>
