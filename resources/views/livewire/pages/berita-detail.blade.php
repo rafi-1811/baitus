@@ -72,13 +72,7 @@
             {{-- cari berita  --}}
             <div class="col-lg-4">
                 <div class="blog_details-right mb-40">
-                    <div class="blog_details-widget mb-30 tp_fade_left">
-                        <h5 class="blog_details-widget-title mb-30">Cari Berita</h5>
-                        <form action="#" class="blog_details-widget-search">
-                            <input type="text" placeholder="Cari disini...">
-                            <button type="submit"><i class="fa-light fa-magnifying-glass"></i></button>
-                        </form>
-                    </div>
+                    @livewire('search-berita')
                     <div class="blog_details-widget mb-30 tp_fade_left">
                         <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
                         <ul>

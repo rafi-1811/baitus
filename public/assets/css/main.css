@@ -7720,6 +7720,11 @@ Header CSS 01 Start
     align-items: center;
     justify-content: center;
 }
+
+.blog_details-widget-search button:hover {
+    background-color: #b5781d;
+}
+
 .blog_details-widget ul {
     list-style: none;
 }

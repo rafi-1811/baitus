@@ -88,4 +88,11 @@ class Berita extends Model
             $berita->slug = Str::slug($berita->judul, '-');
         });
     }
+
+    // fungsi untuk mencari berita
+    public static function search($keyword)
+    {
+        return static::query()
+            ->where('judul', 'like', "%{$keyword}%");
+    }
 }
