@@ -11,22 +11,28 @@ class SearchBerita extends Component
 
     public $berita = [];
 
-    public $error = false;
+    public $isOpen = false;
 
     public function cari()
     {
         $data = Berita::search($this->search)->get();
 
-        if($data->isEmpty()) {
-            $this->error = true;
+        if ($data->isEmpty()) {
+            $this->reset(['search']);
         }
 
+        $this->isOpen = true;
         $this->berita = $data;
+    }
+
+    function closeModal()
+    {
+        $this->isOpen = false;
     }
 
     public function render()
     {
-        return view('livewire.search-berita',[
+        return view('livewire.search-berita', [
             'berita' => $this->berita
         ]);
     }

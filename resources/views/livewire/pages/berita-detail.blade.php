@@ -71,7 +71,7 @@
             </div>
             {{-- cari berita  --}}
             <div class="col-lg-4">
-                <div class="blog_details-right mb-40">
+                <div class="blog_details-right position-relative mb-40">
                     @livewire('search-berita')
                     <div class="blog_details-widget mb-30 tp_fade_left">
                         <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>

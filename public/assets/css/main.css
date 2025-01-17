@@ -2185,9 +2185,9 @@ Header CSS 01 Start
     );
     transition: 0.5s;
 }
-.header-area:hover::before {
+/* .header-area:hover::before {
     left: 100%;
-}
+} */
 .header-area1 {
     position: fixed;
     background-color: #ffffff;
@@ -13391,6 +13391,7 @@ Header CSS 01 Start
     background-color: rgba(236, 156, 37, 0.6);
 }
 
+/* alphine js */
 [x-cloak] {
     display: none !important;
 }

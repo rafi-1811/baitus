@@ -42,9 +42,10 @@ class DataYatimResource extends Resource
                     ->uploadingMessage('Gambar Sedang Diunggah...')
                     ->visibility('private')
                     ->label('Gambar'),
-                
+
                 TextInput::make('jumlah_data')
                     ->required()
+                    ->numeric()
                     ->extraAttributes(['style' => 'width: 50%;'])
                     ->label('Jumlah Data'),
 
@@ -58,10 +59,6 @@ class DataYatimResource extends Resource
                         'Total Kegiatan' => 'Total Kegiatan',
                         'Total Daerah Cakupan' => 'Total Daerah Cakupan',
                     ])
-                    ->unique()
-                        ->validationMessages([
-                            'unique' => ':attribute Sudah didaftarkan',
-                        ]),
 
             ])->columns(1);
     }

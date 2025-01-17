@@ -45,7 +45,6 @@
 
         {{-- Sidebar Kategori Program --}}
         <div class="sidebar1">
-            @livewire('search-berita')
             <div class="blog_details-widget mb-30 tp_fade_left">
                 <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
                 <ul>
