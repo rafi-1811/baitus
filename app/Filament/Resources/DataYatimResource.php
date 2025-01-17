@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DataYatimResource\Pages;
@@ -38,6 +39,7 @@ class DataYatimResource extends Resource
                     ->directory('gambar-data-yatim')
                     ->image()
                     ->maxSize(300)
+                    ->uploadingMessage('Gambar Sedang Diunggah...')
                     ->visibility('private')
                     ->label('Gambar'),
                 
@@ -55,7 +57,11 @@ class DataYatimResource extends Resource
                         'Total Yatim Luar Binaan' => 'Total Yatim Luar Binaan',
                         'Total Kegiatan' => 'Total Kegiatan',
                         'Total Daerah Cakupan' => 'Total Daerah Cakupan',
-                    ]),
+                    ])
+                    ->unique()
+                        ->validationMessages([
+                            'unique' => ':attribute Sudah didaftarkan',
+                        ]),
 
             ])->columns(1);
     }
@@ -64,7 +70,7 @@ class DataYatimResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('gambar')
+                ImageColumn::make('gambar')
                     ->label('Gambar'),
 
                 TextColumn::make('jumlah_data')
