@@ -31,16 +31,15 @@ class Berita extends Model
         'meta_keywords',
         'cover_gambar_berita',
         'gambar_dokumentasi',
-        'gambar_content',
         'quotes',
         'id_youtube',
         'status'
     ];
 
     // Multiply Uploads Gambar Dokumentasi Berita
-    // protected $casts = [
-    //     'gambar_dokumentasi' => 'array',
-    // ];
+    protected $casts = [
+        'gambar_dokumentasi' => 'array',
+    ];
 
     // Menentukan kolom yang tidak bisa diisi secara massal
     protected $guarded = [];

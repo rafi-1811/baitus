@@ -72,15 +72,21 @@ class BeritaResource extends Resource
                     ->uploadingMessage('Gambar Sedang Diunggah...')
                     ->required(),
 
-                FileUpload::make('gambar_content')
-                    ->label('Gambar Content (opsional)')
+                FileUpload::make('gambar_dokumentasi')
+                    ->multiple()
+                    ->label('Gambar Dokumentasi')
                     ->disk('public')
-                    ->directory('gambar-content-berita')
+                    ->directory('gambar-dokumentasi')
                     ->visibility('private')
                     ->image()
                     ->maxSize(200)
+                    ->minFiles(2)
                     ->uploadingMessage('Gambar Sedang Diunggah...')
-                    ->panelLayout('grid'),
+                    ->panelLayout('grid')
+                    ->required(),
+
+                TextInput::make('id_youtube')
+                    ->label('ID Youtube'),
 
                 Select::make('status')
                     ->options([
@@ -104,15 +110,8 @@ class BeritaResource extends Resource
                 ImageColumn::make('cover_gambar_berita')
                     ->label('Gambar'),
 
-                ImageColumn::make('gambar_content')
-                    ->label('Gambar Content'),
-
                 TextColumn::make('judul')
                     ->label('Judul Berita')
-                    ->limit(20),
-
-                TextColumn::make('quotes')
-                    ->label('Quotes')
                     ->limit(20),
 
                 TextColumn::make('kategori')
