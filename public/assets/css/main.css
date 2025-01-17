@@ -13307,6 +13307,7 @@ Header CSS 01 Start
 }
 
 .modal-content {
+    object-fit: contain;
     max-width: 50%;
     max-height: 80%;
     border-radius: 8px;
