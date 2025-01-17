@@ -13202,7 +13202,7 @@ Header CSS 01 Start
     display: grid;
     grid-template-columns: repeat(auto-fit, 250px);
     gap: 1.5rem;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .image-wrap {
@@ -13216,25 +13216,25 @@ Header CSS 01 Start
     position: relative;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     .image-wrap {
         width: 150px;
         height: 150px;
     }
 
     .wrap-content {
-        grid-template-columns: repeat(auto-fit, 150px);
+        grid-template-columns: repeat(2, 150px);
     }
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 766px) and (max-width: 991.98px) {
     .image-wrap {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     .wrap-content {
-        grid-template-columns: repeat(3, 200px);
+        grid-template-columns: repeat(3, 250px);
     }
 }
 
@@ -13246,7 +13246,7 @@ Header CSS 01 Start
 .image-content {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -13254,15 +13254,14 @@ Header CSS 01 Start
     transform: scale(1.1);
 }
 
-
 .image-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(236, 156, 37, 0.7); 
-    opacity: 0; 
+    background: rgba(236, 156, 37, 0.7);
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13270,7 +13269,7 @@ Header CSS 01 Start
 }
 
 .image-wrap:hover .image-overlay {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .overlay-text {
@@ -13278,7 +13277,7 @@ Header CSS 01 Start
     font-size: 15px;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* css modal tampil gambar dokumentasi */
@@ -13315,6 +13314,12 @@ Header CSS 01 Start
     animation: scaleIn 0.3s ease;
 }
 
+@media (max-width: 576px) {
+    .modal-content {
+        max-width: 70%;
+    }
+}
+
 @keyframes scaleIn {
     from {
         transform: scale(0.8);
@@ -13336,6 +13341,11 @@ Header CSS 01 Start
     cursor: pointer;
 }
 
+.close-modal:hover {
+    background-color: rgba(247, 69, 93, 0.6);
+    border-radius: 100%;
+}
+
 /* Tombol prev dan next */
 .prev-btn,
 .next-btn {
@@ -13354,6 +13364,33 @@ Header CSS 01 Start
     left: 10px;
 }
 
+.prev-icon,
+.next-icon,
+.close-icon {
+    fill: white;
+    width: 30px;
+}
+
 .next-btn {
     right: 10px;
-} 
+}
+
+.prev-btn,
+.next-btn,
+.close-modal {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(236, 156, 37, 0.6);
+}
+
+[x-cloak] {
+    display: none !important;
+}
