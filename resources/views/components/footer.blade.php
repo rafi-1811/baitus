@@ -67,14 +67,14 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="footer-bottom-copyright d-flex justify-content-center justify-content-md-start">
-                        <p>&copy; 2024 Baitus Saadah Amanah. All rights reserved.</p>
+                        <p>&copy; 2024 Baitus Saadah Amanah. Semua hak cipta dilindungi.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="footer-bottom-menu d-flex justify-content-center justify-content-md-end">
                         <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Term of Service</a></li>
+                            <li><a href="#">Kebijakan Privasi</a></li>
+                            <li><a href="#">Kewajiban Pengguna</a></li>
                         </ul>
                     </div>
                 </div>

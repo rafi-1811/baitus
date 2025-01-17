@@ -11374,7 +11374,7 @@ Header CSS 01 Start
     color: azure;
     font-size: 15px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -11385,7 +11385,7 @@ Header CSS 01 Start
         color: azure;
         font-size: 15px;
         text-align: start;
-        font-weight: 200;
+        font-weight: 500;
         margin: 0;
     }
 }
