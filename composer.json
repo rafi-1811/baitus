@@ -9,7 +9,7 @@
         "filament/filament": "3.2.57",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5",
+        "livewire/livewire": "3.5.12",
         "nunomaduro/termwind": "^2.1",
         "symfony/asset": "^7.0"
     },
