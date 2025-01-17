@@ -8,20 +8,6 @@ use Livewire\Component;
 class GaleriBerita extends Component
 {
     public $docs;
-    // public $isOpen = false;
-    // public $currentIndex = 0;
-
-    // public function openModal($index)
-    // {
-    //     // dd($index);
-    //     $this->currentIndex = $index;
-    //     $this->isOpen = true;
-    // }
-
-    // public function closeModal()
-    // {
-    //     $this->isOpen = false;
-    // }
 
     public function mount($slug)
     {
