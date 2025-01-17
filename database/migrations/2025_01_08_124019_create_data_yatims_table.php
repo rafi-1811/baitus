@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('data_yatim', function (Blueprint $table) {
             $table->id();
-            $table->string('total_yatim_binaan');
-            $table->string('total_yatim_luar_binaan');
-            $table->string('total_kegiatan');
-            $table->string('total_daerah_cakupan');
+            $table->string('gambar');
+            $table->integer('jumlah_data');
+            $table->string('kategori_data');
             $table->timestamps();
         });
     }

@@ -5341,46 +5341,44 @@ Header CSS 01 Start
 
 .h4_feature-item {
     border-radius: 14px;
-    margin-bottom: 1px;
-    margin-top: 1px;
     background: #ffffff;
-    /* padding: 10px 5px 5px; */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 991.98px) {
+    .h4_feature-item {
+        gap: 10px;
+    }
 }
 
 .h4_feature-item-img {
+    display: flex;
+    align-items: center;
     height: 150px;
     width: 180px;
-    margin-left: 35px;
-    justify-content: center;
-}
-@media (max-width: 1199px) {
-    .h4_feature-item-img {
-        width: 300px;
-        height: 210px;
-        margin-bottom: 20px;
-        margin-left: 25px;
-    }
 }
 
 .h4_feature-item-content-title {
     color: #000000;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 700;
-    margin-top: 15px;
+    margin: 0;
     letter-spacing: -0.72px;
 }
-@media (max-width: 1199px) {
-    .h4_feature-item-content-title {
-        padding-bottom: 40px;
-        font-size: 20px;
-        letter-spacing: 0.3px;
-        margin-left: 13px;
-    }
-}
+
 .h4_feature-item-content-title:hover a {
     color: #f59e0b;
 }
+
+@media (max-width: 1199.98px) {
+    .h4_feature-item-content-title {
+        font-size: 19px;
+    }
+}
+
 .h4_feature-item-content p {
     color: #7f879e;
     text-align: center;
@@ -12492,13 +12490,9 @@ Header CSS 01 Start
     display: inline-block;
     transition: opacity 0.5s;
 }
-/* .counter.visible {
-    opacity: 1;
-} */
-@media (max-width: 1199px) {
-    .counter {
-        margin-left: 10px;
-    }
+
+.counter h2 {
+    margin: 0;
 }
 
 /* Animation 1: Fade In */

@@ -12,9 +12,8 @@ class DataYatim extends Model
     protected $table = 'data_yatim';
 
     protected $fillable = [
-        'total_yatim_binaan',
-        'total_yatim_luar_binaan',
-        'total_kegiatan',
-        'total_daerah_cakupan'
+        'gambar',
+        'jumlah_data',
+        'kategori_data',
     ];
 }

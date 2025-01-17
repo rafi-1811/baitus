@@ -8,8 +8,10 @@ use Filament\Forms\Form;
 use App\Models\DataYatim;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\DataYatimResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -29,43 +31,47 @@ class DataYatimResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('total_yatim_binaan')
+                FileUpload::make('gambar')
                     ->required()
-                    ->numeric()
-                    ->label('Total Yatim Binaan'),
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->disk('public')
+                    ->directory('gambar-data-yatim')
+                    ->image()
+                    ->maxSize(300)
+                    ->visibility('private')
+                    ->label('Gambar'),
+                
+                TextInput::make('jumlah_data')
+                    ->required()
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->label('Jumlah Data'),
 
-                TextInput::make('total_yatim_luar_binaan')
+                Select::make('kategori_data')
                     ->required()
-                    ->numeric()
-                    ->label('Total Yatim Luar Binaan'),
+                    ->extraAttributes(['style' => 'width: 50%;'])
+                    ->label('Kategori Data')
+                    ->options([
+                        'Total Yatim Binaan' => 'Total Yatim Binaan',
+                        'Total Yatim Luar Binaan' => 'Total Yatim Luar Binaan',
+                        'Total Kegiatan' => 'Total Kegiatan',
+                        'Total Daerah Cakupan' => 'Total Daerah Cakupan',
+                    ]),
 
-                TextInput::make('total_kegiatan')
-                    ->required()
-                    ->numeric()
-                    ->label('Total Kegiatan'),
-
-                TextInput::make('total_daerah_cakupan')
-                    ->required()
-                    ->numeric()
-                    ->label('Total Daerah Cakupan')
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('total_yatim_binaan')
-                    ->label('Total Yatim Binaan'),
+                TextColumn::make('gambar')
+                    ->label('Gambar'),
 
-                TextColumn::make('total_yatim_luar_binaan')
-                    ->label('Total Yatim Luar Binaan'),
+                TextColumn::make('jumlah_data')
+                    ->label('Total Data'),
 
-                TextColumn::make('total_kegiatan')
-                    ->label('Total Kegiatan'),
-
-                TextColumn::make('total_daerah_cakupan')
-                    ->label('Total Daerah Cakupan')
+                TextColumn::make('kategori_data')
+                    ->label('Kategori'),
             ])
             ->filters([
                 //

@@ -1,16 +1,16 @@
 <div class="row">
     @forelse ($dataYatim as $index => $item)
         <div wire:key="counter-section-{{ $index }}" id="counter-section-{{ $index }}"
-            class="col-xl-3 col-lg-6 col-md-6 tp_has_fade_anim counter-section" data-fade-from="left">
+            class="col-xl-3 col-lg-3 col-md-6 tp_has_fade_anim counter-section" data-fade-from="left">
             <div class="h4_feature-item mb-30">
                 <div class="h4_feature-item-img">
-                    <img src="{{ asset($item['img']) }}" alt="">
+                    <img src="{{ asset('storage/' . $item['gambar']) }}" alt="{{ $item['kategori_data'] }}">
                 </div>
-                <div class="counter" data-target="{{ $item['number'] }}">
+                <div class="counter" data-target="{{ $item['jumlah_data'] }}">
                     <h2>0</h2>
                 </div>
                 <div class="h4_feature-item-content">
-                    <h4 class="h4_feature-item-content-title">{{ $item['text'] }}</a></h4>
+                    <h4 class="h4_feature-item-content-title">{{ $item['kategori_data'] }}</a></h4>
                 </div>
             </div>
         </div>
