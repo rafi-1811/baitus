@@ -4,12 +4,14 @@ namespace App\Livewire;
 
 use App\Models\Berita;
 use Livewire\Component;
+use Livewire\Attributes\Title;
 
 class GaleriBerita extends Component
 {
     public $docs;
     public $videoId;
 
+    #[Title('Dokumentasi Berita - Yayasan Baitus Saadah Amanah')]
     public function mount($slug)
     {
         $this->docs = Berita::where('slug', $slug)->select(['gambar_dokumentasi', 'id_youtube', 'slug'])->firstOrFail();
@@ -19,8 +21,8 @@ class GaleriBerita extends Component
     public function render()
     {
         return view('livewire.pages.galeri-berita')->layout('layout.layout', [
-            'title' => 'Dokumentasi Berita',
-            'subTitle' => 'Home'
+            'titleBread' => 'Dokumentasi Berita',
+            'subTitleBread' => 'Home'
         ]);
     }
 }
