@@ -13,15 +13,17 @@
             @endforelse
         </div>
 
-        <div class="youtube-wrap">
-            <div class="youtube-item">
-                <iframe class="youtube-content" src="https://www.youtube.com/embed/{{ $videoId }}"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+        @if ($videoId)
+            <div class="youtube-wrap">
+                <div class="youtube-item">
+                    <iframe class="youtube-content" src="https://www.youtube.com/embed/{{ $videoId }}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
-        </div>
+        @endif
     </div>
 
     <!-- Modal tampil gambar -->
