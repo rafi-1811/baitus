@@ -24,6 +24,8 @@ class KontakResource extends Resource
 
     protected static ?string $navigationLabel = 'Kontak';
 
+    protected static ?string $navigationGroup = 'Informasi';
+
     protected static ?string $pluralLabel = 'Kontak';
 
     public static function form(Form $form): Form

@@ -24,6 +24,8 @@ class TentangYayasanResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
+    protected static ?string $navigationGroup = 'Informasi';
+
     protected static ?string $navigationLabel = 'Tentang Yayasan';
 
     protected static ?string $pluralLabel = 'Tentang Yayasan';

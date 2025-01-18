@@ -26,7 +26,16 @@ class RekeningResource extends Resource
 
     protected static ?string $navigationLabel = 'Rekening Donasi';
 
+    protected static ?string $navigationGroup = 'Informasi';
+
     protected static ?string $pluralLabel = 'Rekening Donasi';
+
+    protected static ?string $navigationBadgeTooltip = 'Total Rekening';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

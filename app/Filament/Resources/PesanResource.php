@@ -18,7 +18,20 @@ class PesanResource extends Resource
 
     protected static ?string $model = Pesan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-envelope';
+
+    protected static ?string $navigationLabel = 'Pesan';
+
+    protected static ?string $pluralLabel = 'Pesan Masuk';
+
+    protected static ?string $navigationGroup = 'Kotak Masuk';
+
+    protected static ?string $navigationBadgeTooltip = 'Total Pesan';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function canCreate(): bool
     {

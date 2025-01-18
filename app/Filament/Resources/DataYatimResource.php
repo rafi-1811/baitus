@@ -22,9 +22,11 @@ class DataYatimResource extends Resource
 {
     protected static ?string $model = DataYatim::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document';
+    protected static ?string $navigationIcon = 'heroicon-o-table-cells';
 
     protected static ?string $navigationLabel = 'Data Yatim';
+
+    protected static ?string $navigationGroup = 'Informasi';
 
     protected static ?string $pluralLabel = 'Data Yatim';
 

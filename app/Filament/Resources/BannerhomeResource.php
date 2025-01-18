@@ -27,7 +27,16 @@ class BannerhomeResource extends Resource
 
     protected static ?string $navigationLabel = 'Banner Image';
 
+    protected static ?string $navigationGroup = 'Banner';
+
     protected static ?string $pluralLabel = 'Banner Image';
+
+    protected static ?string $navigationBadgeTooltip = 'Total Gambar';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

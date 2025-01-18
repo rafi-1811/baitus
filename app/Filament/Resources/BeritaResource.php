@@ -30,6 +30,8 @@ class BeritaResource extends Resource
 
     protected static ?string $navigationLabel = 'Berita';
 
+    protected static ?string $navigationGroup = 'Posts';
+
     protected static ?string $pluralLabel = 'Berita';
 
     protected static ?string $navigationBadgeTooltip = 'Total Berita';
