@@ -10715,7 +10715,6 @@ Header CSS 01 Start
     border: none;
     border-radius: 8px;
     background: #f3b353;
-    box-shadow: 0px 2px 10px 0px rgba(27, 42, 82, 0.5);
     height: 46px;
     display: flex;
     align-items: center;
@@ -10724,6 +10723,11 @@ Header CSS 01 Start
     font-size: 14px;
     font-weight: 600;
 }
+
+.contact-form-item button:hover {
+    background-color: #c79852;
+}
+
 .contact-bottom-left {
     height: 100%;
     display: flex;
@@ -13394,4 +13398,32 @@ Header CSS 01 Start
 /* alphine js */
 [x-cloak] {
     display: none !important;
+}
+
+/* styling untuk pesan error form kontak */
+
+.error-form input,
+.error-form textarea {
+    border: 1px solid red !important;
+}
+
+.error-form i {
+    color: red;
+    transform: translateY(-120%);
+}
+
+.form-error-text {
+    font-size: 14px;
+    color: red;
+    margin-left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
