@@ -1,5 +1,10 @@
 <div class="image-docs" x-data="galleryModal()">
     <div class="container">
+        <div class="mb-30">
+            <a wire:navigate href="{{ route('detail-berita', ['slug' => $docs->slug]) }}"
+                class="d-flex align-items-center gap-2 mb"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
+
         <div class="wrap-content">
             @forelse ($docs->gambar_dokumentasi as $index => $item)
                 <div class="image-wrap" @click="openModal('{{ asset('storage/' . $item) }}')">

@@ -12,7 +12,7 @@ class GaleriBerita extends Component
 
     public function mount($slug)
     {
-        $this->docs = Berita::where('slug', $slug)->firstOrFail();
+        $this->docs = Berita::where('slug', $slug)->select(['gambar_dokumentasi', 'id_youtube', 'slug'])->firstOrFail();
         $this->videoId = $this->docs->id_youtube;
     }
 

@@ -32,7 +32,7 @@
                                     <div class="breadcrumb-content text-center">
                                         <h2 class="breadcrumb-title tp_has_text_reveal_anim">{{ $title }}</h2>
                                         <div class="breadcrumb-list tp_fade_left">
-                                            <a href="{{ route('home') }}"><i
+                                            <a wire:navigate href="{{ route('home') }}"><i
                                                     class="fa-light fa-house"></i>{{ $subTitle }}</a>
                                             <span>{{ $title }}</span>
                                         </div>

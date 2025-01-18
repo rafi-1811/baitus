@@ -27,12 +27,27 @@ class BeritaDetail extends Component
         $apiKey = config('services.youtube.api_key');
         $baseUrl = "https://www.googleapis.com/youtube/v3/videos?part=statistics&id={$videoId}&key={$apiKey}";
 
-        $response = Http::get($baseUrl);
+        $response = Http::timeout(60)->get($baseUrl);
+
+        if ($response->failed()) {
+            $this->likes = 0;
+            $this->views = 0;
+            return;
+        }
 
         $data = $response->json();
 
-        $this->likes = $data['items'][0]['statistics']['likeCount'] ?? 0;
-        $this->views = $data['items'][0]['statistics']['viewCount'] ?? 0;
+        $this->likes = $this->formatDataYoutube($data['items'][0]['statistics']['likeCount'] ?? 0);
+        $this->views = $this->formatDataYoutube($data['items'][0]['statistics']['viewCount'] ?? 0);
+    }
+
+    public function formatDataYoutube($data)
+    {
+        if ($data >= 10000) {
+            return floor($data / 1000) . 'K+';
+        }
+
+        return $data;
     }
 
     public function render()

@@ -61,7 +61,8 @@
                                 <a href="#"><i class="fa-light fa-share-nodes"></i>Ayo Bagikan!</a>
                             </div>
                             <div class="docs-berita">
-                                <a href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat dokumentasinya
+                                <a wire:navigate href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat
+                                    dokumentasinya
                                     disini</a>
                             </div>
                         </div>
