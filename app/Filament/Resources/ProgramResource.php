@@ -31,7 +31,7 @@ class ProgramResource extends Resource
 
     protected static ?string $pluralLabel = 'Program Yayasan';
 
-    protected static ?string $navigationBadgeTooltip = 'Total Berita';
+    protected static ?string $navigationBadgeTooltip = 'Total Program';
 
     public static function getNavigationBadge(): ?string
     {
