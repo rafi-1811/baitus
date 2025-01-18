@@ -12,9 +12,19 @@
                 <div class="text-center">Data Kosong</div>
             @endforelse
         </div>
+
+        <div class="youtube-wrap">
+            <div class="youtube-item">
+                <iframe class="youtube-content" src="https://www.youtube.com/embed/{{ $videoId }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal tampil gambar -->
     <div class="image-modal show" x-show="isOpen" x-cloak x-transition>
         <button class="close-modal" @click="closeModal">
             <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">

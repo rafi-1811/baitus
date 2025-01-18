@@ -19,8 +19,8 @@
                             </div>
                             <div class="blog_details-meta-action">
                                 <ul>
-                                    <li><a href="#"><i class="fa-light fa-heart"></i>20</a></li>
-                                    <li><a href="#"><i class="fa-light fa-share-nodes"></i>12</a></li>
+                                    <li><i class="fa-light fa-heart"></i>{{ $likes }}</li>
+                                    <li><i class="fa-regular fa-eye"></i>{{ $views }}</li>
                                 </ul>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                             {!! $content['closing'] !!}</p>
                         <div class="blog_details-content-bottom tp_fade_bottom">
                             <div class="blog_details-content-share">
-                                <a href="#"><i class="fa-light fa-share-nodes"></i>12 Share</a>
+                                <a href="#"><i class="fa-light fa-share-nodes"></i>Ayo Bagikan!</a>
                             </div>
                             <div class="docs-berita">
                                 <a href="{{ route('galeri-berita', ['slug' => $berita->slug]) }}">Lihat dokumentasinya

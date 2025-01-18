@@ -16,41 +16,4 @@
             @endforelse
         </div>
     @endif
-
-
-    <style>
-        .search-result {
-            position: absolute;
-            background: #eaecef;
-            z-index: 100;
-            left: 0;
-            right: 0;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        .search-result-title {
-            text-align: center;
-        }
-
-        .search-result-item {
-            margin: 0;
-            display: -webkit-box;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            margin-bottom: 15px;
-            color: #7f879e;
-        }
-
-        .search-result-item:hover {
-            color: var(--clr-theme-primary);
-        }
-
-        .search-result-item:last-child {
-            margin-bottom: 0;
-        }
-    </style>
-
 </div>
