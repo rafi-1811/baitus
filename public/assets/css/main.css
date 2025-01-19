@@ -13519,3 +13519,141 @@ input[type="number"] {
     height: 100%;
     border-radius: 20px;
 }
+
+
+/* styling untuk modal shareUrl */
+
+.icons::-webkit-scrollbar {
+    height: 8px;
+}
+
+.icons::-webkit-scrollbar-thumb {
+    background-color: var(--clr-theme-primary);
+    border-radius: 10px;
+}
+
+.icons::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.icon-share {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sharePrompt {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#sharePrompt .container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+#sharePrompt .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#sharePrompt .header h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+#sharePrompt .header button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+#sharePrompt .icons {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+#sharePrompt .icon {
+    flex-shrink: 0;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sharePrompt .icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#sharePrompt .icon span {
+    font-size: 0.875rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+#sharePrompt .copy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+#sharePrompt .copy-link input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    outline: none;
+}
+
+#sharePrompt .copy-link button {
+    background-color: var(--clr-theme-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+#sharePrompt .copy-link button:hover {
+    background-color: #b5781d;
+}
+
+#notification {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 6rem;
+    background-color: var(--clr-theme-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

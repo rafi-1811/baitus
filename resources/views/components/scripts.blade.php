@@ -4,8 +4,6 @@
     <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/meanmenu.min.js') }}"></script>
     <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
     <script src="{{ asset('assets/js/SplitText.min.js') }}"></script>
     <script src="{{ asset('assets/js/chroma.min.js') }}"></script>
     <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>

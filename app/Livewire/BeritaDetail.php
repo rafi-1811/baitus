@@ -13,6 +13,7 @@ class BeritaDetail extends Component
     public $content;
     public $likes;
     public $views;
+    public $shareUrl;
 
     protected $newsContentService;
 
@@ -27,13 +28,15 @@ class BeritaDetail extends Component
         $apiKey = config('services.youtube.api_key');
         $baseUrl = "https://www.googleapis.com/youtube/v3/videos?part=statistics&id={$videoId}&key={$apiKey}";
 
-        $response = Http::timeout(60)->get($baseUrl);
+        $response = Http::get($baseUrl);
 
         if ($response->failed()) {
             $this->likes = 0;
             $this->views = 0;
             return;
         }
+
+        $this->shareUrl = url("berita/{$this->berita->slug}");
 
         $data = $response->json();
 
