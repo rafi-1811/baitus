@@ -22,8 +22,8 @@ class ProgramDetail extends Component
         $berita = $this->program->berita()->paginate(10);
 
         return view('livewire.pages.program-detail', compact('berita'))->layout('layout.layout', [
-            'title' => $this->program->kategori_program,
-            'subTitle' => 'Home',
-        ]);
+            'titleBread' => $this->program->kategori_program,
+            'subTitleBread' => 'Home',
+        ])->title("Program Detail - {$this->program->kategori_program}");
     }
 }

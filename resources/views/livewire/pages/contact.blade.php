@@ -101,41 +101,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 tp_fade_left">
-                    <div class="contact-form mt-40 mt-lg-0">
-                        <h3 class="contact-form-title">Form Pesan</h3>
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="contact-form-item mb-25">
-                                        <input type="text" placeholder="Nama">
-                                        <i class="fa-light fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="contact-form-item mb-25">
-                                        <input type="email" placeholder="Email">
-                                        <i class="fa-light fa-envelope"></i>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="contact-form-item mb-25">
-                                        <input type="tel" placeholder="Nomor Telepon" pattern="[0-9]{10,15}">
-                                        <i class="fa-light fa-phone"></i>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="contact-form-item mb-25">
-                                        <textarea name="message" placeholder="Pesan"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="contact-form-item pt-10">
-                                        <button type="submit">Kirim</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    @livewire('form-kontak')
                 </div>
             </div>
         </div>

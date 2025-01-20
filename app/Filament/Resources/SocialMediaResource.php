@@ -25,6 +25,8 @@ class SocialMediaResource extends Resource
     
     protected static ?string $navigationLabel = 'Sosial Media';
 
+    protected static ?string $navigationGroup = 'Informasi';
+
     protected static ?string $pluralLabel = 'Sosial Media';
     
 

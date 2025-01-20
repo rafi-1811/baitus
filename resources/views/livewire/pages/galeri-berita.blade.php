@@ -1,5 +1,10 @@
 <div class="image-docs" x-data="galleryModal()">
     <div class="container">
+        <div class="mb-30">
+            <a wire:navigate href="{{ route('detail-berita', ['slug' => $docs->slug]) }}"
+                class="d-flex align-items-center gap-2 mb"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+        </div>
+
         <div class="wrap-content">
             @forelse ($docs->gambar_dokumentasi as $index => $item)
                 <div class="image-wrap" @click="openModal('{{ asset('storage/' . $item) }}')">
@@ -12,9 +17,21 @@
                 <div class="text-center">Data Kosong</div>
             @endforelse
         </div>
+
+        @if ($videoId)
+            <div class="youtube-wrap">
+                <div class="youtube-item">
+                    <iframe class="youtube-content" src="https://www.youtube.com/embed/{{ $videoId }}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        @endif
     </div>
 
-    <!-- Modal -->
+    <!-- Modal tampil gambar -->
     <div class="image-modal show" x-show="isOpen" x-cloak x-transition>
         <button class="close-modal" @click="closeModal">
             <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<x-head />
+<x-head :title="$title ?? 'Yayasan Baitus Saadah Amanah'" />
 
 <body>
 
@@ -30,11 +30,11 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="breadcrumb-content text-center">
-                                        <h2 class="breadcrumb-title tp_has_text_reveal_anim">{{ $title }}</h2>
+                                        <h2 class="breadcrumb-title tp_has_text_reveal_anim">{{ $titleBread }}</h2>
                                         <div class="breadcrumb-list tp_fade_left">
-                                            <a href="{{ route('home') }}"><i
-                                                    class="fa-light fa-house"></i>{{ $subTitle }}</a>
-                                            <span>{{ $title }}</span>
+                                            <a wire:navigate href="{{ route('home') }}"><i
+                                                    class="fa-light fa-house"></i>{{ $subTitleBread }}</a>
+                                            <span>{{ $titleBread }}</span>
                                         </div>
                                     </div>
                                 </div>

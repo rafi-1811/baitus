@@ -23,11 +23,20 @@ class ProgramResource extends Resource
 {
     protected static ?string $model = Program::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
+    protected static ?string $navigationIcon = 'heroicon-o-list-bullet';
 
     protected static ?string $navigationLabel = 'Program';
 
+    protected static ?string $navigationGroup = 'Posts';
+
     protected static ?string $pluralLabel = 'Program Yayasan';
+
+    protected static ?string $navigationBadgeTooltip = 'Total Program';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
 
     public static function form(Form $form): Form
     {

@@ -3,7 +3,7 @@
         <div class="banner-single">
             <div class="banner-img tp_fade_left">
                 <img class="img-tentang-yayasan"
-                    src="{{ asset('storage/' . ($staticData['tentang_yayasan']->gambar_tentang_yayasan ?? 'assets/images/banner/home1/home.jpg')) }}"
+                    src="{{ asset('storage/' . ($staticData['tentang_yayasan']->gambar_tentang_yayasan ?? '')) }}"
                     alt="ini gambar tentang yayasan">
 
             </div>

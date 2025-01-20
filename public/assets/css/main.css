@@ -2185,9 +2185,9 @@ Header CSS 01 Start
     );
     transition: 0.5s;
 }
-.header-area:hover::before {
+/* .header-area:hover::before {
     left: 100%;
-}
+} */
 .header-area1 {
     position: fixed;
     background-color: #ffffff;
@@ -5341,46 +5341,44 @@ Header CSS 01 Start
 
 .h4_feature-item {
     border-radius: 14px;
-    margin-bottom: 1px;
-    margin-top: 1px;
     background: #ffffff;
-    /* padding: 10px 5px 5px; */
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 991.98px) {
+    .h4_feature-item {
+        gap: 10px;
+    }
 }
 
 .h4_feature-item-img {
+    display: flex;
+    align-items: center;
     height: 150px;
     width: 180px;
-    margin-left: 35px;
-    justify-content: center;
-}
-@media (max-width: 1199px) {
-    .h4_feature-item-img {
-        width: 300px;
-        height: 210px;
-        margin-bottom: 20px;
-        margin-left: 25px;
-    }
 }
 
 .h4_feature-item-content-title {
     color: #000000;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 700;
-    margin-top: 15px;
+    margin: 0;
     letter-spacing: -0.72px;
 }
-@media (max-width: 1199px) {
-    .h4_feature-item-content-title {
-        padding-bottom: 40px;
-        font-size: 20px;
-        letter-spacing: 0.3px;
-        margin-left: 13px;
-    }
-}
+
 .h4_feature-item-content-title:hover a {
     color: #f59e0b;
 }
+
+@media (max-width: 1199.98px) {
+    .h4_feature-item-content-title {
+        font-size: 19px;
+    }
+}
+
 .h4_feature-item-content p {
     color: #7f879e;
     text-align: center;
@@ -7344,7 +7342,7 @@ Header CSS 01 Start
     align-items: center;
     gap: 15px;
 }
-.blog_details-meta-action ul li a {
+.blog_details-meta-action ul li {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -7512,7 +7510,6 @@ Header CSS 01 Start
     font-size: 16px;
     font-weight: 500;
     line-height: 26px;
-    text-transform: uppercase;
     font-family: "Space Grotesk", sans-serif;
 }
 .blog_details-content-share a i {
@@ -7722,6 +7719,11 @@ Header CSS 01 Start
     align-items: center;
     justify-content: center;
 }
+
+.blog_details-widget-search button:hover {
+    background-color: #b5781d;
+}
+
 .blog_details-widget ul {
     list-style: none;
 }
@@ -10712,7 +10714,6 @@ Header CSS 01 Start
     border: none;
     border-radius: 8px;
     background: #f3b353;
-    box-shadow: 0px 2px 10px 0px rgba(27, 42, 82, 0.5);
     height: 46px;
     display: flex;
     align-items: center;
@@ -10721,6 +10722,11 @@ Header CSS 01 Start
     font-size: 14px;
     font-weight: 600;
 }
+
+.contact-form-item button:hover {
+    background-color: #c79852;
+}
+
 .contact-bottom-left {
     height: 100%;
     display: flex;
@@ -11376,7 +11382,7 @@ Header CSS 01 Start
     color: azure;
     font-size: 15px;
     text-align: center;
-    font-weight: 200;
+    font-weight: 500;
     margin: 0;
 }
 
@@ -11387,7 +11393,7 @@ Header CSS 01 Start
         color: azure;
         font-size: 15px;
         text-align: start;
-        font-weight: 200;
+        font-weight: 500;
         margin: 0;
     }
 }
@@ -12493,13 +12499,9 @@ Header CSS 01 Start
     display: inline-block;
     transition: opacity 0.5s;
 }
-/* .counter.visible {
-    opacity: 1;
-} */
-@media (max-width: 1199px) {
-    .counter {
-        margin-left: 10px;
-    }
+
+.counter h2 {
+    margin: 0;
 }
 
 /* Animation 1: Fade In */
@@ -13308,6 +13310,7 @@ Header CSS 01 Start
 }
 
 .modal-content {
+    object-fit: contain;
     max-width: 50%;
     max-height: 80%;
     border-radius: 8px;
@@ -13392,6 +13395,266 @@ Header CSS 01 Start
     background-color: rgba(236, 156, 37, 0.6);
 }
 
+/* alphine js */
 [x-cloak] {
     display: none !important;
+}
+
+/* styling untuk pesan error form kontak */
+
+.error-form input,
+.error-form textarea {
+    border: 1px solid red !important;
+}
+
+.error-form i {
+    color: red;
+    transform: translateY(-133%);
+}
+
+.form-error-text {
+    font-size: 14px;
+    color: red;
+    margin-left: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* styling untuk search berita */
+
+.search-result {
+    position: absolute;
+    background: #eaecef;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.search-result-title {
+    text-align: center;
+}
+
+.search-result-item {
+    margin: 0;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 15px;
+    color: #7f879e;
+}
+
+.search-result-item:hover {
+    color: var(--clr-theme-primary);
+}
+
+.search-result-item:last-child {
+    margin-bottom: 0;
+}
+
+/* styling untuk youtube video detail dokumentasi */
+
+.youtube-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 350px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.youtube-item {
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 576px) {
+    .youtube-wrap {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (min-width: 766px) and (max-width: 991px) {
+    .youtube-wrap {
+        height: 320px;
+    }
+}
+
+@media (min-width: 991.98px) and (max-width: 1199.98px) {
+    .youtube-wrap {
+        width: 60%;
+        height: 320px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .youtube-wrap {
+        width: 50%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 767px) {
+    .youtube-item {
+        width: 100%;
+    }
+}
+
+.youtube-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+
+/* styling untuk modal shareUrl */
+
+.icons::-webkit-scrollbar {
+    height: 8px;
+}
+
+.icons::-webkit-scrollbar-thumb {
+    background-color: var(--clr-theme-primary);
+    border-radius: 10px;
+}
+
+.icons::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.icon-share {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sharePrompt {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#sharePrompt .container {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    padding: 1.5rem;
+}
+
+#sharePrompt .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#sharePrompt .header h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+#sharePrompt .header button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+#sharePrompt .icons {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+#sharePrompt .icon {
+    flex-shrink: 0;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#sharePrompt .icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#sharePrompt .icon span {
+    font-size: 0.875rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+#sharePrompt .copy-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+#sharePrompt .copy-link input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    color: #555;
+    outline: none;
+}
+
+#sharePrompt .copy-link button {
+    background-color: var(--clr-theme-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+#sharePrompt .copy-link button:hover {
+    background-color: #b5781d;
+}
+
+#notification {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 6rem;
+    background-color: var(--clr-theme-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

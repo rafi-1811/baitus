@@ -44,34 +44,7 @@ class PagesController extends Controller
     private function getDataYatim()
     {
         return Cache::remember('data_yatim', 120, function () {
-            $data =  DataYatim::select('total_yatim_binaan', 'total_yatim_luar_binaan', 'total_kegiatan', 'total_daerah_cakupan')->first();
-
-            if (!$data) {
-                return [];
-            }
-
-            return [
-                [
-                    'img' => '',
-                    'number' => $data->total_yatim_binaan,
-                    'text' => 'Yatim Binaan'
-                ],
-                [
-                    'img' => '',
-                    'number' => $data->total_yatim_luar_binaan,
-                    'text' => 'Yatim Luar Binaan'
-                ],
-                [
-                    'img' => '',
-                    'number' => $data->total_kegiatan,
-                    'text' => 'Total Kegiatan'
-                ],
-                [
-                    'img' => '',
-                    'number' => $data->total_daerah_cakupan,
-                    'text' => 'Cakupan Daerah'
-                ]
-            ];
+            return DataYatim::select('gambar', 'jumlah_data', 'kategori_data')->get();
         });
     }
 

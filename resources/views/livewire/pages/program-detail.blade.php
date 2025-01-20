@@ -54,7 +54,6 @@
                                 <span>({{ $item->berita->count() }})</span></a>
                         </li>
                     @endforeach
-
                 </ul>
             </div>
         </div>
