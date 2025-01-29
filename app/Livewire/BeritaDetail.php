@@ -17,7 +17,6 @@ class BeritaDetail extends Component
 
     protected $newsContentService;
 
-    // Menghapus __construct dan menyuntikkan dependensi di mount()
     public function mount(NewsContentService $newsContentService, $slug)
     {
         $this->newsContentService = $newsContentService;
@@ -30,7 +29,7 @@ class BeritaDetail extends Component
 
         $response = Http::get($baseUrl);
 
-        if ($response->failed()) {
+        if ($response->requestTimeout()) {
             $this->likes = 0;
             $this->views = 0;
             return;
@@ -44,7 +43,7 @@ class BeritaDetail extends Component
         $this->views = $this->formatDataYoutube($data['items'][0]['statistics']['viewCount'] ?? 0);
     }
 
-    public function formatDataYoutube($data)
+    private static function formatDataYoutube($data)
     {
         if ($data >= 10000) {
             return floor($data / 1000) . 'K+';
