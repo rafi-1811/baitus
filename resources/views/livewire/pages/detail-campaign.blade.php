@@ -16,22 +16,25 @@
             <p class="text-muted">{{ $campaign->deskripsi }}</p>
 
             <!-- Donasi Terkumpul -->
-            <h4 class="text-success">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
+            <h4 class="text-warning">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
             <p class="text-muted">dari target <strong>Rp {{ number_format($campaign->target, 0, '.', '.') }}</strong>
             </p>
 
             <!-- Progress Bar -->
             <div class="progress mb-3">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 20%;"
-                    aria-valuenow="{{ $campaign->terkumpul }}" aria-valuemin="0"
-                    aria-valuemax="{{ $campaign->target }}"></div>
+                <div class="progress-bar bg-success" role="progressbar"
+                    style="width: {{ ($campaign->terkumpul / $campaign->target) * 100 }}%;"
+                    aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
+                    aria-valuemax="100"></div>
             </div>
 
             <!-- Jumlah Donatur -->
             <p><strong>{{ $campaign->donaturs->count() }} Donatur</strong> telah berdonasi</p>
 
             <!-- Tombol Donasi -->
-            <a href="#" class="btn btn-success w-100">Donasi Sekarang</a>
+            <a wire:navigate href="{{ route('form-donasi', ['slug' => $campaign->slug]) }}"
+                class="btn btn-warning w-100 text-gray">Donasi
+                Sekarang</a>
         </div>
     </div>
 
