@@ -7,6 +7,7 @@ use App\Livewire\Campaign;
 use App\Livewire\BeritaDetail;
 use App\Livewire\GaleriBerita;
 use App\Livewire\ProgramDetail;
+use App\Livewire\DetailCampaign;
 use App\Livewire\BeritaComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Route::get('/dokumentasi/{slug}', GaleriBerita::class)->name('galeri-berita');
 
 // Halaman campaign
 Route::get('/campaign', Campaign::class)->name('campaign');
+Route::get('/campaign/{slug}', DetailCampaign::class)->name('detail-campaign');
 
 
 Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
