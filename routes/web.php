@@ -3,6 +3,7 @@
 use App\Livewire\Home;
 use App\Livewire\About;
 use App\Livewire\Contact;
+use App\Livewire\Campaign;
 use App\Livewire\BeritaDetail;
 use App\Livewire\GaleriBerita;
 use App\Livewire\ProgramDetail;
@@ -19,7 +20,8 @@ Route::get('/berita/{slug}', BeritaDetail::class)->name('detail-berita');
 Route::get('/dokumentasi/{slug}', GaleriBerita::class)->name('galeri-berita');
 
 
-
+// Halaman campaign
+Route::get('/campaign', Campaign::class)->name('campaign');
 
 
 Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
