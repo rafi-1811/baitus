@@ -1,7 +1,7 @@
 <!-- contact area start -->
 <section class="contact-area pt-140 pb-140">
     <div class="container">
-        <div class="row pb-100 justify-content-center">
+        <div class="row pb-20 justify-content-center">
             <div class="col-xxl-5 col-xl-6">
                 <div class="inner_section-area mb-50 text-center">
                     <span class="inner_section-subtitle tp_subtitle_anim"></span>
@@ -10,20 +10,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left">
+            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-phone"></i>
                     </div>
-                    <div class="contact-content">
+                    <div class="contact-content"> 
                         <h4 class="contact-content-title">WhatsApp</h4>
                         <p><a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '081210079178' }}"
                                 target="_blank">{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</a>
+                            <a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '082124771471' }}"
+                                target="_blank">{{ $staticData['kontak']->whatsapp ?? '082124771471' }}</a>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
+            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-house"></i>
@@ -31,14 +33,14 @@
                     <div class="contact-content">
                         <h4 class="contact-content-title">Alamat</h4>
                         <p>
-                            {{ $staticData['kontak']->alamat ?? 'Jl. Komp. Baitussaadahah' }}
+                           <a> {{ $staticData['kontak']->alamat ?? 'Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515' }}</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
+            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-clock"></i>
@@ -49,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
+            <div class="col-lg-4 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-envelope"></i>
@@ -57,19 +59,19 @@
                     <div class="contact-content">
                         <h4 class="contact-content-title">Email</h4>
                         <p><a
-                                href="mailto:{{ $staticData['kontak']->email ?? 'support.young@example.com' }}">{{ $staticData['kontak']->email ?? 'support.young@example.com' }}</a>
+                                href="mailto:{{ $staticData['kontak']->email ?? 'officialbaitussaadahamanah@gmail.com' }}">{{ $staticData['kontak']->email ?? 'officialbaitussaadahamanah@gmail.com' }}</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="social-media-icons">
+        <div class="social-media-icons pt-105">
             <p>Sosial Media</p>
             <a href="https://www.facebook.com/yayasanbaitussaadahamah" target="_blank" class="icon facebook">
                 <i class="fab fa-facebook"></i>
             </a>
 
-            <a href="https://www.youtube.com/@yayasanbaitussaadahamanaho8517" target="_blank" class="icon youtube">
+            <a href="https://www.youtube.com/@NessieJudge" target="_blank" class="icon youtube">
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==" target="_blank"
@@ -106,5 +108,9 @@
             </div>
         </div>
     </div>
+
+    
 </section>
+
+
 <!-- contact area end -->

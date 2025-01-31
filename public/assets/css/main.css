@@ -5137,7 +5137,7 @@ Header CSS 01 Start
 08. feature
 /////////////////////////////////////////////////////////// */
 .feature-area {
-    background: #ffecda;
+    background: #fffaf5;
 }
 @media (max-width: 1199px) {
     .feature-area {
@@ -13010,22 +13010,87 @@ Header CSS 01 Start
 }
 
 .social-media-icons {
-    display: flex;
-    background-color: transparent;
-    justify-content: left;
-    align-items: center;
-    gap: 55px; /* Jarak antar ikon */
+    text-align: center;
+    background-color: #fff;
+    padding: 23px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .social-media-icons p {
-    justify-content: left;
-    color: #202020;
-    align-items: center;
-    font-weight: 600;
-    margin-top: 17px;
-    padding-right: 40px;
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
 }
+
+/* Styling individual icon links */
+.social-media-icons .icon {
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 15px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.social-media-icons .icon:hover {
+    transform: scale(1.2);
+    color: #007bff;
+}
+
+/* Specific icon color overrides */
+.social-media-icons .facebook:hover {
+    color: #3b5998;
+}
+
+.social-media-icons .youtube:hover {
+    color: #ff0000;
+}
+
+.social-media-icons .instagram:hover {
+    color: #e4405f;
+}
+
+.social-media-icons .x:hover {
+    color: #1d9bf0;
+}
+
+.social-media-icons .tiktok:hover {
+    color: #69c9d0;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .social-media-icons {
+        padding: 15px;
+        width: 80%;
+    }
+
+    .social-media-icons .icon {
+        font-size: 28px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-icons {
+        padding: 10px;
+        width: 90%;
+    }
+
+    .social-media-icons p {
+        font-size: 18px;
+    }
+
+    .social-media-icons .icon {
+        font-size: 24px;
+        margin: 0 8px;
+    }
+}
+
 
 /* Styling untuk setiap ikon */
 .icon {
@@ -13657,4 +13722,128 @@ input[type="number"] {
     font-size: 0.875rem;
     display: block;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.button1 {
+	position: relative;
+    /* width: 100%; */
+    align-items: center;
+	background-color: #FA8925;
+	border: 0;
+	color: #ffffff;
+	border-radius: 0.5em;
+	font-size: 20px;
+	padding: 0.375em 1em;
+	font-weight: 600;
+	text-shadow: 0 0.0625em 0 #FA8020;
+	box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
+		0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
+		0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
+	transition: 0.25s ease;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+
+	&:active,
+	&:hover {
+		transform: translateY(0.225em);
+		box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
+			0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
+			0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02, 0 0.225em 0.375em 0 #c45d02;
+
+		&:after {
+			height: calc(100% + 0.225em);
+		}
+	}
+
+	&:after {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 100%;
+		height: calc(100% + 0.375em);
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		transition: height 0.25s ease;
+	}
+}
+
+
+/* Section Styles */
+.h4_donasi-area {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.h4_section-area-donasi {
+    margin-bottom: 20px;
+    letter-spacing: -1.6px;
+}
+
+
+/* #FF983D */
+
+/* Button Styles */
+/* .button1 {
+    background-color: #FF983D;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button1:hover {
+    background-color: #FF983D;
+} */
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+
+    .button1 {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .button1 {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .h4_donasi-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    .button1 {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .h4_donasi-area {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+
+    .button1 {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 }

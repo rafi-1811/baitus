@@ -12,4 +12,6 @@
     {{-- section Data Yatim --}}
     <x-data-yatim />
 
+    {{-- 5 Section Data Yatim --}}
+    <x-donasi />
 </section>
