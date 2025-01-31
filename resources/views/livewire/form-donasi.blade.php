@@ -5,11 +5,20 @@
 @endsection
 
 <div class="container mt-3">
-    <div class="card shadow-sm border-0 rounded-4" style="max-width: 600px; margin: 0 auto;">
+    <div class="card border border-1 rounded-4" style="max-width: 600px; margin: 0 auto;">
         <div class="card-body p-4">
             <h4 class="text-center mb-4 fw-bold">Form Donasi</h4>
-
-            <div class="alert alert-warning mb-4" role="alert">
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <div style="font-size: 14px" class="alert alert-warning mb-4" role="alert">
                 <i class="fas fa-info-circle me-2"></i>
                 Untuk memastikan Anda menerima bukti donasi yang valid, kami mohon agar Anda melengkapi informasi nomor
                 HP dan email Anda.
@@ -19,32 +28,38 @@
                 <!-- Nominal Donasi -->
                 <div x-data="{
                     showModal: false,
-                    nominal: '',
-                    formatRupiah(angka) {
-                        let number_string = angka.replace(/[^,\d]/g, '').toString(),
-                            split = number_string.split(','),
-                            sisa = split[0].length % 3,
-                            rupiah = split[0].substr(0, sisa),
-                            ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-                        if (ribuan) {
-                            let separator = sisa ? '.' : '';
-                            rupiah += separator + ribuan.join('.');
-                        }
-                        return split[1] !== undefined ? 'Rp ' + rupiah + ',' + split[1] : 'Rp ' + rupiah;
+                    anonymous: @entangle('anonymous'),
+                    nominal: @entangle('nominalDonasi'),
+                    rupiah(value) {
+                        let angka = value.replace(/\D/g, '');
+                        return angka ? new Intl.NumberFormat('id-ID', {
+                            style: 'decimal',
+                            currency: 'IDR'
+                        }).format(angka) : '';
                     },
-                    selectNominal(amount) {
-                        this.nominal = this.formatRupiah(amount.toString());
+                    pilihNominal(amount) {
                         this.showModal = false;
-                    },
-                    updateNominal(event) {
-                        this.nominal = this.formatRupiah(event.target.value);
+                        this.nominal = this.rupiah(amount);
+                        this.$wire.nominalDonasi = this.nominal;
                     }
                 }" @click.away="showModal = false">
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Nominal Donasi</label>
-                        <input type="text" class="form-control form-control-lg fs-6" placeholder="Nominal Donasi"
-                            wire:model="nominalDonasi" x-model="nominal" @focus="showModal = true"
-                            @input="showModal = false, updateNominal($event)">
+                        <div
+                            class="input-group @error('nominalDonasi')
+                    error-form
+                @enderror">
+                            <span class="input-group-text">Rp</span>
+                            <input id="nominalDonasi" type="text" class="form-control form-control-lg fs-6"
+                                placeholder="Nominal Donasi" x-model="nominal" wire:model="nominalDonasi"
+                                @focus="showModal = true"
+                                @input="nominal = rupiah($event.target.value), showModal = false" autocomplete="off">
+
+                        </div>
+                        @error('nominalDonasi')
+                            <div class="form-error-text">{{ $message }}</div>
+                        @enderror
+
 
                         <!-- Modal Pilihan Donasi -->
                         <div x-cloak x-show="showModal" x-transition:enter="transition ease-out duration-200"
@@ -52,11 +67,11 @@
                             x-transition:enter-end="opacity-100 transform scale-100" class="card mt-2 shadow-sm">
                             <div class="card-body p-3">
                                 <div class="row g-2">
-                                    <template x-for="amount in [10000, 15000, 25000, 30000, 50000, 100000]">
+                                    <template x-for="amount in ['10000', '15000', '25000', '30000', '50000', '100000']">
                                         <div class="col-6">
-                                            <button @click.prevent="selectNominal(amount)" wire:model="nominalDonasi"
+                                            <button @click.prevent="pilihNominal(amount)"
                                                 class="btn border w-100 text-gray"
-                                                x-text="'Rp ' + new Intl.NumberFormat('id-ID').format(amount)"></button>
+                                                x-text=" 'Rp ' + new Intl.NumberFormat('id-ID',{currency: 'IDR', style: 'decimal'}).format(amount)"></button>
                                         </div>
                                     </template>
                                 </div>
@@ -66,37 +81,50 @@
                 </div>
 
                 <!-- Data Diri -->
-                <div class="mb-3">
+                <div class="mb-3 @error('nama')
+                    error-form
+                @enderror"
+                    x-data="{ anonymous: @entangle('anonymous'), nama: @entangle('nama') }">
                     <label class="form-label fw-semibold">Nama Lengkap</label>
-                    <input wire:model="nama" type="text" class="form-control form-control-lg fs-6"
-                        placeholder="Masukkan nama lengkap">
+                    <input x-model="nama" :value="anonymous ? 'Hamba Allah' : null" wire:model="nama" type="text"
+                        class="form-control form-control-lg fs-6" placeholder="Masukkan nama lengkap"
+                        @change="$wire.set('nama', nama)" :disabled="anonymous">
+                    @error('nama')
+                        <div class="form-error-text">{{ $message }}</div>
+                    @enderror
                 </div>
 
-                <div class="mb-3">
+
+                <div class="mb-3 @error('email')
+                    error-form
+                @enderror">
                     <label class="form-label fw-semibold">Email <span class="text-muted">(Opsional)</span></label>
                     <input wire:model="email" type="email" class="form-control form-control-lg fs-6"
                         placeholder="Masukkan email">
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label fw-semibold">Nomor Telepon <span
-                            class="text-muted">(Opsional)</span></label>
-                    <input wire:model="telepon" type="tel" class="form-control form-control-lg fs-6"
-                        placeholder="Masukkan nomor telepon">
+                    @error('email')
+                        <div class="form-error-text">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <!-- Doa/Harapan -->
-                <div class="mb-3">
+                <div class="mb-3 @error('doa')
+                    error-form
+                @enderror">
                     <label class="form-label fw-semibold">Doa dan Harapan <span
                             class="text-muted">(Opsional)</span></label>
                     <textarea wire:model="doa" class="form-control form-control-lg fs-6" rows="5"
                         placeholder="Tuliskan doa dan harapan Anda"></textarea>
+                    @error('doa')
+                        <div class="form-error-text">{{ $message }}</div>
+                    @enderror
                 </div>
 
+
                 <!-- Checkbox Anonim -->
-                <div class="mb-4" x-data="{ anonymous: false }">
+                <div class="mb-4" x-data="{ anonymous: @entangle('anonymous'), nama: @entangle('nama') }">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="anonymousCheck" wire:model="anonymous">
+                        <input class="form-check-input" x-model="anonymous" type="checkbox" id="anonymousCheck"
+                            @change="nama = anonymous ? 'Hamba Allah' : ''" wire:model="anonymous">
                         <label class="form-check-label" for="anonymousCheck"
                             x-text="anonymous ? 'Anda akan berdonasi secara anonim' : 'Sembunyikan nama saya (Anonim)'">
                         </label>

@@ -10,6 +10,6 @@
     <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
     <script src="{{ asset('assets/js/backtotop.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    @livewireScripts
+    @livewireScript
 
     @stack('scripts')

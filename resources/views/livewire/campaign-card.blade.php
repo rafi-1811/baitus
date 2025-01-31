@@ -29,9 +29,9 @@
         </div>
 
 
-        <a class="btn btn-warning w-100 rounded-pill py-2 fw-bold" wire:navigate
+        <a style="font-size: 14px" class="btn btn-warning w-100 rounded-pill py-2 fw-bold" wire:navigate
             href="{{ route('detail-campaign', ['slug' => $campaign->slug]) }}">
-            Lihat Detail
+            Lihat detail
             <i class="fas fa-arrow-right ms-2"></i>
         </a>
     </div>
