@@ -3,9 +3,12 @@
 use App\Livewire\Home;
 use App\Livewire\About;
 use App\Livewire\Contact;
+use App\Livewire\Campaign;
+use App\Livewire\FormDonasi;
 use App\Livewire\BeritaDetail;
 use App\Livewire\GaleriBerita;
 use App\Livewire\ProgramDetail;
+use App\Livewire\DetailCampaign;
 use App\Livewire\BeritaComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +22,10 @@ Route::get('/berita/{slug}', BeritaDetail::class)->name('detail-berita');
 Route::get('/dokumentasi/{slug}', GaleriBerita::class)->name('galeri-berita');
 
 
-
+// Halaman campaign
+Route::get('/campaign', Campaign::class)->name('campaign');
+Route::get('/campaign/{slug}', DetailCampaign::class)->name('detail-campaign');
+Route::get('/campaign/{slug}/donasi', FormDonasi::class)->name('form-donasi');
 
 
 Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
