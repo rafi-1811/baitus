@@ -168,6 +168,9 @@
         </div>
     </section>
 
+        {{-- 5 Section Data Yatim --}}
+        <x-donasi />
+
 </main>
 
 

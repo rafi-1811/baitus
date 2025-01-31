@@ -11,9 +11,13 @@
     <div class="sidebar-menu-wrapper fix">
         <div class="mobile-menu"></div>
     </div>
+    <div class="donasi-area-side"> <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim">
+        <button class="button2">Donasi Disini</button></a>
+    </div>
     <div class="col-xl-6 col-8">
         <div class="sidebar-logo">
-            <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}" alt="logo-img"></a>
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('assets/images/logo/logo.png') }}" alt="logo-img"></a>
         </div>
     </div>
 </div>

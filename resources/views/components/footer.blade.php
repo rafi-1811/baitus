@@ -51,12 +51,13 @@
                         </div>
                         <div class="footer-widget">
                             <h5 class="footer-widget-title">Kontak</h5>
+
                             <ul>
                                 <li>
-                                    Jl Arthayasa Tengki I No. 42 Limo - Depok 16515 Jawa Barat
+                                    Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515
                                 </li>
-                                <li>yataamafadlanb@gmail.com</li>
-                                <li>+62 812-9951-7321</li>
+                                {{-- <li>officialbaitussaadahamanah@gmail.com</li> --}}
+                                <li>0821-2477-1471</li>
                             </ul>
                         </div>
                     </div>
