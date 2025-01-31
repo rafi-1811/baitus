@@ -3425,28 +3425,30 @@ Header CSS 01 Start
     font-size: 15px;
     font-weight: 400;
     line-height: 28px;
-}
-@media (max-width: 1199px) {
-    .banner-content p br {
-        display: none;
-    }
-}
-@media (max-width: 991px) {
-    .banner-content p br {
-        display: block;
-    }
-}
-@media (max-width: 767px) {
-    .banner-content p br {
-        display: none;
-    }
+    padding-left: 0px;
+    text-align: justify;
 }
 @media (max-width: 1199px) {
     .banner-content p {
-        font-size: 16px;
-        margin-left: 0px;
+        /* display: none; */
+        text-align: justify;
     }
 }
+@media (max-width: 768px) {
+    .banner-content p {
+        display: block;
+        text-align: justify;
+
+    }
+}
+@media (max-width: 576px) {
+    .banner-content p {
+        /* display: none; */
+        text-align: justify;
+
+    }
+}
+
 .banner-content-btn {
     display: flex;
     align-items: center;
@@ -9638,7 +9640,7 @@ Header CSS 01 Start
     background: transparent;
     padding-top: 10px;
     /* width: 100%; */
-    padding-left: 15px;
+    padding-left: 17px;
     margin-top: 0;
     text-align: center;
     align-content: center;
