@@ -13786,6 +13786,8 @@ input[type="number"] {
 }
 
 
+
+
 /* #FF983D */
 
 /* Button Styles */
@@ -13828,7 +13830,9 @@ input[type="number"] {
         padding-bottom: 60px;
     }
 
-
+    .h4_section-area-donasi h2{
+        font-size: 30px;
+    }
     .button1 {
         font-size: 14px;
         padding: 8px 16px;
@@ -13845,5 +13849,9 @@ input[type="number"] {
     .button1 {
         font-size: 12px;
         padding: 6px 12px;
+    }
+
+    .h4_section-area-donasi h2{
+        font-size: 27px;
     }
 }
