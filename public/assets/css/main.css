@@ -3438,14 +3438,12 @@ Header CSS 01 Start
     .banner-content p {
         display: block;
         text-align: justify;
-
     }
 }
 @media (max-width: 576px) {
     .banner-content p {
         /* display: none; */
         text-align: justify;
-
     }
 }
 
@@ -9588,7 +9586,6 @@ Header CSS 01 Start
     -o-transition: all 0.4s linear 0s;
     transition: all 0.4s linear 0s;
     /* padding: 30px 30px 30px 30px; */
-    
 }
 .side-info:is(.info-open) {
     right: 0;
@@ -9734,7 +9731,6 @@ Header CSS 01 Start
     width: 250px;
     height: 250px;
     margin-left: 80px;
-
 }
 
 /* ///////////////////////////////////////////////////////////
@@ -13112,7 +13108,6 @@ Header CSS 01 Start
     }
 }
 
-
 /* Styling untuk setiap ikon */
 .icon {
     font-size: 2rem;
@@ -13217,6 +13212,22 @@ Header CSS 01 Start
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.text-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.text-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
 }
 
 .content1 {
@@ -13607,7 +13618,6 @@ input[type="number"] {
     border-radius: 20px;
 }
 
-
 /* styling untuk modal shareUrl */
 
 .icons::-webkit-scrollbar {
@@ -13713,7 +13723,7 @@ input[type="number"] {
     width: 100%;
     border: none;
     background: transparent;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #555;
     outline: none;
 }
@@ -13725,7 +13735,7 @@ input[type="number"] {
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 #sharePrompt .copy-link button:hover {
@@ -13745,52 +13755,51 @@ input[type="number"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .button1 {
-	position: relative;
+    position: relative;
     /* width: 100%; */
     align-items: center;
-	background-color: #FA8925;
-	border: 0;
-	color: #ffffff;
-	border-radius: 0.5em;
-	font-size: 20px;
-	padding: 0.375em 1em;
-	font-weight: 600;
-	text-shadow: 0 0.0625em 0 #FA8020;
-	box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
-		0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
-		0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
-	transition: 0.25s ease;
-	touch-action: manipulation;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	cursor: pointer;
+    background-color: #fa8925;
+    border: 0;
+    color: #ffffff;
+    border-radius: 0.5em;
+    font-size: 20px;
+    padding: 0.375em 1em;
+    font-weight: 600;
+    text-shadow: 0 0.0625em 0 #fa8020;
+    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
+        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
+        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
+    transition: 0.25s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
 
-	&:active,
-	&:hover {
-		transform: translateY(0.225em);
-		box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
-			0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
-			0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02, 0 0.225em 0.375em 0 #c45d02;
+    &:active,
+    &:hover {
+        transform: translateY(0.225em);
+        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
+            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
+            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
+            0 0.225em 0.375em 0 #c45d02;
 
-		&:after {
-			height: calc(100% + 0.225em);
-		}
-	}
+        &:after {
+            height: calc(100% + 0.225em);
+        }
+    }
 
-	&:after {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 100%;
-		height: calc(100% + 0.375em);
-		top: 0;
-		left: 0;
-		background-color: transparent;
-		transition: height 0.25s ease;
-	}
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(100% + 0.375em);
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        transition: height 0.25s ease;
+    }
 }
-
 
 /* Section Styles */
 .h4_donasi-area {
@@ -13805,9 +13814,6 @@ input[type="number"] {
     margin-bottom: 20px;
     letter-spacing: -1.6px;
 }
-
-
-
 
 /* #FF983D */
 
@@ -13830,7 +13836,6 @@ input[type="number"] {
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-
     .button1 {
         font-size: 14px;
         padding: 10px 20px;
@@ -13838,7 +13843,6 @@ input[type="number"] {
 }
 
 @media (max-width: 992px) {
-
     .button1 {
         font-size: 14px;
         padding: 8px 16px;
@@ -13851,7 +13855,7 @@ input[type="number"] {
         padding-bottom: 60px;
     }
 
-    .h4_section-area-donasi h2{
+    .h4_section-area-donasi h2 {
         font-size: 30px;
     }
     .button1 {
@@ -13866,17 +13870,15 @@ input[type="number"] {
         padding-bottom: 40px;
     }
 
-
     .button1 {
         font-size: 12px;
         padding: 6px 12px;
     }
 
-    .h4_section-area-donasi h2{
+    .h4_section-area-donasi h2 {
         font-size: 27px;
     }
 }
-
 
 .donasi-area-side {
     background-color: #ffffff;
@@ -13891,58 +13893,54 @@ input[type="number"] {
     letter-spacing: -1.6px;
 }
 
-
-
-
 .button2 {
-	position: relative;
+    position: relative;
     width: 100%;
     align-items: center;
-	background-color: #FA8925;
-	border: 0;
-	color: #ffffff;
-	border-radius: 0.5em;
-	font-size: 20px;
-	padding: 0.375em 1em;
-	font-weight: 100;
+    background-color: #fa8925;
+    border: 0;
+    color: #ffffff;
+    border-radius: 0.5em;
+    font-size: 20px;
+    padding: 0.375em 1em;
+    font-weight: 100;
     letter-spacing: 1.5px;
-	text-shadow: 0 0.0625em 0 #FA8020;
-	box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
-		0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
-		0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
-	transition: 0.25s ease;
-	touch-action: manipulation;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	cursor: pointer;
+    text-shadow: 0 0.0625em 0 #fa8020;
+    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
+        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
+        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
+    transition: 0.25s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
 
-	&:active,
-	&:hover {
-		transform: translateY(0.225em);
-		box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
-			0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
-			0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02, 0 0.225em 0.375em 0 #c45d02;
+    &:active,
+    &:hover {
+        transform: translateY(0.225em);
+        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
+            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
+            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
+            0 0.225em 0.375em 0 #c45d02;
 
-		&:after {
-			height: calc(100% + 0.225em);
-		}
-	}
+        &:after {
+            height: calc(100% + 0.225em);
+        }
+    }
 
-	&:after {
-		position: absolute;
-		content: "";
-		display: block;
-		width: 100%;
-		height: calc(100% + 0.375em);
-		top: 0;
-		left: 0;
-		background-color: transparent;
-		transition: height 0.25s ease;
-	}
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(100% + 0.375em);
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        transition: height 0.25s ease;
+    }
 }
 
-
 @media (max-width: 1200px) {
-
     .button2 {
         font-size: 14px;
         padding: 10px 20px;
@@ -13950,7 +13948,6 @@ input[type="number"] {
 }
 
 @media (max-width: 992px) {
-
     .button2 {
         font-size: 14px;
         padding: 8px 16px;
@@ -13967,7 +13964,6 @@ input[type="number"] {
         font-size: 16px;
         /* padding: 8px 16px; */
         margin-left: 14px;
-
     }
 }
 
@@ -13977,11 +13973,57 @@ input[type="number"] {
         padding-bottom: 40px;
     }
 
-
     .button2 {
         font-size: 16px;
         /* padding: 6px 12px; */
         margin-left: 12px;
     }
+}
 
+/* styling untuk card campaign */
+
+.card-campaign {
+    max-width: 360px;
+}
+
+.card-campaign .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-campaign .card-body h5 {
+    margin-bottom: 10px;
+}
+
+.card-campaign .card-body .text-muted {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card-campaign .card-body .campaign-target,
+.card-campaign .card-body .campaign-terkumpul {
+    color: var(--clr-theme-primary);
+}
+
+.card-campaign .card-body .progress {
+    height: 8px;
+}
+
+.card-campaign .card-body .button-donasi {
+    background-color: var(--clr-theme-primary);
+    font-size: 14px;
+    color: #fcf9f9;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.card-campaign .card-body .button-donasi:hover {
+    background-color: #cf8f30;
+    color: #fcf9f9;
 }

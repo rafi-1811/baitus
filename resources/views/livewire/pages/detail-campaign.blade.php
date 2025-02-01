@@ -11,12 +11,12 @@
         </div>
 
         <!-- Detail Campaign -->
-        <div class="col-md-5">
+        <div class="col-md-5 detail-campaign">
             <h3 class="fw-bold">{{ $campaign->judul }}</h3>
-            <p class="text-muted">{{ $campaign->deskripsi }}</p>
+            <p class="text-muted campaign-deskripsi">{{ $campaign->deskripsi }}</p>
 
             <!-- Donasi Terkumpul -->
-            <h4 class="text-warning">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
+            <h4 class="campaign-terkumpul">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
             <p class="text-muted">dari target <strong>Rp {{ number_format($campaign->target, 0, '.', '.') }}</strong>
             </p>
 
@@ -33,8 +33,8 @@
 
             <!-- Tombol Donasi -->
             <a wire:navigate href="{{ route('form-donasi', ['slug' => $campaign->slug]) }}"
-                class="btn btn-warning w-100 text-gray">Donasi
-                Sekarang</a>
+                class="button-donasi w-100">Donasi
+                sekarang</a>
         </div>
     </div>
 
@@ -60,29 +60,63 @@
             <!-- Tab List Donatur -->
             <div class="tab-pane fade" id="donatur" role="tabpanel" aria-labelledby="donatur-tab">
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>John Doe</strong>
-                            <span class="badge bg-success">Rp 500.000</span>
-                        </div>
-                        <small class="text-muted">"Semoga berkah dan bermanfaat!"</small>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>Jane Smith</strong>
-                            <span class="badge bg-success">Rp 1.000.000</span>
-                        </div>
-                        <small class="text-muted">"Semoga anak-anak yatim mendapatkan pendidikan terbaik."</small>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>Anonim</strong>
-                            <span class="badge bg-success">Rp 200.000</span>
-                        </div>
-                        <small class="text-muted">"Saya hanya bisa membantu sedikit, semoga bermanfaat."</small>
-                    </li>
+                    @forelse ($donatur as $item)
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>{{ $item->nama }}</strong>
+                                <span class="badge bg-success">Rp
+                                    {{ number_format($item->jumlah, 0, '.', '.') }}</span>
+                            </div>
+                            <small class="text-muted">"{{ $item->doa }}"</small>
+                        </li>
+                    @empty
+                        <p class="text-center fs-6">Belum ada donatur nih, Donasi Yuk!!</p>
+                    @endforelse
+
                 </ul>
             </div>
         </div>
     </div>
+
+    <style>
+        .detail-campaign h3 {
+            font-size: 30px;
+        }
+
+        @media (max-width: 576px) {
+            .detail-campaign h3 {
+                margin-top: 10px;
+                font-size: 25px;
+            }
+        }
+
+        .detail-campaign .campaign-deskripsi {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .detail-campaign .campaign-terkumpul {
+            color: var(--clr-theme-primary);
+            margin-bottom: 0;
+        }
+
+        .detail-campaign .button-donasi {
+            background-color: var(--clr-theme-primary);
+            color: #fffefe;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .detail-campaign .button-donasi:hover {
+            background-color: #cf8f30;
+        }
+
+        .nav-tabs .nav-item .nav-link {
+            color: #1b2a52;
+        }
+    </style>
 </div>

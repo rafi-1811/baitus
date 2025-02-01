@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Program;
+use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BeritaFactory extends Factory
 {
@@ -11,20 +12,25 @@ class BeritaFactory extends Factory
 
     public function definition()
     {
+
+        $kategori = \App\Models\Program::inRandomOrder()->first()->kategori_program;
+
         return [
-            'id' => fake()->uuid, 
-            'judul' => fake()->sentence(6, true), 
-            'slug' => fake()->slug, 
-            'kategori' => Program::inRandomOrder()->value('kategori_program'), 
-            'body' => fake()->paragraphs(5, true),
-            'meta_deskripsi' => fake()->sentence(10, true), 
-            'meta_keywords' => implode(',', fake()->words(5)), 
-            'cover_gambar_berita' => fake()->imageUrl(850, 450, 'berita', true, 'gambar_cover'), 
-            'gambar_content' => fake()->imageUrl(379, 239, 'konten berita', true, 'gambar_isi_berita'), 
-            'quotes' => fake()->sentence(10, true), 
-            'status' => fake()->randomElement(['published', 'draft', 'reviewing']), 
-            'created_at' => now(), 
-            'updated_at' => now(),
+            'id' => Str::uuid(),
+            'judul' => $this->faker->sentence(),
+            'slug' => $this->faker->slug(),
+            'kategori' => $kategori, // Sesuaikan dengan kategori yang valid
+            'body' => $this->faker->paragraph(),
+            'meta_deskripsi' => $this->faker->sentence(),
+            'meta_keywords' => $this->faker->words(3, true),
+            'cover_gambar_berita' => $this->faker->imageUrl(),
+            'gambar_dokumentasi' => json_encode([
+                $this->faker->imageUrl(),
+                $this->faker->imageUrl(),
+            ]),
+            'id_youtube' => $this->faker->optional()->word(),
+            'quotes' => $this->faker->optional()->sentence(),
+            'status' => $this->faker->randomElement(['PUBLISHED', 'DRAFT', 'PENDING']),
         ];
     }
 

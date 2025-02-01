@@ -16,7 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('campaign_id');
             $table->string('transaksi_id')->unique();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email')->nullable();
+            $table->string('telepon')->nullable();
             $table->decimal('jumlah', 15, 2);
             $table->text('doa')->nullable();
             $table->string('status')->default('pending');

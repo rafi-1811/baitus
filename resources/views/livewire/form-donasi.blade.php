@@ -20,8 +20,7 @@
             @endif
             <div style="font-size: 14px" class="alert alert-warning mb-4" role="alert">
                 <i class="fas fa-info-circle me-2"></i>
-                Untuk memastikan Anda menerima bukti donasi yang valid, kami mohon agar Anda melengkapi informasi nomor
-                HP dan email Anda.
+                Untuk memastikan Anda menerima bukti donasi yang valid, kami mohon agar Anda melengkapi email Anda.
             </div>
 
             <form wire:submit.prevent="submitDonasi">
@@ -94,7 +93,7 @@
                     @enderror
                 </div>
 
-
+                {{-- email --}}
                 <div class="mb-3 @error('email')
                     error-form
                 @enderror">
@@ -102,6 +101,19 @@
                     <input wire:model="email" type="email" class="form-control form-control-lg fs-6"
                         placeholder="Masukkan email">
                     @error('email')
+                        <div class="form-error-text">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                {{-- Nomor Telepon --}}
+                <div class="mb-3 @error('telepon')
+                    error-form
+                @enderror">
+                    <label class="form-label fw-semibold">Nomor Telepon <span
+                            class="text-muted">(Opsional)</span></label>
+                    <input wire:model="telepon" type="tel" class="form-control form-control-lg fs-6"
+                        placeholder="Masukkan Nomor Telepon">
+                    @error('telepon')
                         <div class="form-error-text">{{ $message }}</div>
                     @enderror
                 </div>
@@ -135,7 +147,41 @@
                 <button type="submit" class="btn btn-warning w-100 py-2 fw-semibold rounded-3">
                     <i class="fas fa-heart me-2"></i>Lanjutkan Donasi
                 </button>
+
+                <div id="result-json"></div>
             </form>
         </div>
     </div>
 </div>
+
+
+@push('scripts')
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
+    </script>
+    <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('donasiSent', (data) => {
+                snap.pay(data[0].snapToken, {
+                    onSuccess: function(result) {
+                        Livewire.dispatch('paymentSuccess', result);
+                        document.getElementById('result-json').innerHTML += JSON.stringify(
+                            result, null, 2);
+                    },
+                    onPending: function(result) {
+                        Livewire.dispatch('paymentPending', result);
+                        document.getElementById('result-json').innerHTML += JSON.stringify(
+                            result, null, 2);
+                    },
+                    onError: function(result) {
+                        Livewire.dispatch('paymentError', result);
+                        document.getElementById('result-json').innerHTML += JSON.stringify(
+                            result, null, 2);
+                    },
+                    onClose: function() {
+                        Livewire.dispatch('paymentClosed');
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
