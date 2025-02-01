@@ -22,7 +22,7 @@
         </div>
 
         <div class="progress mb-4">
-            <div class="progress-bar bg-primary" role="progressbar"
+            <div class="progress-bar bg-warning" role="progressbar"
                 style="width: {{ ($campaign->terkumpul / $campaign->target) * 100 }}%"
                 aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
                 aria-valuemax="100"></div>

@@ -22,7 +22,7 @@
                 <!-- Slides -->
                 <div class="carousel-inner">
                     @foreach ($staticData['banner'] as $index => $item)
-                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                        <div wire:key="{{ $item->id }}" class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                             <img src="{{ asset('storage/' . $item->gambar) }}" class="d-block w-100"
                                 alt="{{ $item->caption }}">
                         </div>
@@ -73,7 +73,8 @@
             </div>
             <div class="row">
                 @forelse ($staticData['rekening'] as $item)
-                    <div class="col-xl-3 col-lg-3 col-md-3 tp_fade_left" data-fade-from="left">
+                    <div wire:key="{{ $item->id }}" class="col-xl-3 col-lg-3 col-md-3 tp_fade_left"
+                        data-fade-from="left">
                         <div class="rekening_service-item">
                             <div class="rekening_service-item-icon">
                                 <img src="{{ asset('storage/' . $item->gambar_rekening_bank) }}"
@@ -168,8 +169,8 @@
         </div>
     </section>
 
-        {{-- 5 Section Data Yatim --}}
-        <x-donasi />
+    {{-- 5 Section Data Yatim --}}
+    <x-donasi />
 
 </main>
 

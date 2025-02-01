@@ -18,7 +18,7 @@
                                     <a href="#">Program Kami</a>
                                     <ul class="submenu">
                                         @foreach ($staticData['program'] as $item)
-                                            <x-nav-link
+                                            <x-nav-link wire:key="{{ $item->slug }}"
                                                 href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}</x-nav-link>
                                         @endforeach
                                     </ul>

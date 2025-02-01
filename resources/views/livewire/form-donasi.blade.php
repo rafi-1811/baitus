@@ -144,11 +144,10 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-warning w-100 py-2 fw-semibold rounded-3">
+                <button wire:loading.attr="disabled" type="submit"
+                    class="btn btn-warning w-100 py-2 fw-semibold rounded-3">
                     <i class="fas fa-heart me-2"></i>Lanjutkan Donasi
                 </button>
-
-                <div id="result-json"></div>
             </form>
         </div>
     </div>
@@ -159,23 +158,23 @@
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.client_key') }}">
     </script>
     <script>
-        document.addEventListener('livewire:init', () => {
+        document.addEventListener('livewire:navigated', () => {
             Livewire.on('donasiSent', (data) => {
                 snap.pay(data[0].snapToken, {
                     onSuccess: function(result) {
-                        Livewire.dispatch('paymentSuccess', result);
-                        document.getElementById('result-json').innerHTML += JSON.stringify(
-                            result, null, 2);
+                        console.log(result);
+                        Livewire.dispatch('paymentSuccess', {
+                            order_id: result.order_id,
+                            campaign_id: data[0].campaign_id
+                        });
                     },
                     onPending: function(result) {
-                        Livewire.dispatch('paymentPending', result);
-                        document.getElementById('result-json').innerHTML += JSON.stringify(
-                            result, null, 2);
+                        Livewire.dispatch('paymentPending', {
+                            order_id: result.order_id
+                        });
                     },
                     onError: function(result) {
                         Livewire.dispatch('paymentError', result);
-                        document.getElementById('result-json').innerHTML += JSON.stringify(
-                            result, null, 2);
                     },
                     onClose: function() {
                         Livewire.dispatch('paymentClosed');

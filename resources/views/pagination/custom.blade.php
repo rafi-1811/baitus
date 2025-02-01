@@ -14,7 +14,7 @@ $scrollIntoViewJsSnippet = ($scrollTo !== false)
     @if ($paginator->hasPages())
         <div class="row">
             <div class="col-12">
-                <div class="pagination-area pt-30 d-flex justify-content-center tp_fade_bottom">
+                <div class="pagination-area pt-30 pb-30 d-flex justify-content-center tp_fade_bottom">
                     {{-- Tombol "Previous" --}}
                     @if ($paginator->onFirstPage())
                         <span class="disabled" style="cursor: default; border-color: #e9e9e9; color: #e9e9e9"><i class="fa-light fa-arrow-left"></i></span>

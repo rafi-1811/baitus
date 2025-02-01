@@ -14,7 +14,8 @@
         <div class="content1">
             <div class="row">
                 @forelse ($berita as $item)
-                    <div class="col-xl-4 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
+                    <div wire:key="{{ $item->slug }}" class="col-xl-4 col-lg-4 col-md-6 tp_fade_left"
+                        data-fade-from="left">
                         <div class="h2_blog-item mb-35">
                             <a wire:navigate href="{{ route('detail-berita', ['slug' => $item->slug]) }}">
                                 <div class="h2_blog-img w_img">
@@ -54,7 +55,7 @@
                 <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
                 <ul>
                     @foreach ($staticData['program'] as $item)
-                        <li><a wire:navigate
+                        <li wire:key="{{ $item->slug }}"><a wire:navigate
                                 href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}
                                 <span>({{ $item->berita->count() }})</span></a>
                         </li>

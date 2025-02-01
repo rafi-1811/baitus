@@ -22,12 +22,13 @@ class FormDonasi extends Component
     public $nama;
     public $email;
     public $telepon;
-    public $doa;   
+    public $doa;
     public $anonymous = false;
     public $campaign;
     public $snapToken;
 
-    protected function rules() {
+    protected function rules()
+    {
         return [
             'nominalDonasi' => 'required|numeric|min:10000',
             'nama' => 'required|min:3',
@@ -37,7 +38,8 @@ class FormDonasi extends Component
         ];
     }
 
-    protected function messages() {
+    protected function messages()
+    {
         return [
             'nominalDonasi.required' => 'Nominal donasi harus diisi.',
             'nominalDonasi.numeric' => 'Nominal donasi harus berupa angka.',
@@ -52,10 +54,11 @@ class FormDonasi extends Component
 
     public function updated($field)
     {
-        $this->resetValidation(['nama', 'nominalDonasi','email', 'telepon', 'doa']);
+        $this->resetValidation(['nama', 'nominalDonasi', 'email', 'telepon', 'doa']);
     }
 
-    private function getTransactionId() {
+    private function getTransactionId()
+    {
         $transactionId = 'DONASIBSA-' . now()->format('YmdHis') . '-' . strtoupper(Str::random(4)) . '-U' . auth()->id();
         return $transactionId;
     }
@@ -69,7 +72,7 @@ class FormDonasi extends Component
         $donatur = Donatur::create([
             "id" => (string) Str::uuid(),
             "campaign_id" => $this->campaign->id,
-            "transaksi_id" => $this->getTransactionId(), 
+            "transaksi_id" => $this->getTransactionId(),
             "jumlah" => $this->nominalDonasi,
             "nama" => $this->nama,
             "email" => $this->email,
@@ -83,16 +86,16 @@ class FormDonasi extends Component
     private function setMidtransConfig()
     {
         Config::$serverKey = config('midtrans.server_key');
-        Config::$isProduction = config('midtrans.is_production'); 
-        Config::$isSanitized = true; 
+        Config::$isProduction = config('midtrans.is_production');
+        Config::$isSanitized = true;
         Config::$is3ds = true;
     }
 
-    private function createMidtransParams() 
+    private function createMidtransParams($donatur)
     {
         return [
             'transaction_details' => [
-                'order_id' => $this->getTransactionId(),
+                'order_id' => $donatur->transaksi_id,
                 'gross_amount' => $this->nominalDonasi,
             ],
             'customer_details' => [
@@ -112,38 +115,49 @@ class FormDonasi extends Component
 
     public function submitDonasi()
     {
-        if (!$this->campaign) {
-            session()->flash('error', 'Campaign tidak ditemukan');
-            return;
-        }
-
-        $this->nominalDonasi = (int) str_replace('.', '', $this->nominalDonasi);
-
-        if ($this->anonymous === true) {
-            $this->nama = 'Hamba Allah';
-        }
-
-        // calidasi form
-        $this->validate();
-
+        // ini fungsi rate limit buat antisipasi spam spam kaga jelas
         try {
             $this->rateLimit(5, 350);
-            $donatur = $this->createDonatur();
         } catch (TooManyRequestsException $exception) {
             session()->flash('error', "Mohon tunggu {$exception->secondsUntilAvailable} detik sebelum mengirim ulang donasi");
         } catch (\Exception $e) {
             session()->flash('error', 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.');
         }
 
+        // ini handle error klo campaignnya kaga ada
+        if (!$this->campaign) {
+            session()->flash('error', 'Campaign tidak ditemukan');
+            return;
+        }
+
+        // ini fungsi nominal yang tadinya string jadi type integer
+        $this->nominalDonasi = (int) str_replace('.', '', $this->nominalDonasi);
+
+        // kalo checkbox anonimnya di centang namanya jadi 'Hamba Allah'
+        if ($this->anonymous === true) {
+            $this->nama = 'Hamba Allah';
+        }
+
+        // validasi form
+        $this->validate();
+
+        // buat data donatur
+        $donatur = $this->createDonatur();
+
+        // config midtrans
         $this->setMidtransConfig();
 
-        $params = $this->createMidtransParams();
+        // siapin params buat snap token midtrans
+        $params = $this->createMidtransParams($donatur);
 
+        // reset form kalo abis submit tombolnya
         $this->reset();
 
         try {
+            // ini bikin snap tokennya
             $this->snapToken = Snap::getSnapToken($params);
             $this->dispatch('donasiSent', [
+                'campaign_id' => $donatur->campaign_id,
                 'nama' => $donatur->nama,
                 'jumlah' => $donatur->jumlah,
                 'doa' => $donatur->doa,
@@ -156,7 +170,8 @@ class FormDonasi extends Component
         }
     }
 
-    public function mount($slug) {
+    public function mount($slug)
+    {
         $this->campaign = Campaign::with('donaturs')->where('slug', $slug)->first();
         if (!$this->campaign) {
             abort(404, 'Campaign tidak ditemukan');
@@ -168,36 +183,41 @@ class FormDonasi extends Component
         return view('livewire.form-donasi')->layout('layout.layout1');
     }
 
-    #[On('paymentSuccess')] 
-    public function handlePaymentSuccess($result)
+    private function updateStatusDonatur($order_id, $status)
     {
-        Donatur::where('transaksi_id', $result['order_id'])
-            ->update(['status' => 'SUCCESS']);
-            
-        session()->flash('success', 'Pembayaran berhasil!');
+        return Donatur::where('transaksi_id', $order_id)
+            ->update(['status' => $status]);
     }
-    
+
+    #[On('paymentSuccess')]
+    public function handlePaymentSuccess($order_id, $campaign_id)
+    {
+        $this->updateStatusDonatur($order_id, 'SUCCESS');
+        $totalTerkumpul = Donatur::where('campaign_id', $campaign_id)
+            ->where('status', 'SUCCESS')
+            ->sum('jumlah');
+        Campaign::where('id', $campaign_id)
+            ->update(['terkumpul' => $totalTerkumpul]);
+        $this->redirect('/campaign', navigate: true);
+    }
+
     #[On('paymentPending')]
-    public function handlePaymentPending($result)
+    public function handlePaymentPending($order_id)
     {
-        Donatur::where('transaksi_id', $result['order_id'])
-            ->update(['status' => 'PENDING']);
-            
-        session()->flash('info', 'Menunggu pembayaran');
+        $this->updateStatusDonatur($order_id, 'PENDING');
+        $this->redirect('/campaign', navigate: true);
     }
-    
+
     #[On('paymentError')]
     public function handlePaymentError($result)
     {
-        Donatur::where('transaksi_id', $result['order_id'])
-            ->update(['status' => 'FAILED']);
-            
-        session()->flash('error', 'Pembayaran gagal');
+        $this->updateStatusDonatur($result['order_id'], 'FAILED');
+        $this->redirect('/campaign', navigate: true);
     }
-    
+
     #[On('paymentClosed')]
     public function handlePaymentClosed()
     {
-        session()->flash('info', 'Pembayaran dibatalkan');
+        $this->redirect('/campaign', navigate: true);
     }
 }

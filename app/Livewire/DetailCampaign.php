@@ -13,19 +13,20 @@ class DetailCampaign extends Component
     public $donatur;
 
     #[On('donasiSent')]
-    public function updateDonasi($data){
-        $this->donatur = $this->campaign->donaturs()->latest()->get();
+    public function updateDonasi($data)
+    {
+        $this->donatur = $this->campaign->donaturs()->where('status', 'SUCCESS')->latest()->get();
     }
 
     public function mount($slug)
     {
-        $this->campaign = Campaign::with('donaturs')->where('slug', $slug)->firstOrFail();
-        $this->donatur = $this->campaign->donaturs()->latest()->get();
+        $this->campaign = Campaign::with('donaturs')->where('status', 'Aktif')->where('slug', $slug)->firstOrFail();
+        $this->donatur = $this->campaign->donaturs()->where('status', 'SUCCESS')->latest()->get();
     }
 
     public function render()
     {
-        return view('livewire.pages.detail-campaign',[
+        return view('livewire.pages.detail-campaign', [
             'campaign' => $this->campaign
         ])->layout('layout.layout1', [
             'titleBread' => 'Detail Campaign',

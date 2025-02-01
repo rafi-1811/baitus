@@ -6,7 +6,7 @@
     <div class="row">
         <!-- Gambar Campaign -->
         <div class="col-md-7">
-            <img src="{{ asset('storage/' . $campaign->gambar) }}" class="img-fluid rounded shadow-sm"
+            <img src="{{ asset('storage/' . $campaign->gambar) }}" style="width: 100%;" class="rounded shadow-sm"
                 alt="Gambar Campaign">
         </div>
 
@@ -21,15 +21,22 @@
             </p>
 
             <!-- Progress Bar -->
-            <div class="progress mb-3">
-                <div class="progress-bar bg-success" role="progressbar"
-                    style="width: {{ ($campaign->terkumpul / $campaign->target) * 100 }}%;"
-                    aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
-                    aria-valuemax="100"></div>
+            <div class="relative mb-3">
+                <div class="progress">
+                    <div class="progress-bar position-relative" role="progressbar"
+                        style="width: {{ min(($campaign->terkumpul / $campaign->target) * 100, 100) }}%"
+                        aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <span class="position-absolute top-50 start-50 translate-middle fw-bold label-persentase">
+                            {{ number_format(min(($campaign->terkumpul / $campaign->target) * 100, 100), 0) }}%
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- Jumlah Donatur -->
-            <p><strong>{{ $campaign->donaturs->count() }} Donatur</strong> telah berdonasi</p>
+            <p><strong>{{ $campaign->donaturs->where('status', 'SUCCESS')->count() }} Donatur</strong> telah berdonasi
+            </p>
 
             <!-- Tombol Donasi -->
             <a wire:navigate href="{{ route('form-donasi', ['slug' => $campaign->slug]) }}"
@@ -64,7 +71,7 @@
                         <li class="list-group-item">
                             <div class="d-flex justify-content-between align-items-center">
                                 <strong>{{ $item->nama }}</strong>
-                                <span class="badge bg-success">Rp
+                                <span class="badge">Rp
                                     {{ number_format($item->jumlah, 0, '.', '.') }}</span>
                             </div>
                             <small class="text-muted">"{{ $item->doa }}"</small>
@@ -77,46 +84,4 @@
             </div>
         </div>
     </div>
-
-    <style>
-        .detail-campaign h3 {
-            font-size: 30px;
-        }
-
-        @media (max-width: 576px) {
-            .detail-campaign h3 {
-                margin-top: 10px;
-                font-size: 25px;
-            }
-        }
-
-        .detail-campaign .campaign-deskripsi {
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .detail-campaign .campaign-terkumpul {
-            color: var(--clr-theme-primary);
-            margin-bottom: 0;
-        }
-
-        .detail-campaign .button-donasi {
-            background-color: var(--clr-theme-primary);
-            color: #fffefe;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .detail-campaign .button-donasi:hover {
-            background-color: #cf8f30;
-        }
-
-        .nav-tabs .nav-item .nav-link {
-            color: #1b2a52;
-        }
-    </style>
 </div>

@@ -32,7 +32,8 @@
                             <h5 class="footer-widget-title">Sosial Media</h5>
                             <ul>
                                 @forelse ($staticData['sosial_media'] as $item)
-                                    <li><a href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a>
+                                    <li wire:key="{{ $item->id }}"><a
+                                            href="{{ $item->link_sosial_media }}">{{ $item->nama_sosial_media }}</a>
                                     </li>
                                 @empty
                                     <li class="text-danger">Belum ada sosial media</li>

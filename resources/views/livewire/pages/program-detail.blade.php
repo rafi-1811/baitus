@@ -49,7 +49,7 @@
                 <h5 class="blog_details-widget-title mb-25">Kategori Program</h5>
                 <ul>
                     @foreach ($staticData['program'] as $item)
-                        <li><a wire:navigate
+                        <li wire:key="{{ $item->slug }}"><a wire:navigate
                                 href="{{ route('detail-program', ['slug' => $item->slug]) }}">{{ $item->kategori_program }}
                                 <span>({{ $item->berita->count() }})</span></a>
                         </li>
