@@ -20,7 +20,9 @@
             @endif
             <div style="font-size: 14px" class="alert alert-warning mb-4" role="alert">
                 <i class="fas fa-info-circle me-2"></i>
-                Untuk memastikan Anda menerima bukti donasi yang valid, kami mohon agar Anda melengkapi email Anda.
+                Untuk memastikan Anda menerima bukti donasi yang valid, kami mohon agar Anda melengkapi <b>Nomor
+                    Telepon</b>
+                dan <b>Email</b> Anda.
             </div>
 
             <form wire:submit.prevent="submitDonasi">
@@ -162,7 +164,6 @@
             Livewire.on('donasiSent', (data) => {
                 snap.pay(data[0].snapToken, {
                     onSuccess: function(result) {
-                        console.log(result);
                         Livewire.dispatch('paymentSuccess', {
                             order_id: result.order_id,
                             campaign_id: data[0].campaign_id

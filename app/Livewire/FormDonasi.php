@@ -43,7 +43,7 @@ class FormDonasi extends Component
         return [
             'nominalDonasi.required' => 'Nominal donasi harus diisi.',
             'nominalDonasi.numeric' => 'Nominal donasi harus berupa angka.',
-            'nominalDonasi.min' => 'Nominal donasi minimal Rp 10.000.',
+            'nominalDonasi.min' => 'Nominal donasi minimal Rp 10.000',
             'nama.required' => 'Nama harus diisi.',
             'nama.min' => 'Nama minimal 3 karakter.',
             'email.email' => 'Email tidak valid.',
@@ -151,7 +151,7 @@ class FormDonasi extends Component
         $params = $this->createMidtransParams($donatur);
 
         // reset form kalo abis submit tombolnya
-        $this->reset();
+        // $this->reset();
 
         try {
             // ini bikin snap tokennya
@@ -198,6 +198,9 @@ class FormDonasi extends Component
             ->sum('jumlah');
         Campaign::where('id', $campaign_id)
             ->update(['terkumpul' => $totalTerkumpul]);
+        $this->dispatch('modalSuccess', [
+            "nama" => $this->nama,
+        ]);
         $this->redirect('/campaign', navigate: true);
     }
 

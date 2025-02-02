@@ -14033,6 +14033,10 @@ input[type="number"] {
     line-height: 1.5;
 }
 
+.card-campaign .card-body .campaign-target{
+    font-size: 14px;
+}
+
 .card-campaign .card-body .campaign-target,
 .card-campaign .card-body .campaign-terkumpul {
     color: var(--clr-theme-primary);
@@ -14120,4 +14124,80 @@ input[type="number"] {
 
 .tab-content .tab-pane .list-group .list-group-item .badge {
     background-color: var(--clr-theme-primary);
+}
+
+/* styling modal donasi */
+
+/* Modal Container */
+.modal-donasi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* Overlay */
+.modal-donasi .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-donasi .modal-content {
+    position: relative;
+    width: 70%;
+    max-width: 550px;
+    background-color: white;
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-donasi .modal-content h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-donasi .modal-content p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.modal-donasi .modal-content .img-gift {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Tombol Kembali */
+.button-close {
+    width: 50%;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f6a96c;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-close:hover {
+    background-color: #f8b436;
 }
