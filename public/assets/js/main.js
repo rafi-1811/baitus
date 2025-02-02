@@ -7,47 +7,47 @@ var device_width = window.screen.width;
 
 ////////////////////////////////////////////////////////////////////////
 // 02. Meanmenu
-$('#mobile-menu').meanmenu({
-	meanMenuContainer: '.mobile-menu',
-	meanScreenWidth: "1199"
-});
+// $('#mobile-menu').meanmenu({
+// 	meanMenuContainer: '.mobile-menu',
+// 	meanScreenWidth: "1199"
+// });
 
 
 
   
   
-////////////////////////////////////////////////////////////////////////
-// 03. Mobile Side Menu
+// ////////////////////////////////////////////////////////////////////////
+// // 03. Mobile Side Menu
 
-$('.side-toggle').on('click', function () {
-    $('.side-info').addClass('info-open');
-    $('.offcanvas-overlay').addClass('overlay-open');
-});
+// $('.side-toggle').on('click', function () {
+//     $('.side-info').addClass('info-open');
+//     $('.offcanvas-overlay').addClass('overlay-open');
+// });
 
-$('.sidebar-close').on('click', function () {
-    $('.side-info').removeClass('info-open');
-    $('.offcanvas-overlay').removeClass('overlay-open');
-});
+// $('.sidebar-close').on('click', function () {
+//     $('.side-info').removeClass('info-open');
+//     $('.offcanvas-overlay').removeClass('overlay-open');
+// });
 
-$('.offcanvas-overlay').on('click', function () {
-    $('.side-info').removeClass('info-open');
-    $('.offcanvas-overlay').removeClass('overlay-open');
-});
+// $('.offcanvas-overlay').on('click', function () {
+//     $('.side-info').removeClass('info-open');
+//     $('.offcanvas-overlay').removeClass('overlay-open');
+// });
 
-$('.side-info-close,.offcanvas-overlay').on('click', function () {
-    closeSidebar();
-});
+// $('.side-info-close,.offcanvas-overlay').on('click', function () {
+//     closeSidebar();
+// });
 
-function closeSidebar() {
-    if($(window).width() > 1199) {
-        $('.side-info').removeClass('info-open');
-        $('.offcanvas-overlay').removeClass('overlay-open');
-    }
-}
+// function closeSidebar() {
+//     if($(window).width() > 1199) {
+//         $('.side-info').removeClass('info-open');
+//         $('.offcanvas-overlay').removeClass('overlay-open');
+//     }
+// }
 
-$(window).resize(function() {
-    closeSidebar();
-});
+// $(window).resize(function() {
+//     closeSidebar();
+// });
 
 
 
