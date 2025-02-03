@@ -171,11 +171,13 @@
                     },
                     onPending: function(result) {
                         Livewire.dispatch('paymentPending', {
-                            order_id: result.order_id
+                            order_id: result.order_id,
                         });
                     },
                     onError: function(result) {
-                        Livewire.dispatch('paymentError', result);
+                        Livewire.dispatch('paymentError', {
+                            order_id: result.order_id,
+                        });
                     },
                     onClose: function() {
                         Livewire.dispatch('paymentClosed');

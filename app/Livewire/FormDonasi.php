@@ -212,9 +212,9 @@ class FormDonasi extends Component
     }
 
     #[On('paymentError')]
-    public function handlePaymentError($result)
+    public function handlePaymentError($order_id)
     {
-        $this->updateStatusDonatur($result['order_id'], 'FAILED');
+        $this->updateStatusDonatur($order_id, 'FAILED');
         $this->redirect('/campaign', navigate: true);
     }
 

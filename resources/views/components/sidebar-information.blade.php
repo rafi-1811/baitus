@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {{-- <div class="sidebar-info side-info">
     <div class="sidebar-logo-wrapper mb-25">
         <div class="row align-items-end">
@@ -27,20 +28,21 @@
 <!-- Tombol untuk membuka sidebar -->
 
 <!-- Sidebar -->
+
 <aside id="sidebar" class="sidebar">
     <div class="sidebar-header">
         <button id="close-sidebar" class="close-sidebar-btn">&times;</button>
     </div>
     <nav>
         <ul>
-            <li><a href="/" class="menu-link">Beranda</a></li>
+            <li><a wire:navigate href="/" class="menu-link">Beranda</a></li>
             <li class="dropdown-program">
                 <a href="#"
                     class="menu-link dropdown-toggle d-flex align-items-center justify-content-center gap-2">Program
                     Kami</a>
                 <ul class="program-menu-list">
                     @foreach ($staticData['program'] as $item)
-                        <li><a wire:navigate href="/program/{{ $item->slug }}"
+                        <li><a wire:key="{{ $item->slug }}" wire:navigate href="/program/{{ $item->slug }}"
                                 class="menu-link">{{ $item->kategori_program }}</a></li>
                     @endforeach
                 </ul>
@@ -60,27 +62,47 @@
 
 @push('scripts')
     <script>
-        document.addEventListener('livewire:navigated', () => {
-            const clickOpenSidebar = document.querySelector('.header-menu-bar');
-            const sidebar = document.getElementById('sidebar');
-            const menuClick = document.querySelector('.dropdown-toggle');
-            const listProgram = document.querySelector('.program-menu-list');
-            const closeSidebar = document.getElementById('close-sidebar');
-            const sidebarOverlay = document.getElementById('sidebar-overlay');
+        function initSidebar() {
+            const clickOpenSidebar = document.querySelector(".header-menu-bar");
+            const sidebar = document.getElementById("sidebar");
+            const menuClick = document.querySelector(".dropdown-toggle");
+            const listProgram = document.querySelector(".program-menu-list");
+            const closeSidebar = document.getElementById("close-sidebar");
+            const sidebarOverlay = document.getElementById("sidebar-overlay");
 
-            menuClick.addEventListener('click', () => {
-                listProgram.classList.toggle('open');
-            })
+            if (menuClick) {
+                const newMenuClick = menuClick.cloneNode(true);
+                menuClick.parentNode.replaceChild(newMenuClick, menuClick);
 
-            closeSidebar.addEventListener('click', () => {
-                sidebar.classList.remove('open');
-                sidebarOverlay.classList.remove('open');
-            })
+                newMenuClick.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    listProgram.classList.toggle("open");
+                });
+            }
 
-            clickOpenSidebar.addEventListener('click', () => {
-                sidebar.classList.add('open');
-                sidebarOverlay.classList.add('open');
-            })
-        })
+            if (closeSidebar) {
+                closeSidebar.addEventListener("click", () => {
+                    sidebar.classList.remove("open");
+                    sidebarOverlay.classList.remove("open");
+                });
+            }
+
+            if (clickOpenSidebar) {
+                clickOpenSidebar.addEventListener("click", () => {
+                    sidebar.classList.add("open");
+                    sidebarOverlay.classList.add("open");
+                });
+            }
+        }
+
+        // Pasang event listener untuk navigasi Livewire
+        document.addEventListener("livewire:navigated", () => {
+            initSidebar();
+        });
+
+        // Pasang event listener saat dokumen pertama kali dimuat
+        document.addEventListener("livewire:init", () => {
+            initSidebar();
+        });
     </script>
 @endpush
