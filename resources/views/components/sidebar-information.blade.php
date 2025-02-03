@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {{-- <div class="sidebar-info side-info">
     <div class="sidebar-logo-wrapper mb-25">
         <div class="row align-items-end">

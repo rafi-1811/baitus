@@ -6,7 +6,7 @@
                     <h2 class="h4_section-donasi mb-0">Teman - Teman Bisa Donasi Mulai Dari Rp 10.000</h2>
                 </div>
                  <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim">
-                <button class="button1">Donasi Disini</button></a>
+                <button class="button1">DONASI DISINI</button></a>
             </div>
         </div>
     </div>

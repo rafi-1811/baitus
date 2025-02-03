@@ -4931,7 +4931,7 @@ Header CSS 01 Start
 }
 
 .inner_section-subtitle {
-    color: #7d25ec;
+    color: #ff7f32;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -11477,6 +11477,17 @@ Header CSS 01 Start
     font-weight: 500;
     line-height: 22px;
 }
+
+@media (max-width: 767px) {
+    .footer-bottom-copyright p {
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .footer-bottom-copyright p {
+        text-align: center;
+    }
+}
 .footer-bottom-menu ul {
     display: flex;
     align-items: center;
@@ -13644,49 +13655,25 @@ input[type="number"] {
 /* Section Donasi */
 
 .button1 {
-    position: relative;
-    /* width: 100%; */
-    align-items: center;
-    background-color: #fa8925;
-    border: 0;
-    color: #ffffff;
-    border-radius: 0.5em;
-    font-size: 20px;
-    padding: 0.375em 1em;
-    font-weight: 600;
-    text-shadow: 0 0.0625em 0 #fa8020;
-    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
-        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
-        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
-    transition: 0.25s ease;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
+  background: linear-gradient(45deg, #ff7f32, #ffb84d); /* Gradient warna oranye */
+  color: white; /* Warna teks putih */
+  width: 20%;
+  padding: 12px 24px; /* Jarak dalam tombol */
+  border-radius: 8px; /* Sudut melengkung */
+  border: none; /* Menghilangkan border default */
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Teks tebal */
+  cursor: pointer; /* Menambahkan pointer saat hover */
+  transition: background 0.3s ease; /* Efek transisi saat hover */
+}
 
-    &:active,
-    &:hover {
-        transform: translateY(0.225em);
-        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
-            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
-            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
-            0 0.225em 0.375em 0 #c45d02;
+.button1:hover {
+  background: linear-gradient(45deg, #ff9c4d, #ff7f32); /* Warna saat hover */
+}
 
-        &:after {
-            height: calc(100% + 0.225em);
-        }
-    }
-
-    &:after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 100%;
-        height: calc(100% + 0.375em);
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        transition: height 0.25s ease;
-    }
+.button1:active {
+    transform: scale(1);
+    box-shadow: 0px 5px 0px rgba(255, 99, 71, 0.3); /* Small shadow when clicked */
 }
 
 /* Section Styles */
@@ -13714,17 +13701,7 @@ input[type="number"] {
 }
 
 /* Button styles */
-.button1 {
-    display: inline-block;
-    padding: 12px 30px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 22px;
-    text-transform: uppercase;
-    color: #fff;
-    background: linear-gradient(90deg, #ff983d 10%, #fa7f20 30%, #ffbb3d 80%);
-}
+
 /* #FF983D */
 
 /* Button Styles */
@@ -13786,6 +13763,7 @@ input[type="number"] {
 
     .button1 {
         font-size: 16px;
+        width: 45%;
         padding: 10px 25px;
     }
 }
@@ -13868,92 +13846,6 @@ input[type="number"] {
     letter-spacing: -1.6px;
 }
 
-.button2 {
-    position: relative;
-    width: 100%;
-    align-items: center;
-    background-color: #fa8925;
-    border: 0;
-    color: #ffffff;
-    border-radius: 0.5em;
-    font-size: 20px;
-    padding: 0.375em 1em;
-    font-weight: 100;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0.0625em 0 #fa8020;
-    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
-        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
-        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
-    transition: 0.25s ease;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-
-    &:active,
-    &:hover {
-        transform: translateY(0.225em);
-        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
-            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
-            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
-            0 0.225em 0.375em 0 #c45d02;
-
-        &:after {
-            height: calc(100% + 0.225em);
-        }
-    }
-
-    &:after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 100%;
-        height: calc(100% + 0.375em);
-        top: 0;
-        left: 0;
-        background-color: transparent;
-        transition: height 0.25s ease;
-    }
-}
-
-@media (max-width: 1200px) {
-    .button2 {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 992px) {
-    .button2 {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 768px) {
-    .donasi-area-side {
-        padding-top: 50px;
-        padding-bottom: 60px;
-    }
-
-    .button2 {
-        font-size: 16px;
-        /* padding: 8px 16px; */
-        margin-left: 14px;
-    }
-}
-
-@media (max-width: 576px) {
-    .donasi-area-side {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .button2 {
-        font-size: 16px;
-        /* padding: 6px 12px; */
-        margin-left: 12px;
-    }
-}
 /* styling campaign page */
 
 
@@ -14017,7 +13909,7 @@ input[type="number"] {
 }
 
 .card-campaign .card-body .button-donasi:hover {
-    background-color: #cf8f30;
+    background-color: #fa822d;
     color: #fcf9f9;
 }
 
@@ -14041,12 +13933,12 @@ input[type="number"] {
 }
 
 .detail-campaign .campaign-terkumpul {
-    color: var(--clr-theme-primary);
+    color: #fa8d20;
     margin-bottom: 0;
 }
 
 .detail-campaign .button-donasi {
-    background-color: var(--clr-theme-primary);
+    background-color: #fa8d20;
     color: #fffefe;
     padding: 10px 20px;
     display: flex;
@@ -14057,7 +13949,7 @@ input[type="number"] {
 }
 
 .detail-campaign .button-donasi:hover {
-    background-color: #cf8f30;
+    background-color: #ff9d3b;
 }
 
 .detail-campaign .progress{
@@ -14065,7 +13957,7 @@ input[type="number"] {
 }
 
 .detail-campaign .progress .progress-bar{
-    background-color: var(--clr-theme-primary);
+    background-color: #fa8d20;
 }
 
 .detail-campaign .progress .progress-bar .label-persentase{
@@ -14252,7 +14144,7 @@ input[type="number"] {
 
 .cta-donasi {
     display: block;
-    background-color: var(--clr-theme-primary);
+    background-color: #f5890f;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -14260,11 +14152,12 @@ input[type="number"] {
     text-decoration: none;
     margin-top: 20px;
     width: 50%;
-    border-radius: 30px;
+    border-radius: 17px;
 }
 
 .cta-donasi:hover {
-    background-color: #cd8b29;
+    background-color: #f5982f;
+    color: #fffaf5;
 }
 
 /* Overlay */
