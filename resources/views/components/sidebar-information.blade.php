@@ -8,10 +8,13 @@
             </div>
         </div>
     </div>
+
+
     <div class="sidebar-menu-wrapper fix">
         <div class="mobile-menu"></div>
     </div>
-    <div class="donasi-area-side"> <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim">
+    <div class="donasi-area-side  text-center"> 
+        <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim">
         <button class="button2">Donasi Disini</button></a>
     </div>
     <div class="col-xl-6 col-8">

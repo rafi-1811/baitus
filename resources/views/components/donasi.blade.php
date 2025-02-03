@@ -8,7 +8,6 @@
                  <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim">
                 <button class="button1">Donasi Disini</button></a>
             </div>
-            
         </div>
     </div>
 </section>
