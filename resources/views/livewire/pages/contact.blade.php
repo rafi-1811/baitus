@@ -17,11 +17,16 @@
                     </div>
                     <div class="contact-content">
                         <h4 class="contact-content-title">WhatsApp</h4>
+<<<<<<< HEAD
                         <p><a href="https://wa.me/+{{ $staticData['kontak']->telepon ?? '081210079178' }}"
                                 target="_blank">{{ $staticData['kontak']->telepon ?? '081210079178' }}</a>
                             <br>
                             <a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '082124771471' }}"
                                 target="_blank">{{ $staticData['kontak']->whatsapp ?? '082124771471' }}</a>
+=======
+                        <p><a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '081210079178' }}"
+                                target="_blank">{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</a>
+>>>>>>> 278ae270d55eb6fdfbf882516870b8d416341c2f
                         </p>
                     </div>
                 </div>
@@ -48,8 +53,13 @@
                         <i class="fa-solid fa-clock"></i>
                     </div>
                     <div class="contact-content">
+<<<<<<< HEAD
                         <h4 class="contact-content-title">Waktu Oprasional</h4>
                         <p><a href="#">07.00 - 17.00</a></p>
+=======
+                        <h4 class="contact-content-title">Waktu Operasional</h4>
+                        <p><a href="mailto:support.young@example.com">07.00 - 17.00</a></p>
+>>>>>>> 278ae270d55eb6fdfbf882516870b8d416341c2f
                     </div>
                 </div>
             </div>
@@ -61,7 +71,7 @@
                     <div class="contact-content">
                         <h4 class="contact-content-title">Email</h4>
                         <p><a
-                                href="mailto:{{ $staticData['kontak']->email ?? 'officialbaitussaadahamanah@gmail.com' }}">{{ $staticData['kontak']->email ?? 'officialbaitussaadahamanah@gmail.com' }}</a>
+                                href="mailto:{{ $staticData['kontak']->email ?? 'officialyayasan@baitussaadahamanah.org' }}">{{ $staticData['kontak']->email ?? 'officialyayasan@baitussaadahamanah.org' }}</a>
                         </p>
                     </div>
                 </div>
@@ -73,7 +83,7 @@
                 <i class="fab fa-facebook"></i>
             </a>
 
-            <a href="https://www.youtube.com/@NessieJudge" target="_blank" class="icon youtube">
+            <a href="https://www.youtube.com/@yayasanbaitussaadahamanaho8517" target="_blank" class="icon youtube">
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://www.instagram.com/yayasanbaitussaadahamanah_?igsh=MWdveXU2YzBjeHNhOA==" target="_blank"
@@ -83,7 +93,7 @@
             <a href="https://x.com/Baitussaadah_" target="_blank" class="icon x">
                 <i class="fab fa-x"></i>
             </a>
-            <a href="tiktok.com/@yayasanbaitussaadahamah" target="_blank" class="icon tiktok">
+            <a href="https://www.tiktok.com/@yayasanbaitussaadahamah" target="_blank" class="icon tiktok">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>

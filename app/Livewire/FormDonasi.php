@@ -12,6 +12,8 @@ use Livewire\Attributes\On;
 use Illuminate\Support\Facades\Log;
 use DanHarrin\LivewireRateLimiting\WithRateLimiting;
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
+use App\Jobs\SendThankYouEmail;
+
 
 
 class FormDonasi extends Component
@@ -185,22 +187,38 @@ class FormDonasi extends Component
 
     private function updateStatusDonatur($order_id, $status)
     {
-        return Donatur::where('transaksi_id', $order_id)
-            ->update(['status' => $status]);
+        $donatur = Donatur::where('transaksi_id', $order_id)->first();
+
+        if($donatur) {
+            $donatur->update(['status' => $status]);
+        }
+
+        return $donatur;
     }
 
     #[On('paymentSuccess')]
     public function handlePaymentSuccess($order_id, $campaign_id)
     {
-        $this->updateStatusDonatur($order_id, 'SUCCESS');
+        $donatur = $this->updateStatusDonatur($order_id, 'SUCCESS');
+        // SUM tabel jumlah yang statusnya SUCCESS
         $totalTerkumpul = Donatur::where('campaign_id', $campaign_id)
             ->where('status', 'SUCCESS')
             ->sum('jumlah');
+        
+        // update total terkumpul
         Campaign::where('id', $campaign_id)
             ->update(['terkumpul' => $totalTerkumpul]);
+        
+        // kirim notifikasi
         $this->dispatch('modalSuccess', [
             "nama" => $this->nama,
         ]);
+
+        // kirim email
+        SendThankYouEmail::dispatch($donatur)
+                ->delay(now()->addSeconds(30))
+                ->onQueue('emails');
+
         $this->redirect('/campaign', navigate: true);
     }
 
