@@ -19,6 +19,7 @@
                         <h4 class="contact-content-title">WhatsApp</h4>
                         <p><a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '081210079178' }}"
                                 target="_blank">{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</a>
+                            <br>
                             <a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '082124771471' }}"
                                 target="_blank">{{ $staticData['kontak']->whatsapp ?? '082124771471' }}</a>
                         </p>

@@ -10522,6 +10522,11 @@ Header CSS 01 Start
     font-size: 13px;
     margin-left: 64px;
 }
+@media (max-width: 575px) {
+    .contact-content p {
+        width: 70%;
+    }
+}
 
 .contact-content a {
     color: #7f879e;
@@ -13635,9 +13640,9 @@ input[type="number"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< HEAD
+
 /* Section Donasi */
-=======
+
 .button1 {
     position: relative;
     /* width: 100%; */
@@ -13685,7 +13690,7 @@ input[type="number"] {
 }
 
 /* Section Styles */
->>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
+
 .h4_donasi-area {
     display: flex;
     padding-top: 50px;
@@ -13700,7 +13705,7 @@ input[type="number"] {
     text-align: center;
 }
 
-<<<<<<< HEAD
+
 /* Title styles */
 .h4_section-donasi {
     font-size: 28px;
@@ -13719,7 +13724,7 @@ input[type="number"] {
     text-transform: uppercase;
     color: #fff;
     background: linear-gradient(90deg, #ff983d 10%, #fa7f20 30%, #ffbb3d 80%);
-=======
+}
 /* #FF983D */
 
 /* Button Styles */
@@ -13746,7 +13751,7 @@ input[type="number"] {
     box-shadow: 0 10px 30px rgba(255, 105, 0, 0.5);
 }
 
-<<<<<<< HEAD
+
 /* Animation for the gradient */
 @keyframes gradientAnimation {
     0% {
@@ -13757,7 +13762,7 @@ input[type="number"] {
     }
     100% {
         background-position: 200% 0%;
-=======
+    }}   
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .button1 {
@@ -13770,7 +13775,6 @@ input[type="number"] {
     .button1 {
         font-size: 14px;
         padding: 8px 16px;
->>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
     }
 }
 
@@ -13780,7 +13784,6 @@ input[type="number"] {
         font-size: 20px;
     }
 
-<<<<<<< HEAD
     .button1 {
         font-size: 16px;
         padding: 10px 25px;
@@ -13826,7 +13829,7 @@ input[type="number"] {
     }
 }
 
-=======
+
     .h4_section-area-donasi h2 {
         font-size: 30px;
     }
@@ -13834,7 +13837,7 @@ input[type="number"] {
         font-size: 14px;
         padding: 8px 16px;
     }
-}
+
 
 @media (max-width: 576px) {
     .h4_donasi-area {
@@ -13912,7 +13915,6 @@ input[type="number"] {
     }
 }
 
->>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
 @media (max-width: 1200px) {
     .button2 {
         font-size: 14px;
@@ -13954,11 +13956,7 @@ input[type="number"] {
 }
 /* styling campaign page */
 
-<<<<<<< HEAD
-}
 
-
-=======
 .campaign-section {
     padding: 70px 20px;
 }
@@ -14292,4 +14290,3 @@ input[type="number"] {
     width: 200px;
     height: 200px;
 }
->>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
