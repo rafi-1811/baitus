@@ -10,12 +10,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left">
+            <div class="col-lg-6 col-md-6 mb-35 tp_fade_left" data-fade-from="left">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-phone"></i>
                     </div>
-                    <div class="contact-content"> 
+                    <div class="contact-content">
                         <h4 class="contact-content-title">WhatsApp</h4>
                         <p><a href="https://wa.me/+{{ $staticData['kontak']->whatsapp ?? '081210079178' }}"
                                 target="_blank">{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</a>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
+            <div class="col-lg-6 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".6">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-house"></i>
@@ -33,14 +33,15 @@
                     <div class="contact-content">
                         <h4 class="contact-content-title">Alamat</h4>
                         <p>
-                           <a> {{ $staticData['kontak']->alamat ?? 'Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515' }}</a>
+                            <a>
+                                {{ $staticData['kontak']->alamat ?? 'Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515' }}</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
+            <div class="col-lg-6 col-md-6 mb-35 tp_fade_left" data-fade-from="left" data-delay=".9">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-clock"></i>
@@ -51,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
+            <div class="col-lg-6 col-md-6 mb-30 tp_fade_left" data-fade-from="left" data-delay=".9">
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fa-solid fa-envelope"></i>
@@ -66,7 +67,7 @@
             </div>
         </div>
         <div class="social-media-icons pt-105">
-            <p>Sosial Media</p>
+            <h4>Sosial Media</h4>
             <a href="https://www.facebook.com/yayasanbaitussaadahamah" target="_blank" class="icon facebook">
                 <i class="fab fa-facebook"></i>
             </a>
@@ -109,7 +110,7 @@
         </div>
     </div>
 
-    
+
 </section>
 
 

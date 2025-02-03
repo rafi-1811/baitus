@@ -3438,14 +3438,12 @@ Header CSS 01 Start
     .banner-content p {
         display: block;
         text-align: justify;
-
     }
 }
 @media (max-width: 576px) {
     .banner-content p {
         /* display: none; */
         text-align: justify;
-
     }
 }
 
@@ -9531,7 +9529,6 @@ Header CSS 01 Start
 }
 @media (max-width: 1199px) {
     .pagination-area span {
-        width: 23px;
         font-size: 13px;
     }
 }
@@ -9569,141 +9566,6 @@ Header CSS 01 Start
     border-color: transparent;
 }
 
-/* ///////////////////////////////////////////////////////////
-22. sidebar
-/////////////////////////////////////////////////////////// */
-.side-info {
-    width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 13px 29px rgba(4, 0, 23, 0.1);
-    height: 100%;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: -400px;
-    -webkit-transition: all 0.4s linear 0s;
-    -moz-transition: all 0.4s linear 0s;
-    -ms-transition: all 0.4s linear 0s;
-    -o-transition: all 0.4s linear 0s;
-    transition: all 0.4s linear 0s;
-    /* padding: 30px 30px 30px 30px; */
-    
-}
-.side-info:is(.info-open) {
-    right: 0;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-}
-
-@media (max-width: 768px) {
-    .side-info {
-        padding: 30px 0px 30px 0px;
-    }
-}
-@media (max-width: 480px) {
-    .side-info {
-        padding: 50px 0px 30px 0px;
-    }
-}
-
-.offcanvas-overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    background-color: rgba(4, 0, 23, 0.5);
-    z-index: 9;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.4s linear 0s;
-    -moz-transition: all 0.4s linear 0s;
-    -ms-transition: all 0.4s linear 0s;
-    -o-transition: all 0.4s linear 0s;
-    transition: all 0.4s linear 0s;
-}
-@media (max-width: 1199px) {
-    .offcanvas-overlay {
-        width: 610px;
-    }
-}
-
-.offcanvas-overlay:is(.overlay-open) {
-    left: 0;
-    opacity: 1;
-    visibility: visible;
-}
-
-.mean-container .mean-nav {
-    background: transparent;
-    padding-top: 10px;
-    /* width: 100%; */
-    padding-left: 17px;
-    margin-top: 0;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    /* margin-left: 100px; */
-}
-
-.mean-container .mean-nav ul li a {
-    border: none;
-    font-size: 16px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 0;
-    color: #000000;
-    text-align: center;
-}
-
-.mean-container .mean-nav ul li li a {
-    opacity: 0.75;
-    padding-left: 34px;
-    /* width: 100%; */
-}
-
-.mean-container .mean-nav ul li:hover > a {
-    background-color: #ffffff;
-    color: black;
-}
-
-.pl-sidebar-close.side-info-close {
-    background: white;
-    border: none;
-    font-size: 25px;
-    /* color: #000; */
-}
-
-.mean-container .mean-nav ul li a.mean-expand {
-    /* padding: 8px 0; */
-    border: none;
-    margin-right: 95px;
-    margin-top: -3px;
-    background-color: transparent;
-    color: #000000;
-    width: auto;
-}
-
-.mean-container .mean-nav ul li a.mean-expand:hover {
-    background: transparent;
-}
-
-.sidebar-close {
-    border: 0;
-    background-color: #ffffff;
-    margin-left: 330px;
-    font-size: 35px;
-    color: black;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* .sidebar-close:hover {
-  color: #fff;
-} */
-
 .header-menu-bar-icon {
     width: 40px;
     height: 40px;
@@ -9728,13 +9590,6 @@ Header CSS 01 Start
     background-color: transparent;
     color: transparent;
     border-color: transparent;
-}
-
-.sidebar-logo {
-    width: 250px;
-    height: 250px;
-    margin-left: 80px;
-
 }
 
 /* ///////////////////////////////////////////////////////////
@@ -13035,7 +12890,7 @@ Header CSS 01 Start
     background-color: #fff;
     padding: 23px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 70px 0px rgba(27, 42, 82, 0.06);
     width: auto;
     max-width: 500px;
     margin: 0 auto;
@@ -13111,7 +12966,6 @@ Header CSS 01 Start
         margin: 0 8px;
     }
 }
-
 
 /* Styling untuk setiap ikon */
 .icon {
@@ -13217,6 +13071,22 @@ Header CSS 01 Start
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 4; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.text-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
+}
+
+.text-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Ubah angka 2 sesuai jumlah baris yang diinginkan */
 }
 
 .content1 {
@@ -13524,6 +13394,27 @@ input[type="number"] {
     right: 0;
     padding: 10px 20px;
     border-radius: 10px;
+    max-height: 385px;
+    overflow-y: auto;
+}
+
+.search-result::-webkit-scrollbar {
+    width: 8px; /* Lebar scrollbar */
+}
+
+.search-result::-webkit-scrollbar-track {
+    background: #d1d5db; 
+    border-radius: 10px; 
+}
+
+.search-result::-webkit-scrollbar-thumb {
+    background: var(--clr-theme-primary); 
+    border-radius: 10px; 
+    transition: background 0.3s ease;
+}
+
+.search-result::-webkit-scrollbar-thumb:hover {
+    background: #d78e21;
 }
 
 .search-result-title {
@@ -13606,7 +13497,6 @@ input[type="number"] {
     height: 100%;
     border-radius: 20px;
 }
-
 
 /* styling untuk modal shareUrl */
 
@@ -13713,7 +13603,7 @@ input[type="number"] {
     width: 100%;
     border: none;
     background: transparent;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     color: #555;
     outline: none;
 }
@@ -13725,7 +13615,7 @@ input[type="number"] {
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 #sharePrompt .copy-link button:hover {
@@ -13745,7 +13635,57 @@ input[type="number"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
 /* Section Donasi */
+=======
+.button1 {
+    position: relative;
+    /* width: 100%; */
+    align-items: center;
+    background-color: #fa8925;
+    border: 0;
+    color: #ffffff;
+    border-radius: 0.5em;
+    font-size: 20px;
+    padding: 0.375em 1em;
+    font-weight: 600;
+    text-shadow: 0 0.0625em 0 #fa8020;
+    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
+        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
+        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
+    transition: 0.25s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    &:active,
+    &:hover {
+        transform: translateY(0.225em);
+        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
+            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
+            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
+            0 0.225em 0.375em 0 #c45d02;
+
+        &:after {
+            height: calc(100% + 0.225em);
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(100% + 0.375em);
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        transition: height 0.25s ease;
+    }
+}
+
+/* Section Styles */
+>>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
 .h4_donasi-area {
     display: flex;
     padding-top: 50px;
@@ -13760,6 +13700,7 @@ input[type="number"] {
     text-align: center;
 }
 
+<<<<<<< HEAD
 /* Title styles */
 .h4_section-donasi {
     font-size: 28px;
@@ -13778,6 +13719,17 @@ input[type="number"] {
     text-transform: uppercase;
     color: #fff;
     background: linear-gradient(90deg, #ff983d 10%, #fa7f20 30%, #ffbb3d 80%);
+=======
+/* #FF983D */
+
+/* Button Styles */
+/* .button1 {
+    background-color: #FF983D;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+>>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -13794,6 +13746,7 @@ input[type="number"] {
     box-shadow: 0 10px 30px rgba(255, 105, 0, 0.5);
 }
 
+<<<<<<< HEAD
 /* Animation for the gradient */
 @keyframes gradientAnimation {
     0% {
@@ -13804,6 +13757,20 @@ input[type="number"] {
     }
     100% {
         background-position: 200% 0%;
+=======
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .button1 {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .button1 {
+        font-size: 14px;
+        padding: 8px 16px;
+>>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
     }
 }
 
@@ -13813,6 +13780,7 @@ input[type="number"] {
         font-size: 20px;
     }
 
+<<<<<<< HEAD
     .button1 {
         font-size: 16px;
         padding: 10px 25px;
@@ -13858,8 +13826,94 @@ input[type="number"] {
     }
 }
 
-@media (max-width: 1200px) {
+=======
+    .h4_section-area-donasi h2 {
+        font-size: 30px;
+    }
+    .button1 {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
 
+@media (max-width: 576px) {
+    .h4_donasi-area {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .button1 {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .h4_section-area-donasi h2 {
+        font-size: 27px;
+    }
+}
+
+.donasi-area-side {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.h4_section-area-donasi {
+    margin-bottom: 20px;
+    letter-spacing: -1.6px;
+}
+
+.button2 {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    background-color: #fa8925;
+    border: 0;
+    color: #ffffff;
+    border-radius: 0.5em;
+    font-size: 20px;
+    padding: 0.375em 1em;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0.0625em 0 #fa8020;
+    box-shadow: inset 0 0.0625em 0 0 #ff9538, 0 0.0625em 0 0 #f08324,
+        0 0.125em 0 0 #f57a0f, 0 0.25em 0 0 #c45d02, 0 0.3125em 0 0 #c45d02,
+        0 0.375em 0 0 #c45d02, 0 0.425em 0 0 #c45d02, 0 0.425em 0.5em 0 #c45d02;
+    transition: 0.25s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+
+    &:active,
+    &:hover {
+        transform: translateY(0.225em);
+        box-shadow: inset 0 0.03em 0 0 #c45d02, 0 0.03em 0 0 #c45d02,
+            0 0.0625em 0 0 #c45d02, 0 0.125em 0 0 #c45d02, 0 0.125em 0 0 #c45d02,
+            0 0.2em 0 0 #c45d02, 0 0.225em 0 0 #c45d02,
+            0 0.225em 0.375em 0 #c45d02;
+
+        &:after {
+            height: calc(100% + 0.225em);
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: calc(100% + 0.375em);
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        transition: height 0.25s ease;
+    }
+}
+
+>>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
+@media (max-width: 1200px) {
     .button2 {
         font-size: 14px;
         padding: 10px 20px;
@@ -13867,7 +13921,6 @@ input[type="number"] {
 }
 
 @media (max-width: 992px) {
-
     .button2 {
         font-size: 14px;
         padding: 8px 16px;
@@ -13884,7 +13937,6 @@ input[type="number"] {
         font-size: 16px;
         /* padding: 8px 16px; */
         margin-left: 14px;
-
     }
 }
 
@@ -13894,13 +13946,350 @@ input[type="number"] {
         padding-bottom: 40px;
     }
 
-
     .button2 {
         font-size: 16px;
         /* padding: 6px 12px; */
         margin-left: 12px;
     }
+}
+/* styling campaign page */
 
+<<<<<<< HEAD
 }
 
 
+=======
+.campaign-section {
+    padding: 70px 20px;
+}
+
+.card-wrap {
+    margin-bottom: 20px;
+}
+
+.card-wrap:last-child {
+    margin-bottom: 0;
+}
+
+/* styling untuk card campaign */
+
+.card-campaign {
+    max-width: 360px;
+}
+
+.card-campaign .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-campaign .card-body h5 {
+    margin-bottom: 10px;
+}
+
+.card-campaign .card-body .text-muted {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.card-campaign .card-body .campaign-target{
+    font-size: 14px;
+}
+
+.card-campaign .card-body .campaign-target,
+.card-campaign .card-body .campaign-terkumpul {
+    color: var(--clr-theme-primary);
+}
+
+.card-campaign .card-body .progress {
+    height: 8px;
+}
+
+.card-campaign .card-body .button-donasi {
+    background-color: var(--clr-theme-primary);
+    font-size: 14px;
+    color: #fcf9f9;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.card-campaign .card-body .button-donasi:hover {
+    background-color: #cf8f30;
+    color: #fcf9f9;
+}
+
+
+/* detail campaign */
+
+.detail-campaign h3 {
+    font-size: 30px;
+}
+
+@media (max-width: 576px) {
+    .detail-campaign h3 {
+        margin-top: 10px;
+        font-size: 25px;
+    }
+}
+
+.detail-campaign .campaign-deskripsi {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.detail-campaign .campaign-terkumpul {
+    color: var(--clr-theme-primary);
+    margin-bottom: 0;
+}
+
+.detail-campaign .button-donasi {
+    background-color: var(--clr-theme-primary);
+    color: #fffefe;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.detail-campaign .button-donasi:hover {
+    background-color: #cf8f30;
+}
+
+.detail-campaign .progress{
+    height: 20px;
+}
+
+.detail-campaign .progress .progress-bar{
+    background-color: var(--clr-theme-primary);
+}
+
+.detail-campaign .progress .progress-bar .label-persentase{
+    font-size: 12px;
+    color: #fff;
+    display: block;
+}
+
+.nav-tabs .nav-item .nav-link {
+    color: #1b2a52;
+}
+
+.tab-content .tab-pane .list-group .list-group-item .badge {
+    background-color: var(--clr-theme-primary);
+}
+
+/* styling modal donasi */
+
+/* Modal Container */
+.modal-donasi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* Overlay */
+.modal-donasi .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-donasi .modal-content {
+    position: relative;
+    width: 70%;
+    max-width: 550px;
+    background-color: white;
+    padding: 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-donasi .modal-content h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-donasi .modal-content p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.modal-donasi .modal-content .img-gift {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+/* Tombol Kembali */
+.button-close {
+    width: 50%;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f6a96c;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.button-close:hover {
+    background-color: #f8b436;
+}
+
+
+/* * ini Sidebar custom gua */
+
+.open-sidebar-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Sidebar style */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -375px;
+    /* Initially hidden on the right */
+    width: 375px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1001;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 100px;
+}
+
+.close-sidebar-btn {
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: var(--clr-theme-primary);
+    cursor: pointer;
+}
+
+.sidebar nav {
+    margin-top: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-link {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-link:hover {
+    background-color: #ffdfb0;
+}
+
+.dropdown-program .program-menu-list {
+    max-height: 0; /* Menyembunyikan menu */
+    overflow: hidden;
+    transition: max-height 0.7s ease-out; /* Transisi untuk max-height */
+}
+
+/* Menu dropdown yang terbuka */
+.dropdown-program .program-menu-list.open {
+    max-height: 500px; 
+    transition: max-height 0.3s ease-in;
+}
+.dropdown-program .program-menu-list .menu-link {
+    font-size: 14px;
+    color: #585858;
+}
+
+.cta-donasi {
+    display: block;
+    background-color: var(--clr-theme-primary);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    width: 50%;
+    border-radius: 30px;
+}
+
+.cta-donasi:hover {
+    background-color: #cd8b29;
+}
+
+/* Overlay */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Show sidebar and overlay */
+.sidebar.open,
+.sidebar-overlay.open {
+    right: 0;
+    display: block;
+}
+
+.sidebar-logo{
+    width: 200px;
+    height: 200px;
+}
+>>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8

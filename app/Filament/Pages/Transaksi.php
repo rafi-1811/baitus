@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Filament\Pages;
+
 use App\Models\Donatur;
 use Filament\Pages\Page;
 
@@ -22,7 +23,7 @@ class Transaksi extends Page implements HasTable
 
     protected static string $view = 'filament.pages.transaksi';
 
-    protected static ?string $navigationLabel = 'Transaksi';
+    protected static ?string $navigationLabel = 'Donasi';
 
     protected ?string $heading = 'Transaksi Donasi';
 
@@ -37,8 +38,8 @@ class Transaksi extends Page implements HasTable
 
     public static function getNavigationBadge(): ?string
     {
-        
-        return Donatur::count(); 
+
+        return Donatur::count();
     }
 
     public function table(Table $table): Table
@@ -46,28 +47,27 @@ class Transaksi extends Page implements HasTable
         return $table
             ->query(Donatur::query())
             ->columns([
-                TextColumn::make('order_id')
-                    ->label('Order ID')
-                    ->limit(15) 
-                    ->tooltip(fn ($record) => $record->order_id) 
-                    ->copyMessage('Order ID disalin')
+                TextColumn::make('transaksi_id')
+                    ->label('ID Transaksi')
+                    ->tooltip(fn($record) => $record->transaksi_id)
+                    ->copyMessage('ID Transaksi disalin')
                     ->copyMessageDuration(1500)
                     ->copyable(),
-                    
+
 
                 TextColumn::make('nama'),
-                    
-                
+
+
                 TextColumn::make('email')
                     ->sortable(),
 
                 TextColumn::make('jumlah')
-                    ->formatStateUsing(fn (Donatur $record): string => 'Rp ' . number_format($record->jumlah, 0 , '.', '.') ),
-                
+                    ->formatStateUsing(fn(Donatur $record): string => 'Rp ' . number_format($record->jumlah, 0, '.', '.')),
+
                 TextColumn::make('status')
                     ->sortable()
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
+                    ->color(fn(string $state): string => match ($state) {
                         'SUCCESS' => 'success', // Warna hijau untuk SUCCESS
                         'Menunggu Pembayaran' => 'info',
                         'PENDING' => 'info',    // Warna biru untuk PENDING
@@ -78,17 +78,15 @@ class Transaksi extends Page implements HasTable
 
                 TextColumn::make('created_at')
                     ->label('Tanggal Donasi')
-                    ->formatStateUsing(fn ($state) => \Carbon\Carbon::parse($state)->translatedFormat('d F Y'))
-                    ->tooltip(fn ($state) => \Carbon\Carbon::parse($state)->format('d-m-Y H:i:s'))
+                    ->formatStateUsing(fn($state) => \Carbon\Carbon::parse($state)->translatedFormat('d F Y'))
+                    ->tooltip(fn($state) => \Carbon\Carbon::parse($state)->format('d-m-Y H:i:s'))
                     ->sortable(),
 
             ])
             ->filters([
                 //
             ])
-            ->actions([
-            ])
-            ->bulkActions([
-            ]);
+            ->actions([])
+            ->bulkActions([]);
     }
 }

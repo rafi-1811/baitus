@@ -13,12 +13,12 @@ class Campaign extends Component
 
     public function mount()
     {
-        $this->campaign = Kampanye::with('donaturs')->get();
+        $this->campaign = Kampanye::with('donaturs')->where('status', 'Aktif')->get();
     }
 
     public function render()
     {
-        return view('livewire.pages.campaign',[
+        return view('livewire.pages.campaign', [
             'campaign' => $this->campaign
         ])->layout('layout.layout', [
             'titleBread' => 'Campaign',

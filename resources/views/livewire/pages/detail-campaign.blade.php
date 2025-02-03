@@ -6,35 +6,42 @@
     <div class="row">
         <!-- Gambar Campaign -->
         <div class="col-md-7">
-            <img src="{{ asset('storage/' . $campaign->gambar) }}" class="img-fluid rounded shadow-sm"
+            <img src="{{ asset('storage/' . $campaign->gambar) }}" style="width: 100%;" class="rounded shadow-sm"
                 alt="Gambar Campaign">
         </div>
 
         <!-- Detail Campaign -->
-        <div class="col-md-5">
+        <div class="col-md-5 detail-campaign">
             <h3 class="fw-bold">{{ $campaign->judul }}</h3>
-            <p class="text-muted">{{ $campaign->deskripsi }}</p>
+            <p class="text-muted campaign-deskripsi">{{ $campaign->deskripsi }}</p>
 
             <!-- Donasi Terkumpul -->
-            <h4 class="text-warning">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
+            <h4 class="campaign-terkumpul">Rp {{ number_format($campaign->terkumpul, 0, '.', '.') }}</h4>
             <p class="text-muted">dari target <strong>Rp {{ number_format($campaign->target, 0, '.', '.') }}</strong>
             </p>
 
             <!-- Progress Bar -->
-            <div class="progress mb-3">
-                <div class="progress-bar bg-success" role="progressbar"
-                    style="width: {{ ($campaign->terkumpul / $campaign->target) * 100 }}%;"
-                    aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
-                    aria-valuemax="100"></div>
+            <div class="relative mb-3">
+                <div class="progress">
+                    <div class="progress-bar position-relative" role="progressbar"
+                        style="width: {{ min(($campaign->terkumpul / $campaign->target) * 100, 100) }}%"
+                        aria-valuenow="{{ ($campaign->terkumpul / $campaign->target) * 100 }}" aria-valuemin="0"
+                        aria-valuemax="100">
+                        <span class="position-absolute top-50 start-50 translate-middle fw-bold label-persentase">
+                            {{ number_format(min(($campaign->terkumpul / $campaign->target) * 100, 100), 0) }}%
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- Jumlah Donatur -->
-            <p><strong>{{ $campaign->donaturs->count() }} Donatur</strong> telah berdonasi</p>
+            <p><strong>{{ $campaign->donaturs->where('status', 'SUCCESS')->count() }} Donatur</strong> telah berdonasi
+            </p>
 
             <!-- Tombol Donasi -->
             <a wire:navigate href="{{ route('form-donasi', ['slug' => $campaign->slug]) }}"
-                class="btn btn-warning w-100 text-gray">Donasi
-                Sekarang</a>
+                class="button-donasi w-100">Donasi
+                sekarang</a>
         </div>
     </div>
 
@@ -60,27 +67,19 @@
             <!-- Tab List Donatur -->
             <div class="tab-pane fade" id="donatur" role="tabpanel" aria-labelledby="donatur-tab">
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>John Doe</strong>
-                            <span class="badge bg-success">Rp 500.000</span>
-                        </div>
-                        <small class="text-muted">"Semoga berkah dan bermanfaat!"</small>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>Jane Smith</strong>
-                            <span class="badge bg-success">Rp 1.000.000</span>
-                        </div>
-                        <small class="text-muted">"Semoga anak-anak yatim mendapatkan pendidikan terbaik."</small>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <strong>Anonim</strong>
-                            <span class="badge bg-success">Rp 200.000</span>
-                        </div>
-                        <small class="text-muted">"Saya hanya bisa membantu sedikit, semoga bermanfaat."</small>
-                    </li>
+                    @forelse ($donatur as $item)
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <strong>{{ $item->nama }}</strong>
+                                <span class="badge">Rp
+                                    {{ number_format($item->jumlah, 0, '.', '.') }}</span>
+                            </div>
+                            <small class="text-muted">"{{ $item->doa }}"</small>
+                        </li>
+                    @empty
+                        <p class="text-center fs-6">Belum ada donatur nih, Donasi Yuk!!</p>
+                    @endforelse
+
                 </ul>
             </div>
         </div>

@@ -9,7 +9,7 @@
         <div class="search-result mt-3">
             <p class="search-result-title">Hasil pencarian</p>
             @forelse ($berita as $item)
-                <a href="{{ route('detail-berita', $item->slug) }}" wire:navigate
+                <a wire:key="{{ $item->slug }}" href="{{ route('detail-berita', $item->slug) }}" wire:navigate
                     class="search-result-item">{{ $item->judul }}</a>
             @empty
                 <p class="text-center search-result-item">Hasil pencarian tidak ditemukan</p>

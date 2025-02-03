@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             @forelse ($staticData['program'] as $item)
-                <div class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
+                <div wire:key="{{ $item->slug }}" class="col-xl-3 col-lg-4 col-md-6 tp_fade_left" data-fade-from="left">
                     <div class="choose-item mb-30">
                         <div class="choose-item-img">
                             <img src="{{ asset('storage/' . $item->gambar) }}" alt="Image Not Found">

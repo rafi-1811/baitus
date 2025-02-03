@@ -7,7 +7,8 @@
 
         <div class="wrap-content">
             @forelse ($docs->gambar_dokumentasi as $index => $item)
-                <div class="image-wrap" @click="openModal('{{ asset('storage/' . $item) }}')">
+                <div wire:key="{{ $index }}" class="image-wrap"
+                    @click="openModal('{{ asset('storage/' . $item) }}')">
                     <img class="image-content" src="{{ asset('storage/' . $item) }}" alt="Gambar Dokumentasi">
                     <div class="image-overlay">
                         <span class="overlay-text">Lihat Gambar</span>
