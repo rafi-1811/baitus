@@ -55,10 +55,11 @@
 
                             <ul>
                                 <li>
-                                    Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515
+                                    {{ $staticData['kontak']->alamat ?? 'Jl.Pendowo Raya Gg. Kopo Kel. Limo Kec. Limo, Kota Depok,Jawa Barat 16515' }}
                                 </li>
-                                {{-- <li>officialbaitussaadahamanah@gmail.com</li> --}}
-                                <li>0821-2477-1471</li>
+                                <li class="text-clamp-2">
+                                    {{ $staticData['kontak']->email ?? 'officialyayasan@baitussaadahamanah.org' }}</li>
+                                <li>{{ $staticData['kontak']->whatsapp ?? '081210079178' }}</li>
                             </ul>
                         </div>
                     </div>
