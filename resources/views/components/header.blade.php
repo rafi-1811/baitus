@@ -36,8 +36,9 @@
                 <div class="col-xl-3 col-lg-3 col-6">
                     <div class="header-action-wrap d-flex align-items-center justify-content-end">
                         <div class="button d-none d-xl-block">
-                            <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim" target="_blank">
-                                DONASI DISINI
+                            <a wire:navigate href="/campaign">DONASI DISINI
+                            {{-- <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim" target="_blank">
+                                DONASI DISINI --}}
                                 <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <g filter="url(#filter0_f_618_1123)">

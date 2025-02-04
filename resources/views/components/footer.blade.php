@@ -19,11 +19,10 @@
                             Semoga Allah SWT membalas kebaikan kita semua, Aamiin ya rabbal’alamin.</p>
                     </div>
                     <div class="h5_footer-widget-social">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://x.com/Baitussaadah_"><i class="fa-brands fa-x"></i></a>
+                        <a href="https://www.instagram.com/yayasanbaitussaadahamanah_/?igsh=MWdveXU2YzBjeHNhOA%3D%3D#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/baitus.a.yatim"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@yayasanbaitussaadahamanaho8517?si=6I2xtsKqztSoAMLD"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-right col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">

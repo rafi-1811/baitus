@@ -14035,13 +14035,13 @@ input[type="number"] {
 
 /* Tombol Kembali */
 .button-close {
-    width: 50%;
+    width: 55%;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #f6a96c;
     color: white;
     font-weight: bold;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
     transition: background-color 0.3s ease;
 }
