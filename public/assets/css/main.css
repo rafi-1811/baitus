@@ -11525,7 +11525,7 @@ Header CSS 01 Start
     display: block;
 }
 .footer-bottom-menu ul li a:hover {
-    color: var(--clr-color-violet);
+    color: var(--clr-theme-primary);
 }
 
 .h2_footer-top {
@@ -13651,24 +13651,27 @@ input[type="number"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Section Donasi */
 
 .button1 {
-  background: linear-gradient(45deg, #ff7f32, #ffb84d); /* Gradient warna oranye */
-  color: white; /* Warna teks putih */
-  width: 20%;
-  padding: 12px 24px; /* Jarak dalam tombol */
-  border-radius: 8px; /* Sudut melengkung */
-  border: none; /* Menghilangkan border default */
-  font-size: 16px; /* Ukuran font */
-  font-weight: bold; /* Teks tebal */
-  cursor: pointer; /* Menambahkan pointer saat hover */
-  transition: background 0.3s ease; /* Efek transisi saat hover */
+    background: linear-gradient(
+        45deg,
+        #ff7f32,
+        #ffb84d
+    ); /* Gradient warna oranye */
+    color: white; /* Warna teks putih */
+    width: 20%;
+    padding: 12px 24px; /* Jarak dalam tombol */
+    border-radius: 8px; /* Sudut melengkung */
+    border: none; /* Menghilangkan border default */
+    font-size: 16px; /* Ukuran font */
+    font-weight: bold; /* Teks tebal */
+    cursor: pointer; /* Menambahkan pointer saat hover */
+    transition: all 0.3s ease; /* Efek transisi saat hover */
 }
 
 .button1:hover {
-  background: linear-gradient(45deg, #ff9c4d, #ff7f32); /* Warna saat hover */
+    background: linear-gradient(45deg, #ff9c4d, #ff7f32); /* Warna saat hover */
 }
 
 .button1:active {
@@ -13686,12 +13689,10 @@ input[type="number"] {
     text-align: center;
 }
 
-
 .h4_section-area-donasi {
     margin-bottom: 50px;
     text-align: center;
 }
-
 
 /* Title styles */
 .h4_section-donasi {
@@ -13700,34 +13701,11 @@ input[type="number"] {
     color: #333;
 }
 
-/* Button styles */
-
-/* #FF983D */
-
-/* Button Styles */
-/* .button1 {
-    background-color: #FF983D;
-    color: #ffffff;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
->>>>>>> c06fe5d877ef971ef5205236e3d1be7fe97208d8
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-size: 200% auto;
-    box-shadow: 0 4px 15px rgba(255, 105, 0, 0.4);
-    letter-spacing: 1px;
-}
-
 /* Hover effect on the button */
 .button1:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(255, 105, 0, 0.5);
 }
-
 
 /* Animation for the gradient */
 @keyframes gradientAnimation {
@@ -13739,7 +13717,8 @@ input[type="number"] {
     }
     100% {
         background-position: 200% 0%;
-    }}   
+    }
+}
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .button1 {
@@ -13807,15 +13786,13 @@ input[type="number"] {
     }
 }
 
-
-    .h4_section-area-donasi h2 {
-        font-size: 30px;
-    }
-    .button1 {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-
+.h4_section-area-donasi h2 {
+    font-size: 30px;
+}
+.button1 {
+    font-size: 14px;
+    padding: 8px 16px;
+}
 
 @media (max-width: 576px) {
     .h4_donasi-area {
@@ -13847,7 +13824,6 @@ input[type="number"] {
 }
 
 /* styling campaign page */
-
 
 .campaign-section {
     padding: 70px 20px;
@@ -13955,10 +13931,8 @@ input[type="number"] {
     height: 20px;
 }
 
-
-.detail-campaign .progress .progress-bar{
+.detail-campaign .progress .progress-bar {
     background-color: #fa8d20;
-
 }
 
 .detail-campaign .progress .progress-bar .label-persentase {
@@ -14061,13 +14035,13 @@ input[type="number"] {
 
 /* Tombol Kembali */
 .button-close {
-    width: 55%;
+    width: 50%;
     display: inline-block;
     padding: 10px;
     background-color: #f6a96c;
     color: white;
     font-weight: bold;
-    border-radius: 15px;
+    border-radius: 25px;
     border: none;
     transition: background-color 0.3s ease;
 }

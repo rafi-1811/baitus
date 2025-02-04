@@ -20,9 +20,11 @@
                     </div>
                     <div class="h5_footer-widget-social">
                         <a href="https://x.com/Baitussaadah_"><i class="fa-brands fa-x"></i></a>
-                        <a href="https://www.instagram.com/yayasanbaitussaadahamanah_/?igsh=MWdveXU2YzBjeHNhOA%3D%3D#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/yayasanbaitussaadahamanah_/?igsh=MWdveXU2YzBjeHNhOA%3D%3D#"><i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://www.facebook.com/baitus.a.yatim"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://youtube.com/@yayasanbaitussaadahamanaho8517?si=6I2xtsKqztSoAMLD"><i class="fab fa-youtube"></i></a>
+                        <a href="https://youtube.com/@yayasanbaitussaadahamanaho8517?si=6I2xtsKqztSoAMLD"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-right col-xl-6 col-lg-7 tp_has_fade_anim" data-fade-from="right" data-delay=".8">
@@ -69,7 +71,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <div class="footer-bottom-copyright d-flex justify-content-center justify-content-md-start">
-                        <p>&copy; 2024 Baitus Saadah Amanah. Semua hak cipta dilindungi.</p>
+                        <p>&copy; {{ date('Y') }} Baitus Saadah Amanah. Semua hak cipta dilindungi.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
