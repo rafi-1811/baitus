@@ -13403,13 +13403,13 @@ input[type="number"] {
 }
 
 .search-result::-webkit-scrollbar-track {
-    background: #d1d5db; 
-    border-radius: 10px; 
+    background: #d1d5db;
+    border-radius: 10px;
 }
 
 .search-result::-webkit-scrollbar-thumb {
-    background: var(--clr-theme-primary); 
-    border-radius: 10px; 
+    background: var(--clr-theme-primary);
+    border-radius: 10px;
     transition: background 0.3s ease;
 }
 
@@ -13893,7 +13893,7 @@ input[type="number"] {
     line-height: 1.5;
 }
 
-.card-campaign .card-body .campaign-target{
+.card-campaign .card-body .campaign-target {
     font-size: 14px;
 }
 
@@ -13924,7 +13924,6 @@ input[type="number"] {
     background-color: #cf8f30;
     color: #fcf9f9;
 }
-
 
 /* detail campaign */
 
@@ -13964,15 +13963,15 @@ input[type="number"] {
     background-color: #cf8f30;
 }
 
-.detail-campaign .progress{
+.detail-campaign .progress {
     height: 20px;
 }
 
-.detail-campaign .progress .progress-bar{
+.detail-campaign .progress .progress-bar {
     background-color: var(--clr-theme-primary);
 }
 
-.detail-campaign .progress .progress-bar .label-persentase{
+.detail-campaign .progress .progress-bar .label-persentase {
     font-size: 12px;
     color: #fff;
     display: block;
@@ -14045,6 +14044,31 @@ input[type="number"] {
     margin-bottom: 20px;
 }
 
+@media (max-width: 767.98px) {
+    .modal-donasi .modal-content {
+        width: 85%;
+        padding: 25px;
+    }
+
+    .modal-donasi .modal-content .img-gift {
+        width: 70px;
+        height: 70px;
+    }
+
+    .modal-donasi .modal-content h4 {
+        font-size: 20px;
+    }
+
+    .modal-donasi .modal-content p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .button-close {
+        padding: 5px 10px;
+    }
+}
+
 /* Tombol Kembali */
 .button-close {
     width: 50%;
@@ -14061,7 +14085,6 @@ input[type="number"] {
 .button-close:hover {
     background-color: #f8b436;
 }
-
 
 /* * ini Sidebar custom gua */
 
@@ -14146,7 +14169,7 @@ input[type="number"] {
 
 /* Menu dropdown yang terbuka */
 .dropdown-program .program-menu-list.open {
-    max-height: 500px; 
+    max-height: 500px;
     transition: max-height 0.3s ease-in;
 }
 .dropdown-program .program-menu-list .menu-link {
@@ -14190,7 +14213,7 @@ input[type="number"] {
     display: block;
 }
 
-.sidebar-logo{
+.sidebar-logo {
     width: 200px;
     height: 200px;
 }
