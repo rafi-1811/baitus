@@ -2,13 +2,13 @@
     <div class="header-main header-sticky">
         <div class="container">
             <div class="row align-items-center d-flex justify-content-between">
-                <div class="col-xl-2 col-lg-1 col-4">
+                <div class="col-xl-2 col-lg-2 col-4">
                     <div class="header-logo">
                         <a href="{{ route('home') }}"><img src="{{ asset('assets/images/logo/logo.png') }}"
                                 alt="Logo"></a>
                     </div>
                 </div>
-                <div class="col-xl-7 col-lg-7 d-none d-lg-block">
+                <div class="col-xl-7 col-lg-8 d-none d-xl-block">
                     <div class="header-menu">
                         <nav class="header-nav-menu" id="mobile-menu">
                             <ul class="d-flex justify-content-center">
@@ -33,11 +33,11 @@
                 </div>
 
                 {{-- tombol --}}
-                <div class="col-xl-3 col-lg-3 col-6">
+                <div class="col-xl-3 col-lg-2 col-6">
                     <div class="header-action-wrap d-flex align-items-center justify-content-end">
                         <div class="button d-none d-xl-block">
                             <a wire:navigate href="/campaign">DONASI DISINI
-                            {{-- <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim" target="_blank">
+                                {{-- <a href="https://kitabisa.com/campaign/berbagiberassembakoyatim" target="_blank">
                                 DONASI DISINI --}}
                                 <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
