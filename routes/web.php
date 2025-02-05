@@ -28,4 +28,4 @@ Route::get('/campaign/{slug}', DetailCampaign::class)->name('detail-campaign');
 Route::get('/campaign/{slug}/donasi', FormDonasi::class)->name('form-donasi');
 
 
-Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
+// Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);

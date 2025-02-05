@@ -1,0 +1,5 @@
+​<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^sitemap\.xml$ /sitemap.xml [L]
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

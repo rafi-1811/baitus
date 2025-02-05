@@ -11,8 +11,8 @@
                 <div class="banner-wrapper">
                     <div class="banner-content-subtitle tp_fade_left">Bahagia Bersama Yatim</div>
                 </div>
-                <h1 class="banner-content-title tp_has_text_reveal_anim">Yayasan Baitus Saadah Amanah</h1>
-                <p class="tp_desc_anim">
+                <h1 class="banner-content-title tp_has_text_reveal_anim">Yayasan Baitus Sa'adah Amanah</h1>
+                <p>
                     {{ $staticData['tentang_yayasan']->tentang_yayasan ?? 'Yayasan Baitussaadah Amanah adalah Yayasan
                      yang berdiri sejak 2021 untuk membantu dan memajukan kehidupan anak-anak yatim dengan program yang efektif
                       dan berkesinambungan untuk kehidupan yang lebih baik' }}
