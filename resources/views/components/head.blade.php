@@ -25,7 +25,7 @@
 
     {{-- gambar tab browser --}}
     <link rel="canonical" href="{{ url()->current() }}">
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('assets/images/logo/logo.png') }}">
 
     <script type="application/ld+json">
