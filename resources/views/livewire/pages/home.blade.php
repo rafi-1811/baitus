@@ -1,3 +1,17 @@
+{{-- SEO --}}
+@section('title', "Beranda - Yayasan Baitus Sa'adah Amanah")
+@section('meta_description',
+    'Yayasan Baitus Saadah Amanah adalah lembaga sosial yang berfokus pada pemberdayaan anak
+    yatim. Kami mendampingi dan membina 120 anak yatim dengan memberikan pendidikan, kebutuhan pokok, serta bimbingan moral
+    dan spiritual. Bergabunglah bersama kami dalam upaya menciptakan masa depan yang lebih baik untuk mereka, dan berikan
+    kontribusi positif bagi sesama.')
+@section('meta_keywords',
+    'Yayasan Baitus Saadah Amanah, lembaga sosial, anak yatim, donasi, bimbingan moral, pendidikan
+    anak yatim, peduli yatim, yayasan sosial, bantuan yatim, sedekah, infak, zakat')
+    {{-- @section('meta_image') --}}
+
+
+
 @section('header')
     <x-header />
 @endsection

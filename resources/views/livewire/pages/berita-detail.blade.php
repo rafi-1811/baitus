@@ -1,4 +1,16 @@
-<!-- blog details area start -->
+{{-- SEO --}}
+@section('title', $berita->judul . " - Yayasan Baitus Sa'adah Amanah")
+
+@section('meta_description', $berita->meta_deskripsi)
+
+@section('meta_keywords', 'donasi yatim, yayasan sosial, bantuan yatim, pendidikan yatim, zakat yatim, sedekah yatim,' .
+    $berita->meta_keywords)
+
+@section('meta_image', asset('storage/' . $berita->cover_gambar_berita))
+
+
+
+<!-- berita details area start -->
 <section class="blog_details-area pt-105 pb-100" x-data="{ modalOpen: false, isCopy: false }">
     <div class="container">
         <div class="row">
@@ -178,4 +190,4 @@
         </div>
     </div>
 </section>
-<!-- blog details area end -->
+<!-- berita details area end -->

@@ -1,33 +1,56 @@
 <head>
+    {{-- INI META BASIC --}}
+    <meta name="description" content="@yield('meta_description', 'Yayasan Baitus saadah Amanah adalah lembaga sosial yang peduli terhadap anak yatim, menampung dan membina 120 anak yatim dengan memberikan pendidikan, kebutuhan pokok, serta bimbingan moral dan spiritual. Kami berkomitmen untuk menciptakan lingkungan yang penuh kasih dan mendukung masa depan mereka agar lebih cerah.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'Yayasan Baitus saadah Amanah, anak yatim, donasi yatim, santunan yatim, peduli yatim, bantuan sosial, pendidikan yatim, sedekah yatim, yayasan sosial, infak yatim, bimbingan yatim, lembaga sosial, zakat yatim, wakaf yatim')">
+    <meta name="author" content="Yayasan Baitus Sa'adah Amanah">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <meta name="description" content="html template">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Asad">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="title" content="Yayasan Baitus Saadah Amanah - Yayasan Yatim">
-    <meta name="description" content="Yayasan Baitus Saadah Amanah merupakan lembaga sosial yang menaungi 120 anak yatim berdiri sejak tahun
-    2021. Tujuan utama yayasan ini berdiri yaitu, untuk membantu dan memajukan kehidupan anak-anak yatim dengan program yang
-    efektif dan berkesinambungan untuk kehidupan yang lebih baik.">
-    <meta name="keywords" content="Yayasan Yatim, Yatim, Donasi, Amal, Anak Yatim, Yayasan, Baitus Saadah Amanah">
-    <!-- Meta Open Graph -->
-        <meta property="og:title" content="Yayasan Baitus Saadah Amanah - Yayasan Yatim" />
-    <meta property="og:description"
-        content="Yayasan Baitus Saadah Amanah merupakan lembaga sosial yang menaungi 120 anak yatim berdiri sejak tahun
-    2021. Tujuan utama yayasan ini berdiri yaitu, untuk membantu dan memajukan kehidupan anak-anak yatim dengan program yang
-    efektif dan berkesinambungan untuk kehidupan yang lebih baik." />
-    <meta property="og:url" content="https://www.baitussaadahamanah.org" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="{{ asset('assets/images/logo/logo1.ico') }}" type="image/x-icon">
+    {{-- INI META OPEN GRAPH --}}
+    <meta property="og:title" content="@yield('title', "Yayasan Baitus Sa'adah Amanah")">
+    <meta property="og:description" content="@yield('meta_description', 'Yayasan Baitus saadah Amanah adalah lembaga sosial yang peduli terhadap anak yatim, menampung dan membina 120 anak yatim dengan memberikan pendidikan, kebutuhan pokok, serta bimbingan moral dan spiritual. Kami berkomitmen untuk menciptakan lingkungan yang penuh kasih dan mendukung masa depan mereka agar lebih cerah.')">
+    <meta property="og:image" content="@yield('meta_image', asset('assets/images/logo/logo.png'))">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Yayasan Baitus Sa'adah Amanah">
 
-     <!-- Open Graph / Facebook -->
-     <meta property="og:image" content="{{ asset('assets/images/logo/logo1.ico') }}">
+    {{-- INI META TWITTER --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', "Yayasan Baitus Sa'adah Amanah")">
+    <meta name="twitter:description" content="@yield('meta_description', 'Yayasan Baitus saadah Amanah adalah lembaga sosial yang peduli terhadap anak yatim, menampung dan membina 120 anak yatim dengan memberikan pendidikan, kebutuhan pokok, serta bimbingan moral dan spiritual. Kami berkomitmen untuk menciptakan lingkungan yang penuh kasih dan mendukung masa depan mereka agar lebih cerah.')">
+    <meta name="twitter:image" content="@yield('meta_image', asset('assets/images/logo/logo.png'))">
+    <meta name="twitter:site" content="@Baitussaadah_">
 
-     <!-- Untuk SEO -->
-     <meta name="twitter:image" content="{{ asset('assets/images/logo/logo1.ico') }}">
- 
+    {{-- gambar tab browser --}}
+    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logo/logo.png') }}">
 
-
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "@yield('title', "Yayasan Baitus Sa'adah Amanah")",
+        "description": "@yield('meta_description', 'Yayasan Baitus saadah Amanah adalah lembaga sosial yang peduli terhadap anak yatim, menampung dan membina 120 anak yatim dengan memberikan pendidikan, kebutuhan pokok, serta bimbingan moral dan spiritual. Kami berkomitmen untuk menciptakan lingkungan yang penuh kasih dan mendukung masa depan mereka agar lebih cerah.')",
+        "image": "@yield('meta_image', asset('assets/images/logo/logo.png'))",
+        "author": {
+            "@type": "Organization",
+            "name": "Yayasan Baitus Sa'adah Amanah"
+        },
+        "datePublished": "{{ now()->toIso8601String() }}",
+        "dateModified": "{{ now()->toIso8601String() }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Yayasan Baitus Sa'adah Amanah",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ asset('assets/images/logo/logo.png') }}"
+            }
+        }
+    }
+    </script>
 
     <title>{{ $title }}</title>
 
@@ -39,8 +62,5 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/backtotop.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-    <link rel="icon" href="{{ asset('assets/images/logo/logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('assets/images/favicon.png') }}">
-
     @livewireStyles
 </head>

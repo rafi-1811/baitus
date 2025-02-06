@@ -1,3 +1,15 @@
+{{-- SEO --}}
+@section('title', $campaign->judul . " - Yayasan Baitus Sa'adah Amanah")
+
+@section('meta_description', $campaign->deskripsi)
+
+@section('meta_keywords',
+    'campaign Yayasan Baitus Saadah Amanah, donasi anak yatim, program donasi, bantuan sosial,
+    campaign peduli yatim, donasi sosial, program pendidikan yatim, kampanye yayasan, sedekah yatim, bantuan pendidikan
+    yatim, zakat yatim, infak yatim, wakaf yatim')
+
+@section('meta_image', asset('storage/' . $campaign->gambar))
+
 @section('header')
     <x-header />
 @endsection

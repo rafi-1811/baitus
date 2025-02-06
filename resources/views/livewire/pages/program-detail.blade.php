@@ -1,3 +1,14 @@
+{{-- SEO --}}
+@section('title', $program->kategori_program . " - Yayasan Baitus Sa'adah Amanah")
+
+@section('meta_description', $program->deskripsi)
+
+@section('meta_keywords', 'donasi yatim, yayasan sosial, bantuan yatim, pendidikan yatim, zakat yatim, sedekah yatim' .
+    $program->kategori_program)
+
+@section('meta_image', asset('storage/' . $program->gambar))
+
+
 <div class="container mb-xl-5">
     {{-- Breadcump title --}}
     <div class="row justify-content-center">
