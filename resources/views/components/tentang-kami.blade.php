@@ -9,7 +9,7 @@
             </div>
             <div class="banner-content">
                 <div class="banner-wrapper">
-                    <div class="banner-content-subtitle tp_fade_left">Bahagia Bersama Yatim</div>
+                    <div class="banner-content-subtitle tp_fade_left">Bahagiakan Yatim Pasti Bisa</div>
                 </div>
                 <h1 class="banner-content-title tp_has_text_reveal_anim">Yayasan Baitus Sa'adah Amanah</h1>
                 <p>

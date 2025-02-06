@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="section-area text-center mb-50">
-                    <span class="section-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
+                    <span class="section-subtitle tp_fade_left">Bahagiakan Yatim Pasti Bisa</span>
                     <h2 class="section-title tp_title_slideup mb-0">Program Kami</h2>
                 </div>
             </div>

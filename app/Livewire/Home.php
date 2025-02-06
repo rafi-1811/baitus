@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 
 class Home extends Component
 {
-    #[Title('Beranda - Yayasan Baitus Saadah Amanah')]
+    #[Title('Yayasan Baitus Saadah Amanah')]
     public function render()
     {
         return view('livewire.pages.home')->layout('layout.layout1');

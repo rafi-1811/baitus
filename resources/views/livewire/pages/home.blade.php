@@ -64,7 +64,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-xl-6 col-lg-6 col-md-8">
                     <div class="h4_section-area text-center mb-25">
-                        <span class="section-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
+                        <span class="section-subtitle tp_fade_left">Bahagiakan Yatim Pasti Bisa</span>
                         <h2 class="h4_section-title tp_title_slideup">Rekening Donasi</h2>
                         <p class="mt-20 desc_title">Salurkan Bantuan Anda untuk Masa Depan Anak Yatim yang Lebih Cerah.
                             Setiap Rupiah Membawa Harapan dan Kebahagiaan bagi Mereka yang Membutuhkan.</p>
@@ -108,7 +108,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-xl-6 col-lg-6 col-md-8">
                     <div class="section-area text-center mb-50">
-                        <span class="section-subtitle tp_fade_left">Bahagia Bersama Yatim</span>
+                        <span class="section-subtitle tp_fade_left">Bahagiakan Yatim Pasti Bisa</span>
                         <h2 class="section-title tp_title_slideup mb-0">Berita Terbaru</h2>
                     </div>
                 </div>
