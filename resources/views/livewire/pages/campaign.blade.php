@@ -12,7 +12,7 @@
     {{-- @section('meta_image') --}}
 
     <section class="campaign-section container">
-        <div class="row">
+        <div class="row mx-auto">
             @forelse ($campaign as $item)
                 <div wire:key="{{ $item->slug }}" class="col-md-6 col-lg-4 card-wrap">
                     @livewire('campaign-card', ['campaign' => $item])
