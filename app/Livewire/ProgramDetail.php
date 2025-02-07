@@ -24,6 +24,6 @@ class ProgramDetail extends Component
         return view('livewire.pages.program-detail', compact('berita'))->layout('layout.layout', [
             'titleBread' => $this->program->kategori_program,
             'subTitleBread' => 'Home',
-        ])->title("Program Detail - {$this->program->kategori_program}");
+        ])->title("{$this->program->kategori_program} - Yayasan Baitus Sa'adah Amanah");
     }
 }

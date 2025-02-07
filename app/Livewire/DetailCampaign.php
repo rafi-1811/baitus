@@ -6,6 +6,7 @@ use App\Models\Donatur;
 use Livewire\Component;
 use App\Models\Campaign;
 use Livewire\Attributes\On;
+use Livewire\Attributes\Title;
 
 class DetailCampaign extends Component
 {
@@ -31,6 +32,6 @@ class DetailCampaign extends Component
         ])->layout('layout.layout1', [
             'titleBread' => 'Detail Campaign',
             'subTitleBread' => 'Home'
-        ]);
+        ])->title("{$this->campaign->judul} - Yayasan Baitus Sa'adah Amanah");
     }
 }

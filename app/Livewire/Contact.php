@@ -7,7 +7,7 @@ use Livewire\Attributes\Title;
 
 class Contact extends Component
 {
-    #[Title('Kontak Kami - Yayasan Baitus Saadah Amanah')]
+    #[Title("Kontak Kami - Yayasan Baitus Sa'adah Amanah")]
     public function render()
     {
         return view('livewire.pages.contact')->layout('layout.layout', [

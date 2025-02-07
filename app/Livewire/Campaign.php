@@ -8,7 +8,7 @@ use App\Models\Campaign as Kampanye;
 
 class Campaign extends Component
 {
-    #[Title('Campaign - Yayasan Baitus Saadah Amanah')]
+    #[Title("Campaign - Yayasan Baitus Sa'adah Amanah")]
     public $campaign;
 
     public function mount()

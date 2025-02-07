@@ -57,6 +57,6 @@ class BeritaDetail extends Component
         return view('livewire.pages.berita-detail')->layout('layout.layout', [
             'titleBread' => $this->berita->judul,
             'subTitleBread' => 'Home'
-        ])->title("Berita Detail - {$this->berita->judul}");
+        ])->title("{$this->berita->judul} - Yayasan Baitus Sa'adah Amanah");
     }
 }

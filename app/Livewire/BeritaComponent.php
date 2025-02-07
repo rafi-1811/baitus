@@ -12,7 +12,7 @@ class BeritaComponent extends Component
 {
     use WithPagination, WithoutUrlPagination;
 
-    #[Title('Berita - Yayasan Baitus Saadah Amanah')]
+    #[Title("Berita - Yayasan Baitus Sa'adah Amanah")]
     public function render()
     {
         $berita = Berita::with('program')->where('status', 'published')->orderBy('created_at', 'desc')->paginate(10);
