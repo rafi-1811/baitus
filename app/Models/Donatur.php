@@ -33,4 +33,16 @@ class Donatur extends Model
     {
         return $this->belongsTo(Campaign::class);
     }
+
+    public function updateStatusAndCampaignTotal($status)
+    {
+        $this->status = strtoupper($status);
+        $this->save();
+
+        $totalTerkumpul = self::where('campaign_id', $this->campaign_id)
+            ->where('status', 'SUCCESS')
+            ->sum('jumlah');
+
+        $this->campaign->update(['terkumpul' => $totalTerkumpul]);
+    }
 }

@@ -11,6 +11,8 @@ use App\Livewire\ProgramDetail;
 use App\Livewire\DetailCampaign;
 use App\Livewire\BeritaComponent;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MidtransController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 
 // ini udh pake livewire pi, udh ga pake controller lg
 Route::get('/', Home::class)->name('home');
@@ -27,5 +29,6 @@ Route::get('/campaign', Campaign::class)->name('campaign');
 Route::get('/campaign/{slug}', DetailCampaign::class)->name('detail-campaign');
 Route::get('/campaign/{slug}/donasi', FormDonasi::class)->name('form-donasi');
 
+Route::post('/payment/notification', [MidtransController::class, 'handleNotification'])->name('payment.notification')->withoutMiddleware([VerifyCsrfToken::class]);
 
 // Route::get('{any}', [App\Http\Controllers\PagesController::class, 'pageView']);
